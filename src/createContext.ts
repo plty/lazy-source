@@ -12,7 +12,7 @@ import { streamPrelude } from './stdlib/stream.prelude'
 import { Context, CustomBuiltIns, Value } from './types'
 import * as operators from './utils/operators'
 import { stringify } from './utils/stringify'
-import Evaluable from "./interpreter/evaluable";
+import Evaluable from './interpreter/evaluable'
 
 const createEmptyRuntime = () => ({
   break: false,
@@ -128,7 +128,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   const visualiseList = (v: Value) => externalBuiltIns.visualiseList(v, context.externalContext)
 
   if (context.chapter >= 1) {
-    console.log("this is defined sia")
+    console.log('this is defined sia')
     defineBuiltin(context, 'runtime()', misc.runtime)
     defineBuiltin(context, 'display(val)', display)
     defineBuiltin(context, 'raw_display(str)', rawDisplay)

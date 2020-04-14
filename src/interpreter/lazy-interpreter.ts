@@ -490,7 +490,10 @@ export function apply(
     } else if (typeof fun === 'function') {
       console.log('mueue')
       try {
-        result = fun.apply(thisContext, args.map(x => x.value))
+        result = fun.apply(
+          thisContext,
+          args.map(x => x.value)
+        )
         break
       } catch (e) {
         // Recover from exception

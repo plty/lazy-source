@@ -190,7 +190,7 @@ export async function runInContext(
     return runInContext(code, context, options)
   }
 
-  const lazyActivated = true;
+  const lazyActivated = true
   if (lazyActivated) {
     if (theOptions.executionMethod === 'lazy-interpreter') {
       return Promise.resolve({
@@ -261,7 +261,7 @@ export async function runInContext(
       )
     }
   } else {
-    console.log("ahaha")
+    console.log('ahaha')
     const it = evaluate(program, context)
     let scheduler: Scheduler
     if (theOptions.scheduler === 'async') {
