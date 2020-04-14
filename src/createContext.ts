@@ -95,14 +95,14 @@ const defineSymbol = (context: Context, name: string, value: Value) => {
 // If the builtin is a function, wrap it such that its toString hides the implementation
 export const defineBuiltin = (context: Context, name: string, value: Value) => {
   if (typeof value === 'function') {
-    const wrapped = Evaluable.from((...args: any) => value(...args))
+    const wrapped = (...args: any) => value(...args)
     const funName = name.split('(')[0].trim()
     const repr = `function ${name} {\n\t[implementation hidden]\n}`
     wrapped.toString = () => repr
 
-    defineSymbol(context, funName, wrapped)
+    defineSymbol(context, funName, Evaluable.from(wrapped))
   } else {
-    defineSymbol(context, name, value)
+    defineSymbol(context, name, Evaluable.from(value))
   }
 }
 
