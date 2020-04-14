@@ -95,7 +95,7 @@ const defineSymbol = (context: Context, name: string, value: Value) => {
 // If the builtin is a function, wrap it such that its toString hides the implementation
 export const defineBuiltin = (context: Context, name: string, value: Value) => {
   if (typeof value === 'function') {
-    const wrapped = (...args: any) => value(...args)
+    const wrapped = Evaluable.from((...args: any) => value(...args))
     const funName = name.split('(')[0].trim()
     const repr = `function ${name} {\n\t[implementation hidden]\n}`
     wrapped.toString = () => repr
@@ -136,7 +136,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     defineBuiltin(context, 'error(str)', misc.error_message)
     defineBuiltin(context, 'prompt(str)', prompt)
     defineBuiltin(context, 'is_number(val)', misc.is_number)
-    defineBuiltin(context, 'is_string(val)', Evaluable.from(misc.is_string))
+    defineBuiltin(context, 'is_string(val)', misc.is_string)
     defineBuiltin(context, 'is_function(val)', misc.is_function)
     defineBuiltin(context, 'is_boolean(val)', misc.is_boolean)
     defineBuiltin(context, 'is_undefined(val)', misc.is_undefined)
@@ -147,7 +147,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     // Define all Math libraries
     const props = Object.getOwnPropertyNames(Math)
     for (const prop of props) {
-      defineBuiltin(context, 'math_' + prop, Evaluable.from(Math[prop]))
+      defineBuiltin(context, 'math_' + prop, Math[prop])
     }
   }
 
