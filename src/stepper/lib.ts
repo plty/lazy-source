@@ -5,6 +5,7 @@ import * as ast from '../utils/astCreator'
 import { nodeToValue, valueToExpression } from './converter'
 import { codify } from './stepper'
 import { isBuiltinFunction, isNumber } from './util'
+import Evaluable from '../interpreter/evaluable'
 
 // define builtins that takes in AST, and return AST
 //
@@ -48,7 +49,7 @@ export function is_number(val: substituterNodes): es.Literal {
 
 //   defineBuiltin(context, 'is_string(val)', misc.is_string)
 export function is_string(val: substituterNodes): es.Literal {
-  return ast.literal(val.type === 'Literal' && misc.is_string(val.value))
+  return ast.literal(val.type === 'Literal' && misc.is_string(Evaluable.from(val.value)))
 }
 
 //   defineBuiltin(context, 'is_function(val)', misc.is_function)
@@ -58,7 +59,7 @@ export function is_function(val: substituterNodes): es.Literal {
 
 //   defineBuiltin(context, 'is_boolean(val)', misc.is_boolean)
 export function is_boolean(val: substituterNodes): es.Literal {
-  return ast.literal(val.type === 'Literal' && misc.is_boolean(val.value))
+  return ast.literal(val.type === 'Literal' && misc.is_boolean(Evaluable.from(val.value)))
 }
 
 //   defineBuiltin(context, 'is_undefined(val)', misc.is_undefined)

@@ -2,6 +2,7 @@
 // throws an exception if the argument is not a pair
 
 import { head, is_null, is_pair, List, list, pair, Pair, tail } from './list'
+import Evaluable from '../interpreter/evaluable'
 
 type Stream = null | Pair<any, () => Stream>
 
@@ -34,5 +35,5 @@ export function stream(...elements: any[]): Stream {
 }
 
 export function list_to_stream(xs: List): Stream {
-  return is_null(xs) ? null : pair(head(xs), () => list_to_stream(tail(xs)))
+  return is_null(Evaluable.from(xs)) ? null : pair(head(Evaluable.from(xs)), () => list_to_stream(tail(Evaluable.from(xs))))
 }

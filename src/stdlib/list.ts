@@ -1,4 +1,5 @@
 import { stringify } from '../utils/stringify'
+import Evaluable from '../interpreter/evaluable'
 
 // list.ts: Supporting lists in the Scheme style, using pairs made
 //          up of two-element JavaScript array (vector)
@@ -26,17 +27,16 @@ export function pair<H, T>(x: H, xs: T): Pair<H, T> {
 
 // is_pair returns true iff arg is a two-element array
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function is_pair(x: any) {
-  return array_test(x) && x.length === 2
+export function is_pair(x: Evaluable<any>) {
+  return array_test(x.value) && x.value.length === 2
 }
 
 // head returns the first component of the given pair,
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function head(lazy_xs: any) {
-  const xs = lazy_xs.value
+export function head(xs: Evaluable<any>) {
   if (is_pair(xs)) {
-    return xs[0].value
+    return xs.value[0].value
   } else {
     throw new Error('head(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -45,9 +45,9 @@ export function head(lazy_xs: any) {
 // tail returns the second component of the given pair
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function tail(xs: any) {
+export function tail(xs: Evaluable<any>) {
   if (is_pair(xs)) {
-    return xs[1]
+    return xs.value[1].value
   } else {
     throw new Error('tail(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -55,18 +55,18 @@ export function tail(xs: any) {
 
 // is_null returns true if arg is exactly null
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function is_null(xs: List) {
-  return xs === null
+export function is_null(xs: Evaluable<List>) {
+  return xs.value === null
 }
 
 // list makes a list out of its arguments
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function list(...elements: any[]): List {
-  let theList = null
+  let theList = Evaluable.from(null as List)
   for (let i = elements.length - 1; i >= 0; i -= 1) {
-    theList = pair(elements[i], theList)
+    theList = Evaluable.from(pair(elements[i], theList))
   }
-  return theList
+  return theList.value
 }
 
 // list_to_vector returns vector that contains the elements of the argument list
@@ -75,9 +75,9 @@ export function list(...elements: any[]): List {
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function list_to_vector(lst: List) {
   const vector = []
-  while (!is_null(lst)) {
-    vector.push(head(lst))
-    lst = tail(lst)
+  while (!is_null(Evaluable.from(lst))) {
+    vector.push(head(Evaluable.from(lst)))
+    lst = tail(Evaluable.from(lst))
   }
   return vector
 }
