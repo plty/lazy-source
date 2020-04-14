@@ -56,7 +56,7 @@ export interface Comment {
   loc: SourceLocation | undefined
 }
 
-export type ExecutionMethod = 'native' | 'interpreter' | 'auto'
+export type ExecutionMethod = 'native' | 'interpreter' | 'auto' | 'lazy-interpreter'
 
 export interface Context<T = any> {
   /** The source version used */

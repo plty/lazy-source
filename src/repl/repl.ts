@@ -5,8 +5,9 @@ import { createContext, IOptions, parseError, runInContext } from '../index'
 
 function startRepl(chapter = 1, useSubst: boolean, prelude = '') {
   // use defaults for everything
-  const context = createContext(chapter)
-  const options: Partial<IOptions> = { scheduler: 'preemptive', useSubst }
+  console.log('this is chapter:', chapter)
+  const context = createContext(1)
+  const options: Partial<IOptions> = { useSubst }
   runInContext(prelude, context, options).then(preludeResult => {
     if (preludeResult.status === 'finished') {
       console.dir(preludeResult.value, { depth: null })

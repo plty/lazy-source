@@ -12,6 +12,7 @@ import { streamPrelude } from './stdlib/stream.prelude'
 import { Context, CustomBuiltIns, Value } from './types'
 import * as operators from './utils/operators'
 import { stringify } from './utils/stringify'
+import Evaluable from "./interpreter/evaluable";
 
 const createEmptyRuntime = () => ({
   break: false,
@@ -127,6 +128,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   const visualiseList = (v: Value) => externalBuiltIns.visualiseList(v, context.externalContext)
 
   if (context.chapter >= 1) {
+    console.log("this is defined sia")
     defineBuiltin(context, 'runtime()', misc.runtime)
     defineBuiltin(context, 'display(val)', display)
     defineBuiltin(context, 'raw_display(str)', rawDisplay)
@@ -134,7 +136,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     defineBuiltin(context, 'error(str)', misc.error_message)
     defineBuiltin(context, 'prompt(str)', prompt)
     defineBuiltin(context, 'is_number(val)', misc.is_number)
-    defineBuiltin(context, 'is_string(val)', misc.is_string)
+    defineBuiltin(context, 'is_string(val)', Evaluable.from(misc.is_string))
     defineBuiltin(context, 'is_function(val)', misc.is_function)
     defineBuiltin(context, 'is_boolean(val)', misc.is_boolean)
     defineBuiltin(context, 'is_undefined(val)', misc.is_undefined)
@@ -145,7 +147,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     // Define all Math libraries
     const props = Object.getOwnPropertyNames(Math)
     for (const prop of props) {
-      defineBuiltin(context, 'math_' + prop, Math[prop])
+      defineBuiltin(context, 'math_' + prop, Evaluable.from(Math[prop]))
     }
   }
 
@@ -196,6 +198,8 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   }
 }
 
+// TODO[@plty]: disarm this
+// @ts-ignore
 function importPrelude(context: Context) {
   let prelude = ''
   if (context.chapter >= 2) {
@@ -229,8 +233,9 @@ const createContext = <T>(
   const context = createEmptyContext(chapter, externalSymbols, externalContext)
 
   importBuiltins(context, externalBuiltIns)
-  importPrelude(context)
-  importExternalSymbols(context, externalSymbols)
+  // TODO[@plty]: readd these shits
+  // importPrelude(context)
+  // importExternalSymbols(context, externalSymbols)
 
   return context
 }

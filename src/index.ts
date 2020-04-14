@@ -11,6 +11,7 @@ import {
 } from './errors/errors'
 import { RuntimeSourceError } from './errors/runtimeSourceError'
 import { evaluate } from './interpreter/interpreter'
+import { evaluate as lazyEvaluate } from './interpreter/lazy-interpreter'
 import { parse, parseAt } from './parser/parser'
 import { AsyncScheduler, PreemptiveScheduler } from './schedulers'
 import { getAllOccurrencesInScope, lookupDefinition, scopeVariables } from './scoped-vars'
@@ -41,7 +42,7 @@ export interface IOptions {
 const DEFAULT_OPTIONS: IOptions = {
   scheduler: 'async',
   steps: 1000,
-  executionMethod: 'auto',
+  executionMethod: 'lazy-interpreter',
   originalMaxExecTime: 1000,
   useSubst: false
 }
@@ -179,13 +180,27 @@ export async function runInContext(
       value: steps
     } as Result)
   }
-  const isNativeRunnable = determineExecutionMethod(theOptions, context, program)
+
+  // TODO[@plty]: create amendments on this.
+  console.log('>', theOptions.executionMethod)
   if (context.prelude !== null) {
     const prelude = context.prelude
     context.prelude = null
     await runInContext(prelude, context, options)
     return runInContext(code, context, options)
   }
+
+  const lazyActivated = true;
+  if (lazyActivated) {
+    if (theOptions.executionMethod === 'lazy-interpreter') {
+      return Promise.resolve({
+        status: 'finished',
+        value: lazyEvaluate(program, context).value
+      } as Result)
+    }
+  }
+
+  const isNativeRunnable = determineExecutionMethod(theOptions, context, program)
   if (isNativeRunnable) {
     if (previousCode === code) {
       JSSLANG_PROPERTIES.maxExecTime *= JSSLANG_PROPERTIES.factorToIncreaseBy
@@ -246,6 +261,7 @@ export async function runInContext(
       )
     }
   } else {
+    console.log("ahaha")
     const it = evaluate(program, context)
     let scheduler: Scheduler
     if (theOptions.scheduler === 'async') {
