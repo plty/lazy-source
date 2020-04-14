@@ -1,6 +1,7 @@
 import { MAX_LIST_DISPLAY_LENGTH } from '../constants'
 import Closure from '../interpreter/closure'
 import { Value } from '../types'
+import Evaluable from '../interpreter/evaluable'
 
 function makeIndent(indent: number | string): string {
   if (typeof indent === 'number') {
@@ -80,8 +81,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
   const stringifyObject = (obj: object, indentLevel: number) => {
     ancestors.add(obj)
     const valueStrs = Object.entries(obj).map(entry => {
-      const keyStr = stringifyValue(entry[0], 0)
-      const valStr = stringifyValue(entry[1], 0)
+      const keyStr = stringifyValue(Evaluable.from(entry[0]), 0)
+      const valStr = stringifyValue(Evaluable.from(entry[1]), 0)
       if (valStr.includes('\n')) {
         return keyStr + ':\n' + indentify(indentString, valStr)
       } else {
@@ -100,7 +101,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     }
   }
 
-  const stringifyValue = (v: Value, indentLevel: number = 0): string => {
+  const stringifyValue = (lazy_v: Evaluable<Value>, indentLevel: number = 0): string => {
+    const v = lazy_v.value
     if (v === null) {
       return 'null'
     } else if (v === undefined) {

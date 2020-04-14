@@ -492,7 +492,7 @@ export function apply(
       try {
         result = fun.apply(
           thisContext,
-          args.map(x => x.value)
+          args
         )
         break
       } catch (e) {

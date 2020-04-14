@@ -122,7 +122,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
 
   const rawDisplay = (v: Value, s: string) =>
     externalBuiltIns.rawDisplay(v, s, context.externalContext)
-  const display = (v: Value, s: string) => (rawDisplay(stringify(v), s), v)
+  const display = (v: Value, s: string) => (rawDisplay(stringify(v), s), v.value)
   const prompt = (v: Value) => externalBuiltIns.prompt(v, '', context.externalContext)
   const alert = (v: Value) => externalBuiltIns.alert(v, '', context.externalContext)
   const visualiseList = (v: Value) => externalBuiltIns.visualiseList(v, context.externalContext)

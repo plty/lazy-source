@@ -33,9 +33,10 @@ export function is_pair(x: any) {
 // head returns the first component of the given pair,
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function head(xs: any) {
+export function head(lazy_xs: any) {
+  const xs = lazy_xs.value
   if (is_pair(xs)) {
-    return xs[0]
+    return xs[0].value
   } else {
     throw new Error('head(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
