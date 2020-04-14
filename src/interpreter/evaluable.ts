@@ -1,12 +1,12 @@
-//let uid = 0
+let uid = 0
 class Evaluable<T> {
-  //private readonly uid: number
+  private readonly uid: number
   private cache?: T
   supplier: () => T
 
   constructor(supplier: () => T) {
     this.supplier = supplier
-    //this.uid = uid++
+    this.uid = uid++
   }
 
   static from<T>(v: T): Evaluable<T> {
@@ -17,7 +17,7 @@ class Evaluable<T> {
     if (this.cache === undefined) {
       // tslint:disable-next-line:no-console
       this.cache = this.cache ?? this.supplier()
-      // console.log('Evaluated:', this.uid, this.cache)
+      console.log('Evaluated:', this.uid, this.cache)
     }
 
     return this.cache

@@ -450,7 +450,10 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
 export function evaluate(node: es.Node, context: Context) {
   visit(context, node)
   console.log('>>', node.type)
-  const result = new Evaluable(() => evaluators[node.type](node, context))
+  const clone = {...context}
+  clone.runtime = {...context.runtime}
+  clone.runtime.environments = [currentEnvironment(context)]
+  const result = new Evaluable(() => evaluators[node.type](node, clone))
   leave(context)
   return result
 }
