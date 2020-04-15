@@ -233,9 +233,8 @@ const createContext = <T>(
   const context = createEmptyContext(chapter, externalSymbols, externalContext)
 
   importBuiltins(context, externalBuiltIns)
-  // TODO[@plty]: readd these shits
-  // importPrelude(context)
-  // importExternalSymbols(context, externalSymbols)
+  importPrelude(context)
+  importExternalSymbols(context, externalSymbols)
 
   return context
 }
