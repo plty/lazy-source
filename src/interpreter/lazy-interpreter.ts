@@ -9,7 +9,6 @@ import { primitive } from '../utils/astCreator'
 import { evaluateBinaryExpression, evaluateUnaryExpression } from '../utils/operators'
 import * as rttc from '../utils/rttc'
 import Closure from './closure'
-import Evaluable from './evaluable'
 import Thunk from "./Thunk";
 
 class ReturnValue {
@@ -221,7 +220,7 @@ function getArgs(context: Context, call: es.CallExpression) {
 
 export type Evaluator<T extends es.Node> = (node: T, context: Context) => IterableIterator<Value>
 
-function evaluateBlockStatement(context: Context, node: es.BlockStatement) {
+function* evaluateBlockStatement(context: Context, node: es.BlockStatement) {
   hoistFunctionsAndVariableDeclarationsIdentifiers(context, node)
   let result
   for (const statement of node.body) {
@@ -346,9 +345,9 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     const leftValue = yield* left.value()
 
     if (node.operator === '&&') {
-      return leftValue ? yield* right.value : false
+      return leftValue ? yield* right.value() : false
     } else {
-      return leftValue ? true : yield* right.value
+      return leftValue ? true : yield* right.value()
     }
   },
 
@@ -399,7 +398,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     const id = node.id as es.Identifier
     // tslint:disable-next-line:no-any
     const closure = new Closure(node, currentEnvironment(context), context)
-    defineVariable(context, id.name, Evaluable.from(closure), true)
+    defineVariable(context, id.name, Thunk.from(closure), true)
     return undefined
   },
 
@@ -448,7 +447,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
 }
 
 // tslint:enable:object-literal-shorthand
-export function* evaluate(node: es.Node, context: Context) {
+export function evaluate(node: es.Node, context: Context) {
   visit(context, node)
   console.log('>>', node.type)
   const clone = {...context}

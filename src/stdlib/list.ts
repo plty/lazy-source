@@ -1,5 +1,5 @@
 import { stringify } from '../utils/stringify'
-import Evaluable from '../interpreter/evaluable'
+import Thunk from "../interpreter/Thunk";
 
 // list.ts: Supporting lists in the Scheme style, using pairs made
 //          up of two-element JavaScript array (vector)
@@ -27,16 +27,18 @@ export function pair<H, T>(x: H, xs: T): Pair<H, T> {
 
 // is_pair returns true iff arg is a two-element array
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function is_pair(x: Evaluable<any>) {
-  return array_test(x.value) && x.value.length === 2
+export function* is_pair(x: Thunk) {
+  const value = yield* x.value()
+  return array_test(value) && value.length === 2
 }
 
 // head returns the first component of the given pair,
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function head(xs: Evaluable<any>) {
+export function* head(xs: Thunk) {
   if (is_pair(xs)) {
-    return xs.value[0].value
+    const p = yield* xs.value()
+    return yield* p[0].value()
   } else {
     throw new Error('head(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -45,9 +47,10 @@ export function head(xs: Evaluable<any>) {
 // tail returns the second component of the given pair
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function tail(xs: Evaluable<any>) {
+export function* tail(xs: Thunk) {
   if (is_pair(xs)) {
-    return xs.value[1].value
+    const p = yield* xs.value()
+    return yield* p[1].value()
   } else {
     throw new Error('tail(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -55,29 +58,31 @@ export function tail(xs: Evaluable<any>) {
 
 // is_null returns true if arg is exactly null
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function is_null(xs: Evaluable<List>) {
-  return xs.value === null
+export function* is_null(xs: Thunk) {
+  const value = yield* xs.value()
+  return value === null
 }
 
 // list makes a list out of its arguments
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function list(...elements: any[]): List {
-  let theList = Evaluable.from(null as List)
+// TODO[@plty]: make this represents computation more.
+export function* list(...elements: any[]): List {
+  let theList = Thunk.from(null as List)
   for (let i = elements.length - 1; i >= 0; i -= 1) {
-    theList = Evaluable.from(pair(elements[i], theList))
+    theList = Thunk.from(pair(elements[i], theList))
   }
-  return theList.value
+  return yield* theList.value()
 }
 
 // list_to_vector returns vector that contains the elements of the argument list
 // in the given order.
 // list_to_vector throws an exception if the argument is not a list
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function list_to_vector(lst: List) {
+export function* list_to_vector(lst: Thunk) {
   const vector = []
-  while (!is_null(Evaluable.from(lst))) {
-    vector.push(head(Evaluable.from(lst)))
-    lst = tail(Evaluable.from(lst))
+  while (!is_null(lst)) {
+    vector.push(head(Thunk.from(lst)))
+    lst = tail(Thunk.from(lst))
   }
   return vector
 }
