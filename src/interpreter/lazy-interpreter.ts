@@ -453,7 +453,7 @@ export function evaluate(node: es.Node, context: Context) {
   const clone = {...context}
   clone.runtime = {...context.runtime}
   clone.runtime.environments = [currentEnvironment(context)]
-  const result = new Evaluable(() => evaluators[node.type](node, clone))
+  const result = new Evaluable(() => evaluators[node.type](node, node.type === 'Program' ? context : clone))
   leave(context)
   return result
 }
