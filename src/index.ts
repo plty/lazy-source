@@ -193,9 +193,10 @@ export async function runInContext(
   const lazyActivated = true
   if (lazyActivated) {
     if (theOptions.executionMethod === 'lazy-interpreter') {
+      const e = lazyEvaluate(program, context)
       return Promise.resolve({
         status: 'finished',
-        value: lazyEvaluate(program, context).value
+        value: e.value
       } as Result)
     }
   }

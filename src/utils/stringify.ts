@@ -1,7 +1,7 @@
 import { MAX_LIST_DISPLAY_LENGTH } from '../constants'
 import Closure from '../interpreter/closure'
 import { Value } from '../types'
-import Evaluable from '../interpreter/evaluable'
+import Thunk from '../interpreter/Thunk'
 
 function makeIndent(indent: number | string): string {
   if (typeof indent === 'number') {
@@ -81,8 +81,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
   const stringifyObject = (obj: object, indentLevel: number) => {
     ancestors.add(obj)
     const valueStrs = Object.entries(obj).map(entry => {
-      const keyStr = stringifyValue(Evaluable.from(entry[0]), 0)
-      const valStr = stringifyValue(Evaluable.from(entry[1]), 0)
+      const keyStr = stringifyValue(Thunk.from(entry[0]), 0)
+      const valStr = stringifyValue(Thunk.from(entry[1]), 0)
       if (valStr.includes('\n')) {
         return keyStr + ':\n' + indentify(indentString, valStr)
       } else {
@@ -101,8 +101,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     }
   }
 
-  const stringifyValue = (lazy_v: Evaluable<Value>, indentLevel: number = 0): string => {
-    const v = lazy_v.value
+  const stringifyValue = (thunk: Thunk, indentLevel: number = 0): string => {
+    const v = thunk.value
     if (v === null) {
       return 'null'
     } else if (v === undefined) {

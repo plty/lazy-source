@@ -1,32 +1,30 @@
-import {Value} from "../types";
+import { Value } from '../types'
 
-class Thunk{
-  private cache?: Value
-  constructor(readonly supplier: () => IterableIterator<Value>) {}
+class Thunk {
+  constructor(private supplier: () => IterableIterator<Value>) {}
 
   static from(v: any): Thunk {
-    return new Thunk(() => v)
+    return new Thunk(function*() {
+      return v
+    })
   }
 
-  *value(): Generator<any, Value, any> {
-    if (this.cache === undefined) {
-      this.cache = yield* this.supplier()
-    }
-    return this.cache
-  }
-
-  get retval() {
-    if (this.cache !== undefined) {
-      return this.cache
-    }
-
-    const g = this.value()
-    let v = g.next()
-    while(!v.done) {
-      v = g.next()
-    }
-    this.cache = v.value
+  private static valueOf<T>(generator: IterableIterator<T>): T {
+    let v = generator.next()
+    while (!v.done) v = generator.next()
     return v.value
+  }
+
+  *evaluate(): IterableIterator<Value> {
+    const v = yield* this.supplier()
+    this.supplier = function*() {
+      return v
+    }
+    return v
+  }
+
+  get value() {
+    return Thunk.valueOf(this.evaluate())
   }
 }
 

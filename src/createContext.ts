@@ -7,12 +7,12 @@ import { list_to_vector } from './stdlib/list'
 import { listPrelude } from './stdlib/list.prelude'
 import * as misc from './stdlib/misc'
 import * as parser from './stdlib/parser'
-import * as stream from './stdlib/stream'
+// import * as stream from './stdlib/stream'
 import { streamPrelude } from './stdlib/stream.prelude'
 import { Context, CustomBuiltIns, Value } from './types'
 import * as operators from './utils/operators'
 import { stringify } from './utils/stringify'
-import Evaluable from './interpreter/evaluable'
+import Thunk from './interpreter/Thunk'
 
 const createEmptyRuntime = () => ({
   break: false,
@@ -100,9 +100,9 @@ export const defineBuiltin = (context: Context, name: string, value: Value) => {
     const repr = `function ${name} {\n\t[implementation hidden]\n}`
     wrapped.toString = () => repr
 
-    defineSymbol(context, funName, Evaluable.from(wrapped))
+    defineSymbol(context, funName, Thunk.from(wrapped))
   } else {
-    defineSymbol(context, name, Evaluable.from(value))
+    defineSymbol(context, name, Thunk.from(value))
   }
 }
 
@@ -120,15 +120,20 @@ export const importExternalSymbols = (context: Context, externalSymbols: string[
 export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIns) => {
   ensureGlobalEnvironmentExist(context)
 
-  const rawDisplay = (v: Evaluable<Value>, s: string) =>
-    externalBuiltIns.rawDisplay(v.value, s, context.externalContext)
-  const display = (v: Value, s: string) => (rawDisplay(Evaluable.from(stringify(v)), s), v.value)
+  const rawDisplay = function*(v: Thunk, s: string) {
+    return externalBuiltIns.rawDisplay(yield* v.evaluate(), s, context.externalContext)
+  }
+
+  const display = function*(v: Thunk, s: string) {
+    rawDisplay(Thunk.from(stringify(yield* v.evaluate())), s)
+    return v.value
+  }
+
   const prompt = (v: Value) => externalBuiltIns.prompt(v, '', context.externalContext)
   const alert = (v: Value) => externalBuiltIns.alert(v, '', context.externalContext)
   const visualiseList = (v: Value) => externalBuiltIns.visualiseList(v, context.externalContext)
 
   if (context.chapter >= 1) {
-    console.log('this is defined sia')
     defineBuiltin(context, 'runtime()', misc.runtime)
     defineBuiltin(context, 'display(val)', display)
     defineBuiltin(context, 'raw_display(str)', rawDisplay)
@@ -169,9 +174,9 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     defineBuiltin(context, 'is_array(val)', misc.is_array)
 
     // Stream library
-    defineBuiltin(context, 'stream_tail(stream)', stream.stream_tail)
-    defineBuiltin(context, 'stream(...values)', stream.stream)
-    defineBuiltin(context, 'list_to_stream(xs)', stream.list_to_stream)
+    // defineBuiltin(context, 'stream_tail(stream)', stream.stream_tail)
+    // defineBuiltin(context, 'stream(...values)', stream.stream)
+    // defineBuiltin(context, 'list_to_stream(xs)', stream.list_to_stream)
   }
 
   if (context.chapter >= 4) {
