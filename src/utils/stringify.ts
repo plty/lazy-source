@@ -24,11 +24,11 @@ function indentify(indent: string, s: string): string {
     .join('\n')
 }
 
-export const stringify = (
+export const stringify = function*(
   value: Thunk,
   indent: number | string = 2,
   splitlineThreshold = 80
-): string => {
+): IterableIterator<Value> {
   // Used to check if there are any cyclic structures
   const ancestors = new Set()
 
@@ -126,6 +126,5 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
   }
 
   const v = stringifyValue(value, 0)
-  console.log('<<', v)
   return v
 }

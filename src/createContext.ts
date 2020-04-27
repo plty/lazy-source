@@ -125,8 +125,8 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   }
 
   const display = function*(v: Thunk, s: string) {
-    yield* rawDisplay(Thunk.from(stringify(v)), s)
-    return v.value
+    yield* rawDisplay(Thunk.from(yield* stringify(v)), s)
+    return yield* v.evaluate()
   }
 
   const prompt = (v: Value) => externalBuiltIns.prompt(v, '', context.externalContext)
