@@ -1,6 +1,6 @@
 import { Context, Value } from '../types'
 import { stringify } from '../utils/stringify'
-import Evaluable from '../interpreter/evaluable'
+import Thunk from '../interpreter/Thunk'
 
 /**
  * A function that displays to console.log by default (for a REPL).
@@ -36,43 +36,43 @@ export function timed(
   }
 }
 
-export function is_number(v: Evaluable<Value>) {
+export function is_number(v: Thunk<Value>) {
   return typeof v.value === 'number'
 }
 
-export function is_undefined(xs: Evaluable<Value>) {
+export function is_undefined(xs: Thunk<Value>) {
   return typeof xs.value === 'undefined'
 }
 
-export function is_string(xs: Evaluable<Value>) {
+export function is_string(xs: Thunk<Value>) {
   return typeof xs.value === 'string'
 }
 
-export function is_boolean(xs: Evaluable<Value>) {
+export function is_boolean(xs: Thunk<Value>) {
   return typeof xs.value === 'boolean'
 }
 
-export function is_object(xs: Evaluable<Value>) {
+export function is_object(xs: Thunk<Value>) {
   return typeof xs.value === 'object' || is_function(xs.value)
 }
 
-export function is_function(xs: Evaluable<Value>) {
+export function is_function(xs: Thunk<Value>) {
   return typeof xs.value === 'function'
 }
 
-export function is_NaN(x: Evaluable<Value>) {
+export function is_NaN(x: Thunk<Value>) {
   return is_number(x.value) && isNaN(x.value)
 }
 
-export function has_own_property(obj: Evaluable<Value>, p: Evaluable<Value>) {
+export function has_own_property(obj: Thunk<Value>, p: Thunk<Value>) {
   return obj.value.hasOwnProperty(p.value)
 }
 
-export function is_array(a: Evaluable<Value>) {
+export function is_array(a: Thunk<Value>) {
   return a.value instanceof Array
 }
 
-export function array_length(xs: Evaluable<Value[]>) {
+export function array_length(xs: Thunk<Value[]>) {
   return xs.value.length
 }
 
