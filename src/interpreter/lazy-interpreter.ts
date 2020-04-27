@@ -335,7 +335,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
       return handleRuntimeError(context, error)
     }
 
-    return evaluate(test ? cons : alt, context).evaluate
+    return yield* evaluate(test ? cons : alt, context).evaluate()
   },
 
   LogicalExpression: function*(node: es.LogicalExpression, context: Context){
@@ -449,12 +449,15 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
 // tslint:enable:object-literal-shorthand
 export function evaluate(node: es.Node, context: Context) {
   visit(context, node)
-  const frozenEnvironment = {
+  let frozenEnvironment = {
     ...context,
     runtime: {
       ...context.runtime,
       environments: [...context.runtime.environments]
     }
+  }
+  if (node.type === 'Program') {
+    frozenEnvironment = context
   }
   const result = new Thunk(function*() {
     return yield* evaluators[node.type](node, frozenEnvironment)

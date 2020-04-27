@@ -36,43 +36,43 @@ export function timed(
   }
 }
 
-export function is_number(v: Thunk<Value>) {
+export function is_number(v: Thunk) {
   return typeof v.value === 'number'
 }
 
-export function is_undefined(xs: Thunk<Value>) {
+export function is_undefined(xs: Thunk) {
   return typeof xs.value === 'undefined'
 }
 
-export function is_string(xs: Thunk<Value>) {
+export function is_string(xs: Thunk) {
   return typeof xs.value === 'string'
 }
 
-export function is_boolean(xs: Thunk<Value>) {
+export function is_boolean(xs: Thunk) {
   return typeof xs.value === 'boolean'
 }
 
-export function is_object(xs: Thunk<Value>) {
+export function is_object(xs: Thunk) {
   return typeof xs.value === 'object' || is_function(xs.value)
 }
 
-export function is_function(xs: Thunk<Value>) {
+export function is_function(xs: Thunk) {
   return typeof xs.value === 'function'
 }
 
-export function is_NaN(x: Thunk<Value>) {
+export function is_NaN(x: Thunk) {
   return is_number(x.value) && isNaN(x.value)
 }
 
-export function has_own_property(obj: Thunk<Value>, p: Thunk<Value>) {
+export function has_own_property(obj: Thunk, p: Thunk) {
   return obj.value.hasOwnProperty(p.value)
 }
 
-export function is_array(a: Thunk<Value>) {
+export function is_array(a: Thunk) {
   return a.value instanceof Array
 }
 
-export function array_length(xs: Thunk<Value[]>) {
+export function array_length(xs: Thunk) {
   return xs.value.length
 }
 
