@@ -125,7 +125,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   }
 
   const display = function*(v: Thunk, s: string) {
-    rawDisplay(Thunk.from(stringify(v)), s)
+    yield* rawDisplay(Thunk.from(stringify(v)), s)
     return v.value
   }
 

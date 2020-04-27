@@ -125,5 +125,7 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     }
   }
 
-  return stringifyValue(value, 0)
+  const v = stringifyValue(value, 0)
+  console.log('<<', v)
+  return v
 }
