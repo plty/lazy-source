@@ -25,7 +25,7 @@ function indentify(indent: string, s: string): string {
 }
 
 export const stringify = (
-  value: Value,
+  value: Thunk,
   indent: number | string = 2,
   splitlineThreshold = 80
 ): string => {
@@ -103,6 +103,7 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
 
   const stringifyValue = (thunk: Thunk, indentLevel: number = 0): string => {
     const v = thunk.value
+    console.log('..', v)
     if (v === null) {
       return 'null'
     } else if (v === undefined) {
