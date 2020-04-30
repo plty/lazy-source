@@ -36,8 +36,8 @@ test('Arrow function definition returns itself', () => {
   return expectResult('() => 42;').toMatchInlineSnapshot(`[Function]`)
 })
 
-test('Builtins hide their implementation when eagerStringify', () => {
-  return expectResult('eagerStringify(pair);', { chapter: 2, native: true }).toMatchInlineSnapshot(`
+test('Builtins hide their implementation when stringify', () => {
+  return expectResult('stringify(pair);', { chapter: 2, native: true }).toMatchInlineSnapshot(`
 "function pair(left, right) {
 	[implementation hidden]
 }"

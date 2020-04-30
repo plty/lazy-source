@@ -164,10 +164,10 @@ f(list(1, 2));",
 }
 `;
 
-exports[`Builtins hide their implementation when eagerStringify: expectResult 1`] = `
+exports[`Builtins hide their implementation when stringify: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(pair);",
+  "code": "stringify(pair);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -190,7 +190,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, pair);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, pair);\\");
       }
     }
     return lastStatementResult;
