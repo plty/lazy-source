@@ -1,7 +1,7 @@
 /* tslint:disable:max-classes-per-file */
 import * as es from 'estree'
 import { JSSLANG_PROPERTIES } from '../constants'
-import { stringify } from '../utils/stringify'
+import { stringify } from '../utils/eager-stringify'
 
 import { ErrorSeverity, ErrorType } from '../types'
 import { stripIndent } from '../utils/formatters'

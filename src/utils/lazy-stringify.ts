@@ -1,7 +1,7 @@
 import { MAX_LIST_DISPLAY_LENGTH } from '../constants'
 import Closure from '../interpreter/closure'
 import { Value } from '../types'
-import Evaluable from '../interpreter/evaluable'
+import Thunk from '../interpreter/Thunk'
 
 function makeIndent(indent: number | string): string {
   if (typeof indent === 'number') {
@@ -24,11 +24,11 @@ function indentify(indent: string, s: string): string {
     .join('\n')
 }
 
-export const stringify = (
-  value: Value,
+export const stringify = function*(
+  value: Thunk,
   indent: number | string = 2,
   splitlineThreshold = 80
-): string => {
+): IterableIterator<Value> {
   // Used to check if there are any cyclic structures
   const ancestors = new Set()
 
@@ -50,9 +50,9 @@ export const stringify = (
   // Stringify functions
   // The real one is stringifyValue
 
-  const stringifyArray = (xs: Value[], indentLevel: number) => {
+  const stringifyArray = function*(xs: Value[], indentLevel: number) {
     ancestors.add(xs)
-    const valueStrs = xs.map(x => stringifyValue(x, 0))
+    const valueStrs = yield* concatGenerators(xs.map(x => () => stringifyValue(x, 0)))
     ancestors.delete(xs)
 
     if (shouldMultiline(valueStrs)) {
@@ -78,15 +78,19 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     }
   }
 
-  const stringifyObject = (obj: object, indentLevel: number) => {
+  const stringifyObject = function*(obj: object, indentLevel: number) {
     ancestors.add(obj)
-    const valueStrs = Object.entries(obj).map(entry => {
-      const keyStr = stringifyValue(Evaluable.from(entry[0]), 0)
-      const valStr = stringifyValue(Evaluable.from(entry[1]), 0)
-      if (valStr.includes('\n')) {
-        return keyStr + ':\n' + indentify(indentString, valStr)
+    const keys: [string] = yield* concatGenerators(
+      Object.entries(obj).map(entry => () => stringifyValue(Thunk.from(entry[0])), 0)
+    )
+    const vals: [string] = yield* concatGenerators(
+      Object.entries(obj).map(entry => () => stringifyValue(Thunk.from(entry[1])), 0)
+    )
+    const valueStrs = zip(keys, vals).map(([key, val]) => {
+      if (val.includes('\n')) {
+        return key + ':\n' + indentify(indentString, val)
       } else {
-        return keyStr + ': ' + valStr
+        return key + ': ' + val
       }
     })
     ancestors.delete(obj)
@@ -101,8 +105,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     }
   }
 
-  const stringifyValue = (lazy_v: Evaluable<Value>, indentLevel: number = 0): string => {
-    const v = lazy_v.value
+  const stringifyValue = function*(thunk: Thunk, indentLevel: number = 0): IterableIterator<Value> {
+    const v = yield* thunk.evaluate()
     if (v === null) {
       return 'null'
     } else if (v === undefined) {
@@ -118,11 +122,30 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
     } else if (ancestors.size > MAX_LIST_DISPLAY_LENGTH) {
       return '...<truncated>'
     } else if (Array.isArray(v)) {
-      return stringifyArray(v, indentLevel)
+      return yield* stringifyArray(v, indentLevel)
     } else {
-      return stringifyObject(v, indentLevel)
+      return yield* stringifyObject(v, indentLevel)
     }
   }
 
-  return stringifyValue(value, 0)
+  return yield* stringifyValue(value, 0)
+}
+
+function* concatGenerators(suppliers: (() => IterableIterator<Value>)[]): IterableIterator<Value> {
+  return yield* suppliers.reduce(
+    (acc, cur) => {
+      return function*() {
+        const rest = yield* acc()
+        const v = yield* cur()
+        return [...rest, v]
+      }
+    },
+    function*() {
+      return []
+    }
+  )()
+}
+
+function zip<T, U>(xs: T[], ys: U[]): [T, U][] {
+  return xs.map((x, i) => [x, ys[i]])
 }

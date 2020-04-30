@@ -5203,6 +5203,178 @@ const globals = $NATIVE_STORAGE.globals;
 }
 `;
 
+exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 2`] = `
+Object {
+  "alertResult": Array [],
+  "code": "let i = 1;
+for (i = 1; i < 5; i = i + 1) {
+}
+i;",
+  "displayResult": Array [],
+  "errors": Array [],
+  "parsedErrors": "native:\\"Line null: Name UNKNOWN not declared.\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:5",
+  "resultStatus": "finished",
+  "transpiled": "const native = $$NATIVE_STORAGE;
+const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
+const boolOrErr = native.operators.get(\\"boolOrErr\\");
+const wrap = native.operators.get(\\"wrap\\");
+const unaryOp = native.operators.get(\\"unaryOp\\");
+const binaryOp = native.operators.get(\\"binaryOp\\");
+const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
+const setProp = native.operators.get(\\"setProp\\");
+const getProp = native.operators.get(\\"getProp\\");
+let lastStatementResult = undefined;
+const globals = $NATIVE_STORAGE.globals;
+(( <globals redacted> ) => {
+  return (() => {
+    {
+      {
+        let i = 1;
+        const startTime = runtime();
+        for (i = 1; boolOrErr(binaryOp(\\"<\\", i, 5, 2, 12), 2, 0); i = binaryOp(\\"+\\", i, 1, 2, 23)) {
+          throwIfTimeout(startTime, runtime(), 2, 0);
+        }
+        lastStatementResult = eval(\\"i;\\");
+        globals.variables.set(\\"i\\", {
+          kind: \\"let\\",
+          getValue: () => {
+            return i;
+          },
+          assignNewValue: function (unique) {
+            return i = unique;
+          }
+        });
+        globals.variables.set(\\"startTime\\", {
+          kind: \\"const\\",
+          getValue: () => {
+            return startTime;
+          }
+        });
+      }
+    }
+    return lastStatementResult;
+  })();
+})();
+",
+  "visualiseListResult": Array [],
+}
+`;
+
+exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 3`] = `
+Object {
+  "alertResult": Array [],
+  "code": "let i = 1;
+for (let j = 0; j < 5; j = j + 1) {
+  if (j < 1) {
+    continue;
+  } else {
+    i = i + 1;
+    if (j > 2) {
+      break;
+    } else {
+    }
+  }
+}
+i;",
+  "displayResult": Array [],
+  "errors": Array [],
+  "parsedErrors": "native:\\"Line null: Name UNKNOWN not declared.\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:4",
+  "resultStatus": "finished",
+  "transpiled": "const native = $$NATIVE_STORAGE;
+const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
+const boolOrErr = native.operators.get(\\"boolOrErr\\");
+const wrap = native.operators.get(\\"wrap\\");
+const unaryOp = native.operators.get(\\"unaryOp\\");
+const binaryOp = native.operators.get(\\"binaryOp\\");
+const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
+const setProp = native.operators.get(\\"setProp\\");
+const getProp = native.operators.get(\\"getProp\\");
+let lastStatementResult = undefined;
+const globals = $NATIVE_STORAGE.globals;
+(( <globals redacted> ) => {
+  return (() => {
+    {
+      {
+        let i = 1;
+        const startTime = runtime();
+        for (let j = 0; boolOrErr(binaryOp(\\"<\\", j, 5, 2, 16), 2, 0); j = binaryOp(\\"+\\", j, 1, 2, 27)) {
+          throwIfTimeout(startTime, runtime(), 2, 0);
+          if (boolOrErr(binaryOp(\\"<\\", j, 1, 3, 6), 3, 2)) {
+            continue;
+          } else {
+            i = binaryOp(\\"+\\", i, 1, 6, 8);
+            if (boolOrErr(binaryOp(\\">\\", j, 2, 7, 8), 7, 4)) {
+              break;
+            } else {}
+          }
+        }
+        lastStatementResult = eval(\\"i;\\");
+        globals.variables.set(\\"i\\", {
+          kind: \\"let\\",
+          getValue: () => {
+            return i;
+          },
+          assignNewValue: function (unique) {
+            return i = unique;
+          }
+        });
+        globals.variables.set(\\"startTime\\", {
+          kind: \\"const\\",
+          getValue: () => {
+            return startTime;
+          }
+        });
+      }
+    }
+    return lastStatementResult;
+  })();
+})();
+",
+  "visualiseListResult": Array [],
+}
+`;
+
+exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 4`] = `
+Object {
+  "alertResult": Array [],
+  "code": "[1, 2, 3][1];",
+  "displayResult": Array [],
+  "errors": Array [],
+  "parsedErrors": "",
+  "result": 2,
+  "resultStatus": "finished",
+  "transpiled": "const native = $$NATIVE_STORAGE;
+const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
+const boolOrErr = native.operators.get(\\"boolOrErr\\");
+const wrap = native.operators.get(\\"wrap\\");
+const unaryOp = native.operators.get(\\"unaryOp\\");
+const binaryOp = native.operators.get(\\"binaryOp\\");
+const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
+const setProp = native.operators.get(\\"setProp\\");
+const getProp = native.operators.get(\\"getProp\\");
+let lastStatementResult = undefined;
+const globals = $NATIVE_STORAGE.globals;
+(( <globals redacted> ) => {
+  return (() => {
+    {
+      {
+        lastStatementResult = eval(\\"getProp([1, 2, 3], 1, 1, 0);\\");
+      }
+    }
+    return lastStatementResult;
+  })();
+})();
+",
+  "visualiseListResult": Array [],
+}
+`;
+
 exports[`Syntaxes are allowed in the chapter they are introduced 19: fails a chapter below 1`] = `
 Object {
   "alertResult": Array [],

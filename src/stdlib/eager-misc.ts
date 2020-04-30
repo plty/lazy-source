@@ -1,5 +1,5 @@
 import { Context, Value } from '../types'
-import { stringify } from '../utils/stringify'
+import { stringify } from '../utils/eager-stringify'
 
 /**
  * A function that displays to console.log by default (for a REPL).

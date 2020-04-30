@@ -1,4 +1,4 @@
-import { stringify } from '../utils/stringify'
+import { stringify } from '../utils/eager-stringify'
 
 // list.ts: Supporting lists in the Scheme style, using pairs made
 //          up of two-element JavaScript array (vector)
@@ -33,10 +33,9 @@ export function is_pair(x: any) {
 // head returns the first component of the given pair,
 // throws an exception if the argument is not a pair
 // LOW-LEVEL FUNCTION, NOT SOURCE
-export function head(lazy_xs: any) {
-  const xs = lazy_xs.value
+export function head(xs: any) {
   if (is_pair(xs)) {
-    return xs[0].value
+    return xs[0]
   } else {
     throw new Error('head(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
