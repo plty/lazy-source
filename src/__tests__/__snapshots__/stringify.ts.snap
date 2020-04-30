@@ -4,7 +4,7 @@ exports[`String representation of arrays are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const xs = [1, 'true', true, () => 1];
-stringify(xs);",
+eagerStringify(xs);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -29,7 +29,7 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: false,
           value: 1
         }), \\"() => 1\\")];
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, xs);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, xs);\\");
         globals.variables.set(\\"xs\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -50,7 +50,7 @@ exports[`String representation of arrow functions are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const f = (x, y) => x;
-stringify(f);",
+eagerStringify(f);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -75,7 +75,7 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: false,
           value: x
         }), \\"(x, y) => x\\");
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, f);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, f);\\");
         globals.variables.set(\\"f\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -96,7 +96,7 @@ exports[`String representation of big objects are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const o = { a: 1, b: true, c: () => 1, d: { e: 5, f: 6 }, g: 0, h: 0, i: 0, j: 0, k: 0, l: 0, m: 0, n: 0};
-stringify(o);",
+eagerStringify(o);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -148,7 +148,7 @@ const globals = $NATIVE_STORAGE.globals;
           m: 0,
           n: 0
         };
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, o);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, o);\\");
         globals.variables.set(\\"o\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -168,7 +168,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of booleans are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify('true');",
+  "code": "eagerStringify('true');",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -189,7 +189,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, 'true');\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, 'true');\\");
       }
     }
     return lastStatementResult;
@@ -203,7 +203,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of builtins are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(pair);",
+  "code": "eagerStringify(pair);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -226,7 +226,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, pair);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, pair);\\");
       }
     }
     return lastStatementResult;
@@ -241,7 +241,7 @@ exports[`String representation of empty arrays are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const xs = [];
-stringify(xs);",
+eagerStringify(xs);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -263,7 +263,7 @@ const globals = $NATIVE_STORAGE.globals;
     {
       {
         const xs = [];
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, xs);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, xs);\\");
         globals.variables.set(\\"xs\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -286,7 +286,7 @@ Object {
   "code": "function f(x, y) {
   return x;
 }
-stringify(f);",
+eagerStringify(f);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -315,7 +315,7 @@ const globals = $NATIVE_STORAGE.globals;
             value: x
           };
         }, \\"function f(x, y) {\\\\n  return x;\\\\n}\\");
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 4, 0, f);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 4, 0, f);\\");
         globals.variables.set(\\"f\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -339,7 +339,7 @@ Object {
 for (let i = 0; i < 100; i = i + 1) {
   arr[i] = i;
 }
-stringify(arr);",
+eagerStringify(arr);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -465,7 +465,7 @@ const globals = $NATIVE_STORAGE.globals;
           throwIfTimeout(startTime, runtime(), 2, 0);
           setProp(arr, i, i, 3, 2);
         }
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 5, 0, arr);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 5, 0, arr);\\");
         globals.variables.set(\\"arr\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -491,7 +491,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of huge lists are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(enum_list(1, 100));",
+  "code": "eagerStringify(enum_list(1, 100));",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -600,7 +600,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 10, 1, 100));\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 10, 1, 100));\\");
       }
     }
     return lastStatementResult;
@@ -614,7 +614,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of lists are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(enum_list(1, 10));",
+  "code": "eagerStringify(enum_list(1, 10));",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -635,7 +635,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 10, 1, 10));\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 10, 1, 10));\\");
       }
     }
     return lastStatementResult;
@@ -650,7 +650,7 @@ exports[`String representation of multidimensional arrays are nice: expectResult
 Object {
   "alertResult": Array [],
   "code": "const xs = [1, 'true', [true, () => 1, [[]]]];
-stringify(xs);",
+eagerStringify(xs);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -675,7 +675,7 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: false,
           value: 1
         }), \\"() => 1\\"), [[]]]];
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, xs);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, xs);\\");
         globals.variables.set(\\"xs\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -696,7 +696,7 @@ exports[`String representation of nested objects are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const o = { a: 1, b: true, c: () => 1, d: { e: 5, f: 6 } };
-stringify(o);",
+eagerStringify(o);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -729,7 +729,7 @@ const globals = $NATIVE_STORAGE.globals;
             f: 6
           }
         };
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, o);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, o);\\");
         globals.variables.set(\\"o\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -751,7 +751,7 @@ Object {
   "alertResult": Array [],
   "code": "let o = {};
 o.o = o;
-stringify(o);",
+eagerStringify(o);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -774,7 +774,7 @@ const globals = $NATIVE_STORAGE.globals;
       {
         let o = {};
         setProp(o, \\"o\\", o, 2, 0);
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 3, 0, o);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 3, 0, o);\\");
         globals.variables.set(\\"o\\", {
           kind: \\"let\\",
           getValue: () => {
@@ -797,7 +797,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of null is nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(null);",
+  "code": "eagerStringify(null);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -818,7 +818,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, null);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, null);\\");
       }
     }
     return lastStatementResult;
@@ -832,7 +832,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of numbers are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(0);",
+  "code": "eagerStringify(0);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -853,7 +853,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, 0);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, 0);\\");
       }
     }
     return lastStatementResult;
@@ -868,7 +868,7 @@ exports[`String representation of objects are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
   "code": "const o = { a: 1, b: true, c: () => 1 };
-stringify(o);",
+eagerStringify(o);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -897,7 +897,7 @@ const globals = $NATIVE_STORAGE.globals;
             value: 1
           }), \\"() => 1\\")
         };
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 2, 0, o);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 2, 0, o);\\");
         globals.variables.set(\\"o\\", {
           kind: \\"const\\",
           getValue: () => {
@@ -917,7 +917,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of strings are nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify('a string');",
+  "code": "eagerStringify('a string');",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -938,7 +938,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, 'a string');\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, 'a string');\\");
       }
     }
     return lastStatementResult;
@@ -952,7 +952,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation of undefined is nice: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(undefined);",
+  "code": "eagerStringify(undefined);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -973,7 +973,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, undefined);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, undefined);\\");
       }
     }
     return lastStatementResult;
@@ -987,7 +987,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with 1 space indent: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'), 1);",
+  "code": "eagerStringify(parse('x=>x;'), 1);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1010,7 +1010,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 1);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 1);\\");
       }
     }
     return lastStatementResult;
@@ -1024,7 +1024,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with custom indent: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'), ' ... ');",
+  "code": "eagerStringify(parse('x=>x;'), ' ... ');",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1047,7 +1047,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), ' ... ');\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), ' ... ');\\");
       }
     }
     return lastStatementResult;
@@ -1061,7 +1061,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with default (2 space) indent: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'));",
+  "code": "eagerStringify(parse('x=>x;'));",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1084,7 +1084,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'));\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'));\\");
       }
     }
     return lastStatementResult;
@@ -1098,7 +1098,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with long custom indent gets trimmed to 10 characters: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'), '.................................');",
+  "code": "eagerStringify(parse('x=>x;'), '.................................');",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1121,7 +1121,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), '.................................');\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), '.................................');\\");
       }
     }
     return lastStatementResult;
@@ -1135,7 +1135,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with more than 10 space indent should trim to 10 space indent: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'), 100);",
+  "code": "eagerStringify(parse('x=>x;'), 100);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1158,7 +1158,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 100);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 100);\\");
       }
     }
     return lastStatementResult;
@@ -1172,7 +1172,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`String representation with no indent: expectResult 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse('x=>x;'), 0);",
+  "code": "eagerStringify(parse('x=>x;'), 0);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1193,7 +1193,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 0);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, 'x=>x;'), 0);\\");
       }
     }
     return lastStatementResult;

@@ -201,23 +201,6 @@ function getArgs(context: Context, call: es.CallExpression) {
   return call.arguments.map(arg => evaluate(arg, context))
 }
 
-// function transformLogicalExpression(node: es.LogicalExpression): es.ConditionalExpression {
-//   if (node.operator === '&&') {
-//     return conditionalExpression(node.left, node.right, literal(false), node.loc!)
-//   } else {
-//     return conditionalExpression(node.left, literal(true), node.right, node.loc!)
-//   }
-// }
-
-// function* reduceIf(
-//   node: es.IfStatement | es.ConditionalExpression,
-//   context: Context
-// ): IterableIterator<es.Node> {
-//   const test = evaluate(node.test, context).value
-//
-//   return test ? node.consequent : node.alternate
-// }
-
 export type Evaluator<T extends es.Node> = (node: T, context: Context) => IterableIterator<Value>
 
 function* evaluateBlockStatement(context: Context, node: es.BlockStatement) {
@@ -243,44 +226,36 @@ function* evaluateBlockStatement(context: Context, node: es.BlockStatement) {
  * See: https://github.com/webpack/webpack/issues/7566
  */
 // tslint:disable:object-literal-shorthand
-// prettier-ignore
 export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
   /** Simple Values */
-  Literal: function*(node: es.Literal, context: Context){
+  Literal: function*(node: es.Literal, context: Context) {
     return node.value
   },
 
-  ThisExpression: function*(node: es.ThisExpression, context: Context){
+  ThisExpression: function*(node: es.ThisExpression, context: Context) {
     return currentEnvironment(context).thisContext
   },
 
-  // TODO[@plty]: Reactivate this at some point.
-  // ArrayExpression: function*(node: es.ArrayExpression, context: Context){
-  //   return new Evaluable(() =>
-  //     node.elements.map(n => evaluate(n, context))
-  //   )
-  // },
-
   // TODO[@plty]: Add debugger.
-  // DebuggerStatement: functionfunction*(node: es.DebuggerStatement, context: Context) {
+  // DebuggerStatement: function*(node: es.DebuggerStatement, context: Context) {
   //   context.runtime.break = true
   //   yield
   // },
 
   // TODO MARK[@plty]: unchanged stuff as this is O(1).
-  FunctionExpression: function*(node: es.FunctionExpression, context: Context){
+  FunctionExpression: function*(node: es.FunctionExpression, context: Context) {
     return new Closure(node, currentEnvironment(context), context)
   },
 
-  ArrowFunctionExpression: function*(node: es.ArrowFunctionExpression, context: Context){
+  ArrowFunctionExpression: function*(node: es.ArrowFunctionExpression, context: Context) {
     return Closure.makeFromArrowFunction(node, currentEnvironment(context), context)
   },
 
-  Identifier: function*(node: es.Identifier, context: Context){
+  Identifier: function*(node: es.Identifier, context: Context) {
     return yield* getVariable(context, node.name).evaluate()
   },
 
-  CallExpression: function*(node: es.CallExpression, context: Context){
+  CallExpression: function*(node: es.CallExpression, context: Context) {
     const callee = yield* evaluate(node.callee, context).evaluate()
     const args = getArgs(context, node)
     let thisContext
@@ -290,7 +265,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return yield* apply(context, callee, args, node, thisContext)
   },
 
-  UnaryExpression: function*(node: es.UnaryExpression, context: Context){
+  UnaryExpression: function*(node: es.UnaryExpression, context: Context) {
     const value = yield* evaluate(node.argument, context).evaluate()
 
     const error = rttc.checkUnaryExpression(node, node.operator, value)
@@ -300,7 +275,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return evaluateUnaryExpression(node.operator, value)
   },
 
-  BinaryExpression: function*(node: es.BinaryExpression, context: Context){
+  BinaryExpression: function*(node: es.BinaryExpression, context: Context) {
     const left = yield* evaluate(node.left, context).evaluate()
     const right = yield* evaluate(node.right, context).evaluate()
 
@@ -311,7 +286,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return evaluateBinaryExpression(node.operator, left, right)
   },
 
-  IfStatement: function*(node: es.IfStatement | es.ConditionalExpression, context: Context){
+  IfStatement: function*(node: es.IfStatement | es.ConditionalExpression, context: Context) {
     const test = yield* evaluate(node.test, context).evaluate()
     const cons = node.consequent
     const alt = node.alternate!
@@ -324,7 +299,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return yield* evaluate(test ? cons : alt, context).evaluate()
   },
 
-  ConditionalExpression: function*(node: es.ConditionalExpression, context: Context){
+  ConditionalExpression: function*(node: es.ConditionalExpression, context: Context) {
     // TODO[@plty]: remove code duplication
     const test = yield* evaluate(node.test, context).evaluate()
     const cons = node.consequent
@@ -338,7 +313,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return yield* evaluate(test ? cons : alt, context).evaluate()
   },
 
-  LogicalExpression: function*(node: es.LogicalExpression, context: Context){
+  LogicalExpression: function*(node: es.LogicalExpression, context: Context) {
     const left = evaluate(node.left, context)
     const right = evaluate(node.right, context)
 
@@ -351,7 +326,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     }
   },
 
-  VariableDeclaration: function*(node: es.VariableDeclaration, context: Context){
+  VariableDeclaration: function*(node: es.VariableDeclaration, context: Context) {
     const declaration = node.declarations[0]
     const constant = node.kind === 'const'
     const id = declaration.id as es.Identifier
@@ -360,41 +335,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return undefined
   },
 
-  // TODO[@plty]: Add Member Expression.
-  // MemberExpression: function*(node: es.MemberExpression, context: Context){
-  //   let obj = yield* evaluate(node.object, context)
-  //   if (obj instanceof Closure) {
-  //     obj = obj.fun
-  //   }
-  //   let prop
-  //   if (node.computed) {
-  //     prop = yield* evaluate(node.property, context)
-  //   } else {
-  //     prop = (node.property as es.Identifier).name
-  //   }
-  //
-  //   const error = rttc.checkMemberAccess(node, obj, prop)
-  //   if (error) {
-  //     return handleRuntimeError(context, error)
-  //   }
-  //
-  //   if (
-  //     obj !== null &&
-  //     obj !== undefined &&
-  //     typeof obj[prop] !== 'undefined' &&
-  //     !obj.hasOwnProperty(prop)
-  //   ) {
-  //     return handleRuntimeError(context, new errors.GetInheritedPropertyError(node, obj, prop))
-  //   }
-  //   try {
-  //     return obj[prop]
-  //   } catch {
-  //     return handleRuntimeError(context, new errors.GetPropertyError(node, obj, prop))
-  //   }
-  // },
-
-  // DARI SINI KEBAAAWAH BELOM DIURUS
-  FunctionDeclaration: function*(node: es.FunctionDeclaration, context: Context){
+  FunctionDeclaration: function*(node: es.FunctionDeclaration, context: Context) {
     const id = node.id as es.Identifier
     // tslint:disable-next-line:no-any
     const closure = new Closure(node, currentEnvironment(context), context)
@@ -402,32 +343,17 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return undefined
   },
 
-  ExpressionStatement: function*(node: es.ExpressionStatement, context: Context){
+  ExpressionStatement: function*(node: es.ExpressionStatement, context: Context) {
     return yield* evaluate(node.expression, context).evaluate()
   },
 
   // TODO[@plty] support TCO later
-  ReturnStatement: function*(node: es.ReturnStatement, context: Context){
+  ReturnStatement: function*(node: es.ReturnStatement, context: Context) {
     const returnExpression = node.argument!
     return new ReturnValue(yield* evaluate(returnExpression, context).evaluate())
   },
 
-  // TODO[@plty]: Add Object Expression.
-  // ObjectExpression: function*(node: es.ObjectExpression, context: Context){
-  //   const obj = {}
-  //   for (const prop of node.properties) {
-  //     let key
-  //     if (prop.key.type === 'Identifier') {
-  //       key = prop.key.name
-  //     } else {
-  //       key = yield* evaluate(prop.key, context)
-  //     }
-  //     obj[key] = yield* evaluate(prop.value, context)
-  //   }
-  //   return obj
-  // },
-
-  BlockStatement: function*(node: es.BlockStatement, context: Context){
+  BlockStatement: function*(node: es.BlockStatement, context: Context) {
     let result: Value
 
     // Create a new environment (block scoping)
@@ -438,7 +364,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     return result
   },
 
-  Program: function*(node: es.BlockStatement, context: Context){
+  Program: function*(node: es.BlockStatement, context: Context) {
     context.numberOfOuterEnvironments += 1
     const environment = createBlockEnvironment(context, 'programEnvironment')
     pushEnvironment(context, environment)

@@ -1,6 +1,5 @@
 import { Context, Value } from '../types'
-import { stringify } from '../utils/stringify'
-import Thunk from '../interpreter/Thunk'
+import { stringify } from '../utils/eager-stringify'
 
 /**
  * A function that displays to console.log by default (for a REPL).
@@ -36,44 +35,44 @@ export function timed(
   }
 }
 
-export function is_number(v: Thunk) {
-  return typeof v.value === 'number'
+export function is_number(v: Value) {
+  return typeof v === 'number'
 }
 
-export function is_undefined(xs: Thunk) {
-  return typeof xs.value === 'undefined'
+export function is_undefined(xs: Value) {
+  return typeof xs === 'undefined'
 }
 
-export function is_string(xs: Thunk) {
-  return typeof xs.value === 'string'
+export function is_string(xs: Value) {
+  return typeof xs === 'string'
 }
 
-export function is_boolean(xs: Thunk) {
-  return typeof xs.value === 'boolean'
+export function is_boolean(xs: Value) {
+  return typeof xs === 'boolean'
 }
 
-export function is_object(xs: Thunk) {
-  return typeof xs.value === 'object' || is_function(xs.value)
+export function is_object(xs: Value) {
+  return typeof xs === 'object' || is_function(xs)
 }
 
-export function is_function(xs: Thunk) {
-  return typeof xs.value === 'function'
+export function is_function(xs: Value) {
+  return typeof xs === 'function'
 }
 
-export function is_NaN(x: Thunk) {
-  return is_number(x.value) && isNaN(x.value)
+export function is_NaN(x: Value) {
+  return is_number(x) && isNaN(x)
 }
 
-export function has_own_property(obj: Thunk, p: Thunk) {
-  return obj.value.hasOwnProperty(p.value)
+export function has_own_property(obj: Value, p: Value) {
+  return obj.hasOwnProperty(p)
 }
 
-export function is_array(a: Thunk) {
-  return a.value instanceof Array
+export function is_array(a: Value) {
+  return a instanceof Array
 }
 
-export function array_length(xs: Thunk) {
-  return xs.value.length
+export function array_length(xs: Value[]) {
+  return xs.length
 }
 
 /**

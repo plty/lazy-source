@@ -52,7 +52,7 @@ export const stringify = function*(
 
   const stringifyArray = function*(xs: Value[], indentLevel: number) {
     ancestors.add(xs)
-    const valueStrs = yield* concatGens(xs.map(x => () => stringifyValue(x, 0)))
+    const valueStrs = yield* concatGenerators(xs.map(x => () => stringifyValue(x, 0)))
     ancestors.delete(xs)
 
     if (shouldMultiline(valueStrs)) {
@@ -80,10 +80,10 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
 
   const stringifyObject = function*(obj: object, indentLevel: number) {
     ancestors.add(obj)
-    const keys: [string] = yield* concatGens(
+    const keys: [string] = yield* concatGenerators(
       Object.entries(obj).map(entry => () => stringifyValue(Thunk.from(entry[0])), 0)
     )
-    const vals: [string] = yield* concatGens(
+    const vals: [string] = yield* concatGenerators(
       Object.entries(obj).map(entry => () => stringifyValue(Thunk.from(entry[1])), 0)
     )
     const valueStrs = zip(keys, vals).map(([key, val]) => {
@@ -131,8 +131,8 @@ ${indentify(indentString.repeat(indentLevel), valueStrs[1])}${arrSuffix}`
   return yield* stringifyValue(value, 0)
 }
 
-function* concatGens(gens: (() => IterableIterator<Value>)[]): IterableIterator<Value> {
-  return yield* gens.reduce(
+function* concatGenerators(suppliers: (() => IterableIterator<Value>)[]): IterableIterator<Value> {
+  return yield* suppliers.reduce(
     (acc, cur) => {
       return function*() {
         const rest = yield* acc()

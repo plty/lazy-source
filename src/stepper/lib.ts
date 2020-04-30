@@ -1,5 +1,5 @@
 import * as es from 'estree'
-import * as misc from '../stdlib/misc'
+import * as misc from '../stdlib/eager-misc'
 import { substituterNodes } from '../types'
 import * as ast from '../utils/astCreator'
 import { nodeToValue, valueToExpression } from './converter'
@@ -22,7 +22,7 @@ export function display(val: substituterNodes): substituterNodes {
 }
 
 //   defineBuiltin(context, 'raw_display(str)', rawDisplay)
-//   defineBuiltin(context, 'stringify(val)', stringify)
+//   defineBuiltin(context, 'eagerStringify(val)', eagerStringify)
 export function stringify(val: substituterNodes): es.Literal {
   return ast.literal(codify(val))
 }
@@ -108,7 +108,7 @@ export function evaluateMath(mathFn: string, ...args: substituterNodes[]): es.Ex
 }
 
 // if (context.chapter >= 2) {
-//   // List library
+//   // LazyList library
 //   defineBuiltin(context, 'pair(left, right)', list.pair)
 export function pair(left: substituterNodes, right: substituterNodes): es.ArrayExpression {
   return ast.arrayExpression([left as es.Expression, right as es.Expression])

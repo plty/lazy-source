@@ -3,7 +3,7 @@
 exports[`Blacklisted syntax: expectParsedError 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse(\\"function* f() { yield 1; } f();\\"), undefined, 2);",
+  "code": "eagerStringify(parse(\\"function* f() { yield 1; } f();\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
     ExceptionError {
@@ -32,7 +32,7 @@ Object {
 exports[`Blatant syntax error: expectParsedError 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse(\\"'\\"), undefined, 2);",
+  "code": "eagerStringify(parse(\\"'\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
     ExceptionError {
@@ -61,7 +61,7 @@ Object {
 exports[`Syntax rules: expectParsedError 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "stringify(parse(\\"x = y = x;\\"), undefined, 2);",
+  "code": "eagerStringify(parse(\\"x = y = x;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
     ExceptionError {

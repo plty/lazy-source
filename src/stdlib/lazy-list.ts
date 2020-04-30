@@ -1,14 +1,6 @@
-import { stringify } from '../utils/stringify'
+import { stringify } from '../utils/eager-stringify'
 import Thunk from '../interpreter/Thunk'
 import { Value } from '../types'
-
-// list.ts: Supporting lists in the Scheme style, using pairs made
-//          up of two-element JavaScript array (vector)
-// Author: Martin Henz
-// Translated to TypeScript by Evan Sebastian
-export type Pair = [Thunk, Thunk]
-export type List = null | NonEmptyList
-interface NonEmptyList extends Pair {}
 
 // array test works differently for Rhino and
 // the Firefox environment (especially Web Console)
@@ -38,8 +30,8 @@ export function* is_pair(x: Thunk) {
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function* head(xs: Thunk) {
   if (yield* is_pair(xs)) {
-    const p = yield* xs.evaluate()
-    return yield* p[0].evaluate()
+    const [h] = yield* xs.evaluate()
+    return yield* h.evaluate()
   } else {
     throw new Error('head(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -50,8 +42,8 @@ export function* head(xs: Thunk) {
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function* tail(xs: Thunk) {
   if (yield* is_pair(xs)) {
-    const p = yield* xs.evaluate()
-    return yield* p[1].evaluate()
+    const [, t] = yield* xs.evaluate()
+    return yield* t.evaluate()
   } else {
     throw new Error('tail(xs) expects a pair as argument xs, but encountered ' + stringify(xs))
   }
@@ -69,8 +61,8 @@ export function* is_null(xs: Thunk) {
 // TODO[@plty]: make this represents computation more.
 export function* list(...elements: Thunk[]): IterableIterator<Value> {
   if (elements.length === 0) return null
-  const rest = yield* list(...elements.slice(1))
-  return pair(elements[0], rest)
+  const [h, ...t] = elements
+  return yield* pair(h, Thunk.from(yield* list(...t)))
 }
 
 // list_to_vector returns vector that contains the elements of the argument list
@@ -78,9 +70,9 @@ export function* list(...elements: Thunk[]): IterableIterator<Value> {
 // list_to_vector throws an exception if the argument is not a list
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function* list_to_vector(lst: Thunk): IterableIterator<Value> {
-  const p = yield* lst.evaluate()
-  if (p === null) return []
-  return [yield* p[0]].concat(list_to_vector(p[1]))
+  if (yield* is_null(lst)) return []
+  const [h, t] = yield* lst.evaluate()
+  return [h, ...(yield* list_to_vector(t))]
 }
 
 // vector_to_list returns a list that contains the elements of the argument vector
@@ -89,34 +81,4 @@ export function* list_to_vector(lst: Thunk): IterableIterator<Value> {
 // LOW-LEVEL FUNCTION, NOT SOURCE
 export function* vector_to_list(vector: any[]): IterableIterator<Value> {
   return yield* list(...vector)
-}
-
-// set_head(xs,x) changes the head of given pair xs to be x,
-// throws an exception if the argument is not a pair
-// LOW-LEVEL FUNCTION, NOT SOURCE
-
-export function set_head(xs: any, x: any) {
-  if (is_pair(xs)) {
-    xs[0] = x
-    return undefined
-  } else {
-    throw new Error(
-      'set_head(xs,x) expects a pair as argument xs, but encountered ' + stringify(xs)
-    )
-  }
-}
-
-// set_tail(xs,x) changes the tail of given pair xs to be x,
-// throws an exception if the argument is not a pair
-// LOW-LEVEL FUNCTION, NOT SOURCE
-
-export function set_tail(xs: any, x: any) {
-  if (is_pair(xs)) {
-    xs[1] = x
-    return undefined
-  } else {
-    throw new Error(
-      'set_tail(xs,x) expects a pair as argument xs, but encountered ' + stringify(xs)
-    )
-  }
 }
