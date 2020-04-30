@@ -4,7 +4,7 @@ import { Finished } from '../../types'
 import { stripIndent } from '../../utils/formatters'
 import { expectNativeToTimeoutAndError } from '../../utils/testing'
 
-test('Proper eagerStringify-ing of arguments during potentially infinite iterative function calls', async () => {
+test('Proper stringify-ing of arguments during potentially infinite iterative function calls', async () => {
   const code = stripIndent`
     function f(x) {
       return f(x);
