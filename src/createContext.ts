@@ -99,7 +99,7 @@ export const importExternalSymbols = (context: Context, externalSymbols: string[
  * Imports builtins from standard and external libraries.
  */
 export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIns) => {
-  if (context.chapter <= 1000 && false) {
+  if (context.chapter <= 1000) {
     importEagerBuiltins(context, externalBuiltIns)
   } else {
     importLazyBuiltins({ ...context, chapter: context.chapter - 1000 }, externalBuiltIns)
