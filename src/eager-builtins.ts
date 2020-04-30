@@ -36,7 +36,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     defineBuiltin(context, 'runtime()', misc.runtime)
     defineBuiltin(context, 'display(val)', display)
     defineBuiltin(context, 'raw_display(str)', rawDisplay)
-    defineBuiltin(context, 'eagerStringify(val)', stringify)
+    defineBuiltin(context, 'stringify(val)', stringify)
     defineBuiltin(context, 'error(str)', misc.error_message)
     defineBuiltin(context, 'prompt(str)', prompt)
     defineBuiltin(context, 'is_number(val)', misc.is_number)

@@ -32,7 +32,7 @@ export function HighlightRulesSelector(id: number) {
         'math_cos|math_cosh|math_exp|math_expm1|math_floor|math_fround|math_hypot|math_imul|' +
         'math_log|math_log1p|math_log2|math_log10|math_max|math_min|math_pow|math_random|' +
         'math_round|math_sign|math_sin|math_sinh|math_sqrt|math_tan|math_tanh|' +
-        'math_tanh|math_trunc|parse_int|prompt|runtime|eagerStringify'
+        'math_tanh|math_trunc|parse_int|prompt|runtime|stringify'
     }
 
     const chapter2 = {

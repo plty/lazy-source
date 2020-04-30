@@ -4,7 +4,7 @@
  *
  * The src is the stringified version of the ace-builds worker (see https://github.com/ajaxorg/ace-builds/blob/master/src-noconflict/worker-javascript.js)
  *
- * To debug, kindly debug the ace-builds worker, then eagerStringify it inside this file as module.exports.src
+ * To debug, kindly debug the ace-builds worker, then stringify it inside this file as module.exports.src
  */
 
 module.exports.id = 'ace/mode/javascript_worker'

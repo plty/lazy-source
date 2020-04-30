@@ -5,7 +5,6 @@ import * as ast from '../utils/astCreator'
 import { nodeToValue, valueToExpression } from './converter'
 import { codify } from './stepper'
 import { isBuiltinFunction, isNumber } from './util'
-import Thunk from '../interpreter/Thunk'
 
 // define builtins that takes in AST, and return AST
 //
@@ -22,7 +21,7 @@ export function display(val: substituterNodes): substituterNodes {
 }
 
 //   defineBuiltin(context, 'raw_display(str)', rawDisplay)
-//   defineBuiltin(context, 'eagerStringify(val)', eagerStringify)
+//   defineBuiltin(context, 'stringify(val)', stringify)
 export function stringify(val: substituterNodes): es.Literal {
   return ast.literal(codify(val))
 }
@@ -49,7 +48,7 @@ export function is_number(val: substituterNodes): es.Literal {
 
 //   defineBuiltin(context, 'is_string(val)', misc.is_string)
 export function is_string(val: substituterNodes): es.Literal {
-  return ast.literal(val.type === 'Literal' && misc.is_string(Thunk.from(val.value)))
+  return ast.literal(val.type === 'Literal' && misc.is_string(val.value))
 }
 
 //   defineBuiltin(context, 'is_function(val)', misc.is_function)
@@ -59,7 +58,7 @@ export function is_function(val: substituterNodes): es.Literal {
 
 //   defineBuiltin(context, 'is_boolean(val)', misc.is_boolean)
 export function is_boolean(val: substituterNodes): es.Literal {
-  return ast.literal(val.type === 'Literal' && misc.is_boolean(Thunk.from(val.value)))
+  return ast.literal(val.type === 'Literal' && misc.is_boolean(val.value))
 }
 
 //   defineBuiltin(context, 'is_undefined(val)', misc.is_undefined)
@@ -108,7 +107,7 @@ export function evaluateMath(mathFn: string, ...args: substituterNodes[]): es.Ex
 }
 
 // if (context.chapter >= 2) {
-//   // LazyList library
+//   // List library
 //   defineBuiltin(context, 'pair(left, right)', list.pair)
 export function pair(left: substituterNodes, right: substituterNodes): es.ArrayExpression {
   return ast.arrayExpression([left as es.Expression, right as es.Expression])
