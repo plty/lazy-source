@@ -102,7 +102,7 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   if (context.chapter <= 1000 && false) {
     importEagerBuiltins(context, externalBuiltIns)
   } else {
-    importLazyBuiltins({ ...context, chapter: context.chapter }, externalBuiltIns)
+    importLazyBuiltins({ ...context, chapter: context.chapter - 1000 }, externalBuiltIns)
   }
 }
 

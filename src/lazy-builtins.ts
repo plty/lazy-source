@@ -43,7 +43,6 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
     externalBuiltIns.visualiseList(yield* v.evaluate(), context.externalContext)
   }
 
-  console.log('uhuhu')
   if (context.chapter >= 1) {
     defineBuiltin(context, 'runtime()', misc.runtime)
     defineBuiltin(context, 'display(val)', display)
@@ -68,14 +67,13 @@ export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIn
   }
 
   if (context.chapter >= 2) {
-    // LazyList library
+    // List library
     defineBuiltin(context, 'pair(left, right)', list.pair)
     defineBuiltin(context, 'is_pair(val)', list.is_pair)
     defineBuiltin(context, 'head(xs)', list.head)
     defineBuiltin(context, 'tail(xs)', list.tail)
     defineBuiltin(context, 'is_null(val)', list.is_null)
     defineBuiltin(context, 'list(...values)', list.list)
-    console.log('eeie')
     defineBuiltin(context, 'list_to_vector(xs)', list.list_to_vector)
     defineBuiltin(context, 'draw_data(xs)', visualiseList)
   }

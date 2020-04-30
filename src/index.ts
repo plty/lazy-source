@@ -42,7 +42,7 @@ export interface IOptions {
 const DEFAULT_OPTIONS: IOptions = {
   scheduler: 'async',
   steps: 1000,
-  executionMethod: 'lazy-interpreter',
+  executionMethod: 'auto',
   originalMaxExecTime: 1000,
   useSubst: false
 }
@@ -181,8 +181,6 @@ export async function runInContext(
     } as Result)
   }
 
-  // TODO[@plty]: create amendments on this.
-  console.log('>', theOptions.executionMethod)
   if (context.prelude !== null) {
     const prelude = context.prelude
     context.prelude = null
@@ -190,15 +188,13 @@ export async function runInContext(
     return runInContext(code, context, options)
   }
 
-  const lazyActivated = true
-  if (lazyActivated) {
-    if (theOptions.executionMethod === 'lazy-interpreter') {
-      const e = lazyEvaluate(program, context)
-      return Promise.resolve({
-        status: 'finished',
-        value: e.value
-      } as Result)
-    }
+  // TODO: make this proper with scheduler
+  if (context.chapter >= 1000) {
+    const e = lazyEvaluate(program, context)
+    return Promise.resolve({
+      status: 'finished',
+      value: e.value
+    } as Result)
   }
 
   const isNativeRunnable = determineExecutionMethod(theOptions, context, program)
@@ -262,7 +258,6 @@ export async function runInContext(
       )
     }
   } else {
-    console.log('ahaha')
     const it = evaluate(program, context)
     let scheduler: Scheduler
     if (theOptions.scheduler === 'async') {
