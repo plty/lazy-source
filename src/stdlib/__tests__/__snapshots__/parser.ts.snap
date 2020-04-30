@@ -3,7 +3,7 @@
 exports[`Parses arrow function assignments properly 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"const y = x => x + 1;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"const y = x => x + 1;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -46,7 +46,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const y = x => x + 1;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const y = x => x + 1;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -60,7 +60,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses arrow function expressions properly 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"x => x + 1;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"x => x + 1;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -98,7 +98,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x => x + 1;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x => x + 1;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -112,7 +112,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses assignment statements 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"x = 5; x = x; if (true) { x = 5; } else {}\\"), undefined, 2);",
+  "code": "stringify(parse(\\"x = 5; x = x; if (true) { x = 5; } else {}\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -165,7 +165,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x = 5; x = x; if (true) { x = 5; } else {}\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x = 5; x = x; if (true) { x = 5; } else {}\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -179,7 +179,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses declaration statements 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"const x = 5; let y = x;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"const x = 5; let y = x;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -216,7 +216,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const x = 5; let y = x;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const x = 5; let y = x;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -230,7 +230,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses empty program 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"\\"), undefined, 2);",
+  "code": "stringify(parse(\\"\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -253,7 +253,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -267,7 +267,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses fibonacci 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"function fib(x) { return x <= 1 ? x : fib(x-1) + fib(x-2); } fib(4);\\"), undefined, 2);",
+  "code": "stringify(parse(\\"function fib(x) { return x <= 1 ? x : fib(x-1) + fib(x-2); } fib(4);\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -363,7 +363,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"function fib(x) { return x <= 1 ? x : fib(x-1) + fib(x-2); } fib(4);\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"function fib(x) { return x <= 1 ? x : fib(x-1) + fib(x-2); } fib(4);\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -377,7 +377,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses function calls 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"f(x); thrice(thrice)(plus_one)(0);\\"), undefined, 2);",
+  "code": "stringify(parse(\\"f(x); thrice(thrice)(plus_one)(0);\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -428,7 +428,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"f(x); thrice(thrice)(plus_one)(0);\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"f(x); thrice(thrice)(plus_one)(0);\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -442,7 +442,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses if statements 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"if (true) { hi; } else { haha; } if (false) {} else {}\\"), undefined, 2);",
+  "code": "stringify(parse(\\"if (true) { hi; } else { haha; } if (false) {} else {}\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -491,7 +491,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"if (true) { hi; } else { haha; } if (false) {} else {}\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"if (true) { hi; } else { haha; } if (false) {} else {}\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -505,7 +505,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses infix expressions 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"3 + 5 === 8 || !true && false;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"3 + 5 === 8 || !true && false;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -560,7 +560,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"3 + 5 === 8 || !true && false;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"3 + 5 === 8 || !true && false;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -574,7 +574,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses literals 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"3; true; false; ''; \\\\\\"\\\\\\"; 'bob'; 1; 20;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"3; true; false; ''; \\\\\\"\\\\\\"; 'bob'; 1; 20;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -605,7 +605,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"3; true; false; ''; \\\\\\\\\\\\\\"\\\\\\\\\\\\\\"; 'bob'; 1; 20;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"3; true; false; ''; \\\\\\\\\\\\\\"\\\\\\\\\\\\\\"; 'bob'; 1; 20;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -619,7 +619,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses loops 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse( \\"while (true) { continue; break; } for (let i = 0; i < 1; i = i + 1) { continue; break; } for (i = 0; i < 1; i = i + 1) { continue; break; }\\"), undefined, 2);",
+  "code": "stringify(parse( \\"while (true) { continue; break; } for (let i = 0; i < 1; i = i + 1) { continue; break; } for (i = 0; i < 1; i = i + 1) { continue; break; }\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -738,7 +738,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"while (true) { continue; break; } for (let i = 0; i < 1; i = i + 1) { continue; break; } for (i = 0; i < 1; i = i + 1) { continue; break; }\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"while (true) { continue; break; } for (let i = 0; i < 1; i = i + 1) { continue; break; } for (i = 0; i < 1; i = i + 1) { continue; break; }\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -752,7 +752,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses multi-argument arrow function assignments properly 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"const y = (x, y) => x + 1;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"const y = (x, y) => x + 1;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -798,7 +798,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const y = (x, y) => x + 1;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"const y = (x, y) => x + 1;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -812,7 +812,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses multi-argument arrow function expressions properly 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"(x, y) => x + 1;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"(x, y) => x + 1;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -853,7 +853,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"(x, y) => x + 1;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"(x, y) => x + 1;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -867,7 +867,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses multi-argument arrow function expressions properly 2`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"(x, y) => x + 1;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"(x, y) => x + 1;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -908,7 +908,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"(x, y) => x + 1;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"(x, y) => x + 1;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -922,7 +922,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses name expression 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"x;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"x;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -945,7 +945,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -959,7 +959,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses name expressions 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"x; moreNames; undefined;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"x; moreNames; undefined;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -991,7 +991,7 @@ const globals = $NATIVE_STORAGE.globals;
   return (() => {
     {
       {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(eagerStringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x; moreNames; undefined;\\\\\\"), undefined, 2);\\");
+        lastStatementResult = eval(\\"callIfFuncAndRightArgs(stringify, 1, 0, callIfFuncAndRightArgs(parse, 1, 10, \\\\\\"x; moreNames; undefined;\\\\\\"), undefined, 2);\\");
       }
     }
     return lastStatementResult;
@@ -1005,7 +1005,7 @@ const globals = $NATIVE_STORAGE.globals;
 exports[`Parses object notation 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"let x = {a: 5, b: 10, 'key': value};\\"), undefined, 2);",
+  "code": "stringify(parse(\\"let x = {a: 5, b: 10, 'key': value};\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1037,7 +1037,7 @@ null ] ] ]",
 exports[`Parses property access 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"a[b]; a.b; a[5]; a['b'];\\"), undefined, 2);",
+  "code": "stringify(parse(\\"a[b]; a.b; a[5]; a['b'];\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
@@ -1080,7 +1080,7 @@ null ] ]",
 exports[`Parses property assignment 1`] = `
 Object {
   "alertResult": Array [],
-  "code": "eagerStringify(parse(\\"a[b] = 5; a.b = value; a[5] = 'value'; a['b'] = 42;\\"), undefined, 2);",
+  "code": "stringify(parse(\\"a[b] = 5; a.b = value; a[5] = 'value'; a['b'] = 42;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [],
   "parsedErrors": "",
