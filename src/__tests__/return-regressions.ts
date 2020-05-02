@@ -81,7 +81,10 @@ test('Tail call early returns work', () => {
     f();
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`1`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:1"
+          `)
 })
 
 // This is bad practice. Don't do this!
@@ -153,7 +156,10 @@ test('Tail call early returns in if statements work', () => {
     f();
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`1`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:1"
+          `)
 })
 
 // This is bad practice. Don't do this!
@@ -225,7 +231,10 @@ test('Tail call early returns in while loops work', () => {
     f();
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(`1`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:1"
+          `)
 })
 
 // This is bad practice. Don't do this!
@@ -294,5 +303,8 @@ test('Tail call early returns in for loops work', () => {
     f();
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(`1`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:1"
+          `)
 })

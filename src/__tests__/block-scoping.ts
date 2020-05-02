@@ -105,7 +105,10 @@ test('for loop `let` variables are copied into the block scope', () => {
   test();
   `,
     { chapter: 4, native: true }
-  ).toMatchInlineSnapshot(`1`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:1"
+          `)
 })
 
 test('Cannot overwrite loop variables within a block', () => {

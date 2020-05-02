@@ -23,11 +23,10 @@ test('Undefined variable error is thrown', () => {
 
 test('Undefined variable error is thrown - verbose', () => {
   return expectParsedError(undefinedVariableVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 0: Name im_undefined not declared.
-Before you can read the value of im_undefined, you need to declare it as a variable or a constant. You can do this \
-using the let or const keywords.
-"
-`)
+            "Line 2, Column 0: Name im_undefined not declared.
+            Before you can read the value of im_undefined, you need to declare it as a variable or a constant. You can do this using the let or const keywords.
+            "
+          `)
 })
 
 test('Undefined variable error message differs from verbose version', () => {
@@ -51,10 +50,10 @@ test('Error when assigning to builtin', () => {
 
 test('Error when assigning to builtin - verbose', () => {
   return expectParsedError(assignToBuiltinVerbose, { chapter: 3 }).toMatchInlineSnapshot(`
-"Line 2, Column 0: Cannot assign new value to constant map.
-As map was declared as a constant, its value cannot be changed. You will have to declare a new variable.
-"
-`)
+            "Line 2, Column 0: Cannot assign new value to constant map.
+            As map was declared as a constant, its value cannot be changed. You will have to declare a new variable.
+            "
+          `)
 })
 
 test('Assigning to builtin error message differs from verbose version', () => {
@@ -78,10 +77,10 @@ test('Error when assigning to builtin', () => {
 
 test('Error when assigning to builtin - verbose', () => {
   return expectParsedError(assignToBuiltinVerbose1, { chapter: 3 }).toMatchInlineSnapshot(`
-"Line 2, Column 0: Cannot assign new value to constant undefined.
-As undefined was declared as a constant, its value cannot be changed. You will have to declare a new variable.
-"
-`)
+            "Line 2, Column 0: Cannot assign new value to constant undefined.
+            As undefined was declared as a constant, its value cannot be changed. You will have to declare a new variable.
+            "
+          `)
 })
 
 test('Assigning to builtin error message differs from verbose version', () => {
@@ -237,10 +236,10 @@ test('Error when calling non function value undefined', () => {
 
 test('Error when calling non function value undefined - verbose', () => {
   return expectParsedError(callingNonFunctionValueUndefinedVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: Calling non-function value undefined.
-Because undefined is not a function, you cannot run undefined().
-"
-`)
+            "Line 2, Column 2: Calling non-function value undefined.
+            Because undefined is not a function, you cannot run undefined().
+            "
+          `)
 })
 
 test('Calling non function value undefined error message differs from verbose version', () => {
@@ -267,10 +266,10 @@ test('Error when calling non function value undefined with arguments', () => {
 
 test('Error when calling non function value undefined with arguments - verbose', () => {
   return expectParsedError(callingNonFunctionValueUndefinedArgsVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: Calling non-function value undefined.
-Because undefined is not a function, you cannot run undefined(1, true).
-"
-`)
+            "Line 2, Column 2: Calling non-function value undefined.
+            Because undefined is not a function, you cannot run undefined(1, true).
+            "
+          `)
 })
 
 test('Calling non function value undefined with arguments error message differs from verbose version', () => {
@@ -297,10 +296,10 @@ test('Error when calling non function value null', () => {
 
 test('Error when calling non function value null - verbose', () => {
   return expectParsedError(callingNonFunctionValueNullVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: null literals are not allowed.
-They're not part of the Source §1 specs.
-"
-`)
+            "Line 2, Column 2: null literals are not allowed.
+            They're not part of the Source §1 specs.
+            "
+          `)
 })
 
 test('Calling non function value null error message differs from verbose version', () => {
@@ -326,10 +325,10 @@ test('Error when calling non function value true', () => {
 
 test('Error when calling non function value true - verbose', () => {
   return expectParsedError(callingNonFunctionValueTrueVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: Calling non-function value true.
-Because true is not a function, you cannot run true().
-"
-`)
+            "Line 2, Column 2: Calling non-function value true.
+            Because true is not a function, you cannot run true().
+            "
+          `)
 })
 
 test('Calling non function value true error message differs from verbose version', () => {
@@ -356,11 +355,10 @@ test('Error when calling non function value 0', () => {
 
 test('Error when calling non function value 0 - verbose', () => {
   return expectParsedError(callingNonFunctionValue0Verbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: Calling non-function value 0.
-Because 0 is not a function, you cannot run 0(). If you were planning to perform multiplication by 0, you need to use \
-the * operator.
-"
-`)
+            "Line 2, Column 2: Calling non-function value 0.
+            Because 0 is not a function, you cannot run 0(). If you were planning to perform multiplication by 0, you need to use the * operator.
+            "
+          `)
 })
 
 test('Calling non function value 0 error message differs from verbose version', () => {
@@ -387,10 +385,10 @@ test('Error when calling non function value "string"', () => {
 
 test('Error when calling non function value "string" - verbose', () => {
   return expectParsedError(callingNonFunctionValueStringVerbose).toMatchInlineSnapshot(`
-"Line 2, Column 2: Calling non-function value \\"string\\".
-Because \\"string\\" is not a function, you cannot run \\"string\\"().
-"
-`)
+            "Line 2, Column 2: Calling non-function value \\"string\\".
+            Because \\"string\\" is not a function, you cannot run \\"string\\"().
+            "
+          `)
 })
 
 test('Calling non function value string error message differs from verbose version', () => {
@@ -419,10 +417,10 @@ test('Error when calling non function value array', () => {
 test('Error when calling non function value array - verbose', () => {
   return expectParsedError(callingNonFunctionValueArrayVerbose, { chapter: 3 })
     .toMatchInlineSnapshot(`
-"Line 2, Column 0: Calling non-function value [1].
-Because [1] is not a function, you cannot run [1]().
-"
-`)
+            "Line 2, Column 0: Calling non-function value [1].
+            Because [1] is not a function, you cannot run [1]().
+            "
+          `)
 })
 
 test('Calling non function value array error message differs from verbose version', () => {
@@ -450,10 +448,10 @@ test('Error when calling non function value object', () => {
 test('Error when calling non function value object - verbose', () => {
   return expectParsedError(callingNonFunctionValueObjectVerbose, { chapter: 100 })
     .toMatchInlineSnapshot(`
-"Line 2, Column 0: Calling non-function value {\\"a\\": 1}.
-Because {\\"a\\": 1} is not a function, you cannot run {\\"a\\": 1}().
-"
-`)
+            "Line 2, Column 0: Calling non-function value {\\"a\\": 1}.
+            Because {\\"a\\": 1} is not a function, you cannot run {\\"a\\": 1}().
+            "
+          `)
 })
 
 test('Calling non function value object error message differs from verbose version', () => {
@@ -471,10 +469,10 @@ test('Error when calling non function value object - verbose', () => {
     `,
     { chapter: 100 }
   ).toMatchInlineSnapshot(`
-"Line 2, Column 0: Calling non-function value {\\"a\\": 1}.
-Because {\\"a\\": 1} is not a function, you cannot run {\\"a\\": 1}().
-"
-`)
+            "Line 2, Column 0: Calling non-function value {\\"a\\": 1}.
+            Because {\\"a\\": 1} is not a function, you cannot run {\\"a\\": 1}().
+            "
+          `)
 })
 
 test('Error when calling function with too few arguments', () => {
@@ -497,10 +495,10 @@ test('Error when calling function with too few arguments - verbose', () => {
       }
       f();
     `).toMatchInlineSnapshot(`
-"Line 5, Column 2: Expected 1 arguments, but got 0.
-Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 5, Column 2: Expected 1 arguments, but got 0.
+            Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling function with too many arguments', () => {
@@ -523,10 +521,10 @@ test('Error when calling function with too many arguments - verbose', () => {
       }
       f(1, 2);
     `).toMatchInlineSnapshot(`
-"Line 5, Column 2: Expected 1 arguments, but got 2.
-Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 5, Column 2: Expected 1 arguments, but got 2.
+            Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling arrow function with too few arguments', () => {
@@ -545,10 +543,10 @@ test('Error when calling arrow function with too few arguments - verbose', () =>
     const f = x => x;
     f();
   `).toMatchInlineSnapshot(`
-"Line 3, Column 2: Expected 1 arguments, but got 0.
-Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 3, Column 2: Expected 1 arguments, but got 0.
+            Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling arrow function with too many arguments', () => {
@@ -567,10 +565,10 @@ test('Error when calling arrow function with too many arguments - verbose', () =
       const f = x => x;
       f(1, 2);
     `).toMatchInlineSnapshot(`
-"Line 3, Column 2: Expected 1 arguments, but got 2.
-Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 3, Column 2: Expected 1 arguments, but got 2.
+            Try calling function f again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling function from member expression with too many arguments', () => {
@@ -592,10 +590,10 @@ test('Error when calling function from member expression with too many arguments
     `,
     { chapter: 3 }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 2: Expected 1 arguments, but got 2.
-Try calling function f[0] again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 3, Column 2: Expected 1 arguments, but got 2.
+            Try calling function f[0] again, but with 1 argument instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling arrow function in tail call with too many arguments - verbose', () => {
@@ -607,10 +605,10 @@ test('Error when calling arrow function in tail call with too many arguments - v
     f(1);
   `
   ).toMatchInlineSnapshot(`
-"Line 3, Column 15: Expected 0 arguments, but got 1.
-Try calling function g again, but with 0 arguments instead. Remember that arguments are separated by a ',' (comma).
-"
-`)
+            "Line 3, Column 15: Expected 0 arguments, but got 1.
+            Try calling function g again, but with 0 arguments instead. Remember that arguments are separated by a ',' (comma).
+            "
+          `)
 })
 
 test('Error when calling arrow function in tail call with too many arguments', () => {
@@ -621,7 +619,10 @@ test('Error when calling arrow function in tail call with too many arguments', (
     f(1);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`"Line 2: Expected 0 arguments, but got 1."`)
+  ).toMatchInlineSnapshot(`
+            "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+            interpreted:\\"Line 2: Expected 0 arguments, but got 1.\\""
+          `)
 })
 
 test('Error when redeclaring constant', () => {
@@ -683,10 +684,10 @@ test('Error when redeclaring function after let --verbose', () => {
   `,
     { chapter: 3, native: true }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
-There is a syntax error in your program
-"
-`)
+            "Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
+            There is a syntax error in your program
+            "
+          `)
 })
 
 test('Error when redeclaring function after function', () => {
@@ -708,10 +709,10 @@ test('Error when redeclaring function after function --verbose', () => {
   `,
     { chapter: 3, native: true }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
-There is a syntax error in your program
-"
-`)
+            "Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
+            There is a syntax error in your program
+            "
+          `)
 })
 
 test('Error when redeclaring function after const', () => {
@@ -733,10 +734,10 @@ test('Error when redeclaring function after const --verbose', () => {
   `,
     { chapter: 3, native: true }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
-There is a syntax error in your program
-"
-`)
+            "Line 3, Column 9: SyntaxError: Identifier 'f' has already been declared (3:9)
+            There is a syntax error in your program
+            "
+          `)
 })
 
 test('Error when redeclaring const after function', () => {
@@ -758,10 +759,10 @@ test('Error when redeclaring const after function --verbose', () => {
   `,
     { chapter: 3, native: true }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 6: SyntaxError: Identifier 'f' has already been declared (3:6)
-There is a syntax error in your program
-"
-`)
+            "Line 3, Column 6: SyntaxError: Identifier 'f' has already been declared (3:6)
+            There is a syntax error in your program
+            "
+          `)
 })
 
 test('Error when redeclaring let after function', () => {
@@ -783,10 +784,10 @@ test('Error when redeclaring let after function --verbose', () => {
   `,
     { chapter: 3, native: true }
   ).toMatchInlineSnapshot(`
-"Line 3, Column 4: SyntaxError: Identifier 'f' has already been declared (3:4)
-There is a syntax error in your program
-"
-`)
+            "Line 3, Column 4: SyntaxError: Identifier 'f' has already been declared (3:4)
+            There is a syntax error in your program
+            "
+          `)
 })
 
 // NOTE: Obsoleted due to strict types on member access
@@ -817,10 +818,10 @@ test.skip('Error when accessing inherited property of builtin', () => {
   `,
     { chapter: 100, native: true }
   ).toMatchInlineSnapshot(`
-"Line 1: Cannot read inherited property constructor of function pair(left, right) {
-	[implementation hidden]
-}"
-`)
+            "Line 1: Cannot read inherited property constructor of function pair(left, right) {
+            	[implementation hidden]
+            }"
+          `)
 })
 
 // NOTE: Obsoleted due to strict types on member access
@@ -984,9 +985,10 @@ test('Cascading js errors work properly 1', () => {
     eval_stream(make_alternating_stream(enum_stream(1, 9)), 9);
     `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(
-    `"Line 8: Error: head(xs) expects a pair as argument xs, but encountered null"`
-  )
+  ).toMatchInlineSnapshot(`
+            "native:\\"Line 337: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+            interpreted:\\"Line 8: Error: head(xs) expects a pair as argument xs, but encountered null\\""
+          `)
 })
 
 test('Cascading js errors work properly', () => {
@@ -999,7 +1001,8 @@ test('Cascading js errors work properly', () => {
     h(null);
     `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(
-    `"Line 2: Error: head(xs) expects a pair as argument xs, but encountered null"`
-  )
+  ).toMatchInlineSnapshot(`
+            "native:\\"Line 2: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+            interpreted:\\"Line 2: Error: head(xs) expects a pair as argument xs, but encountered null\\""
+          `)
 })

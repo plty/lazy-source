@@ -7,11 +7,12 @@ Object {
   , list(\\"string\\", 123, 456, null, undefined));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 274: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -29,7 +30,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(stream_append, 1, 21, callIfFuncAndRightArgs(stream, 1, 35, \\\\\\"string\\\\\\", 123), callIfFuncAndRightArgs(stream, 1, 58, 456, null, undefined))), callIfFuncAndRightArgs(list, 2, 4, \\\\\\"string\\\\\\", 123, 456, null, undefined));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -43,11 +44,12 @@ Object {
   "code": "equal(stream_to_list(build_stream(5, x => x * x)), list(0, 1, 4, 9, 16));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -65,7 +67,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(build_stream, 1, 21, 5, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"*\\\\\\", x, x, 1, 42) }), \\\\\\"x => x * x\\\\\\"))), callIfFuncAndRightArgs(list, 1, 51, 0, 1, 4, 9, 16));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -79,11 +81,12 @@ Object {
   "code": "equal(stream_to_list(enum_stream(1.5, 5)), list(1.5, 2.5, 3.5, 4.5));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 337: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -101,7 +104,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(enum_stream, 1, 21, 1.5, 5)), callIfFuncAndRightArgs(list, 1, 43, 1.5, 2.5, 3.5, 4.5));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -115,11 +118,12 @@ Object {
   "code": "equal(stream_to_list(enum_stream(1, 5)), list(1, 2, 3, 4, 5));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 337: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -137,7 +141,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(enum_stream, 1, 21, 1, 5)), callIfFuncAndRightArgs(list, 1, 41, 1, 2, 3, 4, 5));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -155,11 +159,12 @@ Object {
 , list(2, 1, 3, 4, 2));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 324: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -177,7 +182,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 2, 2, callIfFuncAndRightArgs(stream_filter, 3, 4, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"<=\\\\\\", x, 4, 3, 23) }), \\\\\\"x => x <= 4\\\\\\"), callIfFuncAndRightArgs(stream, 3, 31, 2, 10, 1000, 1, 3, 100, 4, 5, 2, 1000))), callIfFuncAndRightArgs(list, 5, 2, 2, 1, 3, 4, 2));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -195,11 +200,12 @@ stream_for_each(x => {
 sum;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 6,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:6",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -230,7 +236,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -244,11 +250,12 @@ Object {
   "code": "stream_ref(stream(1, 2, 3, \\"4\\", 4), 4);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 4,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:4",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -266,7 +273,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_ref, 1, 0, callIfFuncAndRightArgs(stream, 1, 11, 1, 2, 3, \\\\\\"4\\\\\\", 4), 4);\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -280,11 +287,12 @@ Object {
   "code": "equal(stream_to_list(stream_map(x => 2 * x, stream(12, 11, 3))), list(24, 22, 6));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 214: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -302,7 +310,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(stream_map, 1, 21, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"*\\\\\\", 2, x, 1, 37) }), \\\\\\"x => 2 * x\\\\\\"), callIfFuncAndRightArgs(stream, 1, 44, 12, 11, 3))), callIfFuncAndRightArgs(list, 1, 65, 24, 22, 6));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -318,11 +326,12 @@ Object {
   list(\\"string\\", 123, 456, null, undefined));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 2: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -340,7 +349,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 2, 2, callIfFuncAndRightArgs(stream_member, 2, 17, \\\\\\"string\\\\\\", callIfFuncAndRightArgs(stream, 2, 41, 1, 2, 3, \\\\\\"string\\\\\\", 123, 456, null, undefined))), callIfFuncAndRightArgs(list, 3, 2, \\\\\\"string\\\\\\", 123, 456, null, undefined));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -358,7 +367,6 @@ Object {
   "result": null,
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -376,7 +384,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream, 1, 0);\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -393,11 +401,12 @@ stream_for_each(item => {result[array_length(result)] = item;}, s);
 stream_ref(s,4)(22) === 22 && stream_ref(s,7)(pair('', '1')) === '1' && result;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:false",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -435,7 +444,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -449,14 +458,12 @@ Object {
   "code": "stream_tail(integers_from(0));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    [Function],
-  ],
+  "parsedErrors": "native:\\"Line 346: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:[1, () => integers_from(n + 1)]",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -474,7 +481,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_tail, 1, 0, callIfFuncAndRightArgs(integers_from, 1, 12, 0));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -492,7 +499,6 @@ Object {
   "result": 2,
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -510,7 +516,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(head, 1, 0, callIfFuncAndRightArgs(stream_tail, 1, 5, callIfFuncAndRightArgs(stream, 1, 17, 1, 2)));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -528,7 +534,6 @@ Object {
   "result": null,
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -546,7 +551,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_to_list, 1, 0, null);\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -560,29 +565,12 @@ Object {
   "code": "stream_to_list(stream(1, true, 3, 4.4, [1, 2]));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    Array [
-      true,
-      Array [
-        3,
-        Array [
-          4.4,
-          Array [
-            Array [
-              1,
-              2,
-            ],
-            null,
-          ],
-        ],
-      ],
-    ],
-  ],
+  "parsedErrors": "native:\\"Line 189: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:[1, [true, [3, [4.4, [[1, 2], null]]]]]",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -600,7 +588,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_to_list, 1, 0, callIfFuncAndRightArgs(stream, 1, 15, 1, true, 3, 4.4, [1, 2]));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -614,14 +602,12 @@ Object {
   "code": "stream_to_list(stream_remove(2, stream(1)));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    null,
-  ],
+  "parsedErrors": "native:\\"Line 300: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:[1, null]",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -639,7 +625,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_to_list, 1, 0, callIfFuncAndRightArgs(stream_remove, 1, 15, 2, callIfFuncAndRightArgs(stream, 1, 32, 1)));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -653,11 +639,12 @@ Object {
   "code": "stream_remove(1, stream(1));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
+  "parsedErrors": "native:\\"Line 299: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:null",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -675,7 +662,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(stream_remove, 1, 0, 1, callIfFuncAndRightArgs(stream, 1, 17, 1));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -689,11 +676,12 @@ Object {
   "code": "equal(stream_to_list(stream_remove_all(1, stream(2, 3, \\"1\\"))), list(2, 3, \\"1\\"));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 311: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -711,7 +699,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(stream_remove_all, 1, 21, 1, callIfFuncAndRightArgs(stream, 1, 42, 2, 3, \\\\\\"1\\\\\\"))), callIfFuncAndRightArgs(list, 1, 63, 2, 3, \\\\\\"1\\\\\\"));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -726,11 +714,12 @@ Object {
   list(2, 3, 4, \\"1\\", 5, 6));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -748,7 +737,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(stream_remove_all, 1, 21, 1, callIfFuncAndRightArgs(stream, 1, 42, 1, 2, 3, 4, 1, 1, \\\\\\"1\\\\\\", 5, 1, 1, 6))), callIfFuncAndRightArgs(list, 2, 2, 2, 3, 4, \\\\\\"1\\\\\\", 5, 6));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -765,11 +754,12 @@ Object {
 list(123, null, undefined, null, \\"string\\"));",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line 1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -787,7 +777,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(stream_to_list, 1, 6, callIfFuncAndRightArgs(stream_reverse, 2, 2, callIfFuncAndRightArgs(stream, 3, 4, \\\\\\"string\\\\\\", null, undefined, null, 123))), callIfFuncAndRightArgs(list, 4, 0, 123, null, undefined, null, \\\\\\"string\\\\\\"));\\");
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",

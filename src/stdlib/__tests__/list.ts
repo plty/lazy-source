@@ -91,7 +91,10 @@ test('for_each', () => {
     sum;
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(`6`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:6"
+          `)
 })
 
 test('map', () => {
@@ -100,7 +103,10 @@ test('map', () => {
     equal(map(x => 2 * x, list(12, 11, 3)), list(24, 22, 6));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('filter', () => {
@@ -109,7 +115,10 @@ test('filter', () => {
     equal(filter(x => x <= 4, list(2, 10, 1000, 1, 3, 100, 4, 5, 2, 1000)), list(2, 1, 3, 4, 2));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('build_list', () => {
@@ -118,7 +127,10 @@ test('build_list', () => {
     equal(build_list(5, x => x * x), list(0, 1, 4, 9, 16));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('reverse', () => {
@@ -127,7 +139,10 @@ test('reverse', () => {
     equal(reverse(list("string", null, undefined, null, 123)), list(123, null, undefined, null, "string"));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('append', () => {
@@ -136,7 +151,10 @@ test('append', () => {
     equal(append(list("string", 123), list(456, null, undefined)), list("string", 123, 456, null, undefined));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('member', () => {
@@ -147,7 +165,10 @@ test('member', () => {
       list("string", 123, 456, null, undefined));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('remove', () => {
@@ -156,7 +177,10 @@ test('remove', () => {
     remove(1, list(1));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`null`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:null"
+          `)
 })
 
 test('remove not found', () => {
@@ -166,10 +190,8 @@ test('remove not found', () => {
   `,
     { chapter: 2, native: true }
   ).toMatchInlineSnapshot(`
-            Array [
-              1,
-              null,
-            ]
+            "native:undefined
+            interpreted:[1, null]"
           `)
 })
 
@@ -179,7 +201,10 @@ test('remove_all', () => {
     equal(remove_all(1, list(1, 2, 3, 4, 1, 1, "1", 5, 1, 1, 6)), list(2, 3, 4, "1", 5, 6));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('remove_all not found', () => {
@@ -188,7 +213,10 @@ test('remove_all not found', () => {
     equal(remove_all(1, list(2, 3, "1")), list(2, 3, "1"));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('enum_list', () => {
@@ -197,7 +225,10 @@ test('enum_list', () => {
     equal(enum_list(1, 5), list(1, 2, 3, 4, 5));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('enum_list with floats', () => {
@@ -206,7 +237,10 @@ test('enum_list with floats', () => {
     equal(enum_list(1.5, 5), list(1.5, 2.5, 3.5, 4.5));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('list_ref', () => {
@@ -215,7 +249,10 @@ test('list_ref', () => {
     list_ref(list(1, 2, 3, "4", 4), 4);
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`4`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:4"
+          `)
 })
 
 test('accumulate', () => {
@@ -224,7 +261,10 @@ test('accumulate', () => {
     accumulate((curr, acc) => curr + acc, 0, list(2, 3, 4, 1));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`10`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10"
+          `)
 })
 
 test('list_to_string', () => {
@@ -233,7 +273,10 @@ test('list_to_string', () => {
     list_to_string(list(1, 2, 3));
   `,
     { chapter: 2, native: true }
-  ).toMatchInlineSnapshot(`"[1,[2,[3,null]]]"`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:\\"[1,[2,[3,null]]]\\""
+          `)
 })
 
 // assoc removed from Source
@@ -264,7 +307,10 @@ test('set_head', () => {
     p === q && equal(p, pair(3, 2));
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('set_tail', () => {
@@ -276,7 +322,10 @@ test('set_tail', () => {
     p === q && equal(p, pair(1, 3));
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(`true`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:true"
+          `)
 })
 
 test('non-list error head', () => {
@@ -319,9 +368,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     map(x=>x, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 33: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 33: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+              interpreted:\\"Line 33: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]\\""
+            `)
   })
 
   test('non-list error for_each', () => {
@@ -341,9 +391,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     reverse([1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 80: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 80: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]\\""
+            `)
   })
 
   test('non-list error append', () => {
@@ -352,9 +403,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     append([1, 2, 3], list(1, 2, 3));
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 91: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 91: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+              interpreted:\\"Line 91: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]\\""
+            `)
   })
 
   test('non-list error member', () => {
@@ -480,9 +532,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     build_list('1', x => x);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 45: Expected number on left hand side of operation, got string."`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 45: Expected number on left hand side of operation, got string.\\""
+            `)
   })
 
   test('bad number error enum_list', () => {
@@ -491,9 +544,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     enum_list('1', '5');
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 139: Expected string on right hand side of operation, got number."`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 139: TypeError: f is not iterable (cannot read property Symbol(Symbol.iterator))\\"
+              interpreted:\\"Line 139: Expected string on right hand side of operation, got number.\\""
+            `)
   })
 
   test('bad number error enum_list', () => {
@@ -524,9 +578,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), 3);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: head(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 147: Error: head(xs) expects a pair as argument xs, but encountered null\\""
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -535,9 +590,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), -1);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null\\""
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -546,9 +602,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), 1.5);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null\\""
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -557,8 +614,9 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), '1');
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Expected number on left hand side of operation, got string."`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+              interpreted:\\"Line 147: Expected number on left hand side of operation, got string.\\""
+            `)
   })
 })

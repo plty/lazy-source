@@ -13,11 +13,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -43,7 +44,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: f,
               functionName: \\"f\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 5, 13), binaryOp(\\"+\\", y, 1, 5, 18)],
               line: 5,
               column: 11
             };
@@ -58,7 +58,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -79,11 +79,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -109,7 +110,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: f,
               functionName: \\"f\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 5, 22), binaryOp(\\"+\\", y, 1, 5, 27)],
               line: 5,
               column: 20
             });
@@ -124,7 +124,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -141,11 +141,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -168,7 +169,6 @@ const globals = $NATIVE_STORAGE.globals;
             isTail: true,
             function: f,
             functionName: \\"f\\",
-            arguments: [binaryOp(\\"-\\", x, 1, 2, 24), binaryOp(\\"+\\", y, 1, 2, 29)],
             line: 2,
             column: 22
           };
@@ -182,7 +182,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -199,11 +199,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -226,7 +227,6 @@ const globals = $NATIVE_STORAGE.globals;
             isTail: true,
             function: f,
             functionName: \\"f\\",
-            arguments: [binaryOp(\\"-\\", x, 1, 2, 41), binaryOp(\\"+\\", y, 1, 2, 46)],
             line: 2,
             column: 39
           } : {
@@ -243,7 +243,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -264,11 +264,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -294,7 +295,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: f,
               functionName: \\"f\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 5, 13), binaryOp(\\"+\\", y, 1, 5, 18)],
               line: 5,
               column: 11
             };
@@ -309,7 +309,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -324,11 +324,12 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -350,7 +351,6 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: true,
           function: f,
           functionName: \\"f\\",
-          arguments: [binaryOp(\\"-\\", x, 1, 1, 35), binaryOp(\\"+\\", y, 1, 1, 40)],
           line: 1,
           column: 33
         }, \\"(x, y) => x <= 0 ? y : f(x - 1, y + 1)\\");
@@ -363,7 +363,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -384,11 +384,12 @@ Object {
 f(5000, 5000, 2);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 15000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:15000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -414,7 +415,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: f,
               functionName: \\"f\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 5, 13), binaryOp(\\"+\\", y, callIfFuncAndRightArgs(f, 5, 20, 0, z, 0), 5, 18), z],
               line: 5,
               column: 11
             };
@@ -429,7 +429,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -445,11 +445,12 @@ const g = (x, y) => x <= 0 ? y : f(x-1, y+1);
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -471,7 +472,6 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: true,
           function: g,
           functionName: \\"g\\",
-          arguments: [binaryOp(\\"-\\", x, 1, 1, 35), binaryOp(\\"+\\", y, 1, 1, 40)],
           line: 1,
           column: 33
         }, \\"(x, y) => x <= 0 ? y : g(x - 1, y + 1)\\");
@@ -482,7 +482,6 @@ const globals = $NATIVE_STORAGE.globals;
           isTail: true,
           function: f,
           functionName: \\"f\\",
-          arguments: [binaryOp(\\"-\\", x, 1, 2, 35), binaryOp(\\"+\\", y, 1, 2, 40)],
           line: 2,
           column: 33
         }, \\"(x, y) => x <= 0 ? y : f(x - 1, y + 1)\\");
@@ -501,7 +500,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",
@@ -529,11 +528,12 @@ function g(x, y) {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: Cannot read property 'length' of undefined\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
-const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -559,7 +559,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: g,
               functionName: \\"g\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 5, 13), binaryOp(\\"+\\", y, 1, 5, 18)],
               line: 5,
               column: 11
             };
@@ -576,7 +575,6 @@ const globals = $NATIVE_STORAGE.globals;
               isTail: true,
               function: f,
               functionName: \\"f\\",
-              arguments: [binaryOp(\\"-\\", x, 1, 12, 13), binaryOp(\\"+\\", y, 1, 12, 18)],
               line: 12,
               column: 11
             };
@@ -597,7 +595,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return forceIt(lastStatementResult);
+    return lastStatementResult;
   })();
 })();
 ",

@@ -27,7 +27,10 @@ test('Simple tail call returns work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail call in conditional expressions work', () => {
@@ -39,7 +42,10 @@ test('Tail call in conditional expressions work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail call in boolean operators work', () => {
@@ -55,7 +61,10 @@ test('Tail call in boolean operators work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail call in nested mix of conditional expressions boolean operators work', () => {
@@ -67,7 +76,10 @@ test('Tail call in nested mix of conditional expressions boolean operators work'
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail calls in arrow functions work', () => {
@@ -77,7 +89,10 @@ test('Tail calls in arrow functions work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail calls in arrow block functions work', () => {
@@ -93,7 +108,10 @@ test('Tail calls in arrow block functions work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail calls in mutual recursion work', () => {
@@ -116,7 +134,10 @@ test('Tail calls in mutual recursion work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail calls in mutual recursion with arrow functions work', () => {
@@ -127,7 +148,10 @@ test('Tail calls in mutual recursion with arrow functions work', () => {
     f(5000, 5000);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`10000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:10000"
+          `)
 })
 
 test('Tail calls in mixed tail-call/non-tail-call recursion work', () => {
@@ -143,5 +167,8 @@ test('Tail calls in mixed tail-call/non-tail-call recursion work', () => {
     f(5000, 5000, 2);
   `,
     { native: true }
-  ).toMatchInlineSnapshot(`15000`)
+  ).toMatchInlineSnapshot(`
+            "native:undefined
+            interpreted:15000"
+          `)
 })
