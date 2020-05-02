@@ -2,6 +2,7 @@
 
 exports[`Ensure no name clashes 1`] = `
 "const native0 = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs0 = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr0 = native.operators.get(\\"boolOrErr\\");
 const wrap90 = native.operators.get(\\"wrap\\");
@@ -79,16 +80,8 @@ const globals = $$NATIVE_STORAGE[1].globals;
       const tail = globals.previousScope.variables.get(\\"tail\\").getValue();
       const is_null = globals.previousScope.variables.get(\\"is_null\\").getValue();
       const list = globals.previousScope.variables.get(\\"list\\").getValue();
+      const list_to_vector = globals.previousScope.variables.get(\\"list_to_vector\\").getValue();
       const draw_data = globals.previousScope.variables.get(\\"draw_data\\").getValue();
-      const set_head = globals.previousScope.variables.get(\\"set_head\\").getValue();
-      const set_tail = globals.previousScope.variables.get(\\"set_tail\\").getValue();
-      const array_length = globals.previousScope.variables.get(\\"array_length\\").getValue();
-      const is_array = globals.previousScope.variables.get(\\"is_array\\").getValue();
-      const stream_tail = globals.previousScope.variables.get(\\"stream_tail\\").getValue();
-      const stream = globals.previousScope.variables.get(\\"stream\\").getValue();
-      const list_to_stream = globals.previousScope.variables.get(\\"list_to_stream\\").getValue();
-      const parse = globals.previousScope.variables.get(\\"parse\\").getValue();
-      const apply_in_underlying_javascript = globals.previousScope.variables.get(\\"apply_in_underlying_javascript\\").getValue();
       {
         const boolOrErr = 1;
         setProp(boolOrErr, 123, 1, 2, 0);
@@ -126,7 +119,7 @@ const globals = $$NATIVE_STORAGE[1].globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 "
@@ -136,6 +129,7 @@ exports[`builtins do get prepended 1`] = `
 Object {
   "code": "\\"ensure_builtins\\";",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -213,21 +207,13 @@ const globals = $$NATIVE_STORAGE[0].globals;
       const tail = globals.previousScope.variables.get(\\"tail\\").getValue();
       const is_null = globals.previousScope.variables.get(\\"is_null\\").getValue();
       const list = globals.previousScope.variables.get(\\"list\\").getValue();
+      const list_to_vector = globals.previousScope.variables.get(\\"list_to_vector\\").getValue();
       const draw_data = globals.previousScope.variables.get(\\"draw_data\\").getValue();
-      const set_head = globals.previousScope.variables.get(\\"set_head\\").getValue();
-      const set_tail = globals.previousScope.variables.get(\\"set_tail\\").getValue();
-      const array_length = globals.previousScope.variables.get(\\"array_length\\").getValue();
-      const is_array = globals.previousScope.variables.get(\\"is_array\\").getValue();
-      const stream_tail = globals.previousScope.variables.get(\\"stream_tail\\").getValue();
-      const stream = globals.previousScope.variables.get(\\"stream\\").getValue();
-      const list_to_stream = globals.previousScope.variables.get(\\"list_to_stream\\").getValue();
-      const parse = globals.previousScope.variables.get(\\"parse\\").getValue();
-      const apply_in_underlying_javascript = globals.previousScope.variables.get(\\"apply_in_underlying_javascript\\").getValue();
       {
         lastStatementResult = eval(\\"\\\\\\"ensure_builtins\\\\\\";\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",

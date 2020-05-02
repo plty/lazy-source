@@ -3,13 +3,15 @@
 import { GLOBAL, GLOBAL_KEY_TO_ACCESS_NATIVE_STORAGE } from './constants'
 import { AsyncScheduler } from './schedulers'
 import { listPrelude } from './stdlib/list.prelude'
+import { nonDetPrelude } from './stdlib/non-det.prelude'
 import * as misc from './stdlib/eager-misc'
 import { streamPrelude } from './stdlib/stream.prelude'
-import { Context, CustomBuiltIns, Value } from './types'
+import { Context, CustomBuiltIns, Value, Variant } from './types'
 import * as operators from './utils/operators'
 import { importBuiltins as importEagerBuiltins } from './eager-builtins'
 import { importBuiltins as importLazyBuiltins } from './lazy-builtins'
 
+import * as gpu_lib from './gpu/lib'
 const createEmptyRuntime = () => ({
   break: false,
   debuggerOn: true,
@@ -38,6 +40,7 @@ const createGlobalEnvironment = () => ({
 
 export const createEmptyContext = <T>(
   chapter: number,
+  variant: Variant = 'default',
   externalSymbols: string[],
   externalContext?: T
 ): Context<T> => {
@@ -46,7 +49,8 @@ export const createEmptyContext = <T>(
   }
   const length = GLOBAL[GLOBAL_KEY_TO_ACCESS_NATIVE_STORAGE].push({
     globals: { variables: new Map(), previousScope: null },
-    operators: new Map(Object.entries(operators))
+    operators: new Map(Object.entries(operators)),
+    gpu: new Map(Object.entries(gpu_lib))
   })
   return {
     chapter,
@@ -58,7 +62,8 @@ export const createEmptyContext = <T>(
     prelude: null,
     debugger: createEmptyDebugger(),
     contextId: length - 1,
-    executionMethod: 'auto'
+    executionMethod: 'auto',
+    variant
   }
 }
 
@@ -87,6 +92,21 @@ export const defineSymbol = (context: Context, name: string, value: Value) => {
   })
 }
 
+// Defines a builtin in the given context
+// If the builtin is a function, wrap it such that its toString hides the implementation
+export const defineBuiltin = (context: Context, name: string, value: Value) => {
+  if (typeof value === 'function') {
+    const wrapped = (...args: any) => value(...args)
+    const funName = name.split('(')[0].trim()
+    const repr = `function ${name} {\n\t[implementation hidden]\n}`
+    wrapped.toString = () => repr
+
+    defineSymbol(context, funName, wrapped)
+  } else {
+    defineSymbol(context, name, value)
+  }
+}
+
 export const importExternalSymbols = (context: Context, externalSymbols: string[]) => {
   ensureGlobalEnvironmentExist(context)
 
@@ -99,10 +119,10 @@ export const importExternalSymbols = (context: Context, externalSymbols: string[
  * Imports builtins from standard and external libraries.
  */
 export const importBuiltins = (context: Context, externalBuiltIns: CustomBuiltIns) => {
-  if (context.chapter <= 1000) {
+  if (context.variant === 'lazy') {
     importEagerBuiltins(context, externalBuiltIns)
   } else {
-    importLazyBuiltins({ ...context, chapter: context.chapter - 1000 }, externalBuiltIns)
+    importLazyBuiltins({ ...context, chapter: context.chapter }, externalBuiltIns)
   }
 }
 
@@ -114,6 +134,11 @@ function importPrelude(context: Context) {
   if (context.chapter >= 3) {
     prelude += streamPrelude
   }
+
+  if (context.variant === 'non-det') {
+    prelude += nonDetPrelude
+  }
+
   if (prelude !== '') {
     context.prelude = prelude
   }
@@ -132,11 +157,12 @@ const defaultBuiltIns: CustomBuiltIns = {
 
 const createContext = <T>(
   chapter = 1,
+  variant: Variant = 'default',
   externalSymbols: string[] = [],
   externalContext?: T,
   externalBuiltIns: CustomBuiltIns = defaultBuiltIns
 ) => {
-  const context = createEmptyContext(chapter, externalSymbols, externalContext)
+  const context = createEmptyContext(chapter, variant, externalSymbols, externalContext)
   importBuiltins(context, externalBuiltIns)
   importPrelude(context)
   importExternalSymbols(context, externalSymbols)

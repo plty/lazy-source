@@ -9,26 +9,26 @@ test('list creates list', () => {
   `,
     { chapter: 2, native: true }
   ).toMatchInlineSnapshot(`
-Array [
-  1,
-  Array [
-    "a string \\"\\"",
-    Array [
-      [Function],
-      Array [
-        [Function],
-        Array [
-          true,
-          Array [
-            3.14,
-            null,
-          ],
-        ],
-      ],
-    ],
-  ],
-]
-`)
+            Array [
+              1,
+              Array [
+                "a string \\"\\"",
+                Array [
+                  [Function],
+                  Array [
+                    [Function],
+                    Array [
+                      true,
+                      Array [
+                        3.14,
+                        null,
+                      ],
+                    ],
+                  ],
+                ],
+              ],
+            ]
+          `)
 })
 
 test('pair creates pair', () => {
@@ -38,11 +38,11 @@ test('pair creates pair', () => {
   `,
     { chapter: 2, native: true }
   ).toMatchInlineSnapshot(`
-Array [
-  1,
-  "a string \\"\\"",
-]
-`)
+            Array [
+              1,
+              "a string \\"\\"",
+            ]
+          `)
 })
 
 test('head works', () => {
@@ -166,11 +166,11 @@ test('remove not found', () => {
   `,
     { chapter: 2, native: true }
   ).toMatchInlineSnapshot(`
-Array [
-  1,
-  null,
-]
-`)
+            Array [
+              1,
+              null,
+            ]
+          `)
 })
 
 test('remove_all', () => {
@@ -285,9 +285,12 @@ test('non-list error head', () => {
     head([1, 2, 3]);
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(
-    `"Line 1: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-  )
+  ).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 test('non-list error tail', () => {
@@ -296,9 +299,12 @@ test('non-list error tail', () => {
     tail([1, 2, 3]);
   `,
     { chapter: 3, native: true }
-  ).toMatchInlineSnapshot(
-    `"Line 1: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-  )
+  ).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 describe('These tests are reporting weird line numbers, as list functions are now implemented in Source.', () => {
@@ -308,9 +314,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     length([1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 24: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name length not declared.\\"
+              interpreted:\\"Line 24: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error map', () => {
@@ -319,9 +326,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     map(x=>x, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 33: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name map not declared.\\"
+              interpreted:\\"Line 33: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error for_each', () => {
@@ -330,9 +338,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     for_each(x=>x, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 58: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name for_each not declared.\\"
+              interpreted:\\"Line 55: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error reverse', () => {
@@ -341,9 +350,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     reverse([1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 80: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name reverse not declared.\\"
+              interpreted:\\"Line 80: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error append', () => {
@@ -352,9 +362,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     append([1, 2, 3], list(1, 2, 3));
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 91: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name append not declared.\\"
+              interpreted:\\"Line 1: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error member', () => {
@@ -363,9 +374,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     member(1, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 100: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name member not declared.\\"
+              interpreted:\\"Line 100: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error remove', () => {
@@ -374,9 +386,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     remove(1, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 108: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name remove not declared.\\"
+              interpreted:\\"Line 108: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error remove_all', () => {
@@ -385,9 +398,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     remove_all(1, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 117: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name remove_all not declared.\\"
+              interpreted:\\"Line 115: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error assoc', () => {
@@ -405,9 +419,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     filter(x => true, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 129: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name filter not declared.\\"
+              interpreted:\\"Line 127: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\""
+            `)
   })
 
   test('non-list error accumulate', () => {
@@ -416,7 +431,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     accumulate((x, y) => x + y, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(`"Line 1: Expected 3 arguments, but got 2."`)
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name accumulate not declared.\\"
+              interpreted:\\"Line 1: Expected 3 arguments, but got 2.\\""
+            `)
   })
 
   test('non-list error accumulate', () => {
@@ -425,7 +443,10 @@ describe('These tests are reporting weird line numbers, as list functions are no
     accumulate((x, y) => x + y, [1, 2, 3]);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(`"Line 1: Expected 3 arguments, but got 2."`)
+    ).toMatchInlineSnapshot(`
+              "native:\\"Line 1: Name accumulate not declared.\\"
+              interpreted:\\"Line 1: Expected 3 arguments, but got 2.\\""
+            `)
   })
 
   test('non-list error set_head', () => {
@@ -434,9 +455,7 @@ describe('These tests are reporting weird line numbers, as list functions are no
     set_head([1, 2, 3], 4);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 1: Error: set_head(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`"Line 1: Name set_head not declared."`)
   })
 
   test('non-list error set_tail', () => {
@@ -445,9 +464,7 @@ describe('These tests are reporting weird line numbers, as list functions are no
     set_tail([1, 2, 3], 4);
   `,
       { chapter: 3, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 1: Error: set_tail(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]"`
-    )
+    ).toMatchInlineSnapshot(`"Line 1: Name set_tail not declared."`)
   })
 
   // skipped as implementation does not check types, causing infinite recursion.
@@ -524,9 +541,12 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), 3);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: head(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "Line 1: Calling non-function value { \\"supplier\\":
+                  function* () {
+                              return v;
+                          } }."
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -535,9 +555,12 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), -1);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "Line 1: Calling non-function value { \\"supplier\\":
+                  function* () {
+                              return v;
+                          } }."
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -546,9 +569,12 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), 1.5);
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null"`
-    )
+    ).toMatchInlineSnapshot(`
+              "Line 1: Calling non-function value { \\"supplier\\":
+                  function* () {
+                              return v;
+                          } }."
+            `)
   })
 
   test('bad index error list_ref', () => {
@@ -557,8 +583,11 @@ describe('These tests are reporting weird line numbers, as list functions are no
     list_ref(list(1, 2, 3), '1');
   `,
       { chapter: 2, native: true }
-    ).toMatchInlineSnapshot(
-      `"Line 147: Expected number on left hand side of operation, got string."`
-    )
+    ).toMatchInlineSnapshot(`
+              "Line 1: Calling non-function value { \\"supplier\\":
+                  function* () {
+                              return v;
+                          } }."
+            `)
   })
 })

@@ -84,7 +84,10 @@ function theme(acequire, exports, module) {
                         border-color: #FFFFFF\
                         }\
                         .ace-source .ace_support.ace_function {\
-                        color: #FFB054\
+                        color: #FFFFFF\
+                        }\
+                        .ace-source .ace_builtinconsts {\
+                        color: #FFFFFF\
                         }\
                         .ace-source .ace_storage {\
                         color: #FFEE80\
@@ -124,6 +127,41 @@ function theme(acequire, exports, module) {
                         background: url(data:image/png;base64,\
                         iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbY\
                         nAAAAEklEQVQImWNgYGBgYHCLSvkPAAP3AgSDTRd4AAAAAElFTkSuQmCC) right repeat-y\
+                        }\
+                        .ace_dark.ace-source.ace_editor.ace_autocomplete {\
+                        background-color: #2c3e50;\
+                        border-color: #555555;\
+                        color: white;\
+                        }\
+                        .ace_dark.ace-source.ace_editor.ace_autocomplete .ace_completion-highlight {\
+                        color: #FF9D00;\
+                        }\
+                        .ace_dark.ace-source.ace_editor.ace_autocomplete .ace_content .ace_marker-layer .ace_active-line {\
+                        border-color: #555555;\
+                        background-color: #495a6b;\
+                        }\
+                        .ace_dark.ace-source.ace_editor.ace_autocomplete .ace_content .ace_marker-layer .ace_line-hover {\
+                        border-color: #555555;\
+                        background-color: #6b839a;\
+                        }\
+                        .ace_dark.ace-source.ace_editor.ace_autocomplete .ace_content.ace_text-layer .ace_rightAlignedText {\
+                        color: #ced9e0;\
+                        }\
+                        .ace_tooltip.ace_doc-tooltip {\
+                        width: 400px;\
+                        max-height: 40vh;\
+                        white-space: normal;\
+                        overflow: auto;\
+                        background-color: #495a6b;\
+                        color: white;\
+                        border-color:#555555;\
+                        }\
+                        .ace_tooltip.ace_doc-tooltip h4 {\
+                        color: white;\
+                        margin: 0 0 1em;\
+                        }\
+                        .ace_tooltip.ace_doc-tooltip a {\
+                        color: #48aff0;\
                         }\
                         '
 

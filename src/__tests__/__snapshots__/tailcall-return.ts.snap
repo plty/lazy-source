@@ -13,10 +13,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -57,7 +60,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -78,10 +81,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -122,7 +128,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -139,10 +145,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -179,7 +188,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -196,10 +205,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -239,7 +251,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -260,10 +272,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -304,7 +319,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -319,10 +334,13 @@ Object {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -357,7 +375,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -378,10 +396,13 @@ Object {
 f(5000, 5000, 2);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 15000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:15000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -422,7 +443,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -438,10 +459,13 @@ const g = (x, y) => x <= 0 ? y : f(x-1, y+1);
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -493,7 +517,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -521,10 +545,13 @@ function g(x, y) {
 f(5000, 5000);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 10000,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:10000",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -588,7 +615,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",

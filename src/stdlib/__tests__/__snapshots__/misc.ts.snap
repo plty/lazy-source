@@ -6,8 +6,10 @@ Object {
   "code": "parse_int(42, 2.1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 18,
@@ -18,11 +20,81 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 12,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 12,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "42",
+            "start": 10,
+            "type": "Literal",
+            "value": 42,
+          },
+          Node {
+            "end": 17,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 17,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "2.1",
+            "start": 14,
+            "type": "Literal",
+            "value": 2.1,
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 18,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 18,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -35,8 +107,10 @@ Object {
   "code": "parse_int(42, 2);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 16,
@@ -47,11 +121,81 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 12,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 12,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "42",
+            "start": 10,
+            "type": "Literal",
+            "value": 42,
+          },
+          Node {
+            "end": 15,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 14,
+            "type": "Literal",
+            "value": 2,
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 16,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 16,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -64,8 +208,10 @@ Object {
   "code": "parse_int('10', 1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 18,
@@ -76,11 +222,81 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "'10'",
+            "start": 10,
+            "type": "Literal",
+            "value": "10",
+          },
+          Node {
+            "end": 17,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 17,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 16,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 16,
+            "type": "Literal",
+            "value": 1,
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 18,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 18,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -93,8 +309,10 @@ Object {
   "code": "parse_int('10', 37);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 19,
@@ -105,11 +323,81 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "'10'",
+            "start": 10,
+            "type": "Literal",
+            "value": "10",
+          },
+          Node {
+            "end": 18,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 18,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 16,
+                "line": 1,
+              },
+            },
+            "raw": "37",
+            "start": 16,
+            "type": "Literal",
+            "value": 37,
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 19,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 19,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -122,8 +410,10 @@ Object {
   "code": "parse_int(42, '2');",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 18,
@@ -134,118 +424,83 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 12,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 12,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "42",
+            "start": 10,
+            "type": "Literal",
+            "value": 42,
+          },
+          Node {
+            "end": 17,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 17,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "'2'",
+            "start": 14,
+            "type": "Literal",
+            "value": "2",
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 18,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 18,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`parse_int with valid args is ok, but invalid str for radix: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse_int('uu1', 2);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": NaN,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse_int, 1, 0, 'uu1', 2);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`parse_int with valid args is ok, radix 2: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse_int('1100101010101', 2);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 6485,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse_int, 1, 0, '1100101010101', 2);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`parse_int with valid args is ok, radix 36: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse_int('uu1', 36);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 39961,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse_int, 1, 0, 'uu1', 36);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;

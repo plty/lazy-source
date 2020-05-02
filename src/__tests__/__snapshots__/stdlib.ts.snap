@@ -1,50 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Builtins work as expected 0: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "display('message');",
-  "displayResult": Array [
-    "\\"message\\"",
-  ],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": "message",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(display, 1, 0, 'message');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Builtins work as expected 1: fails 1`] = `
 Object {
   "alertResult": Array [],
   "code": "error('error!');",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: "error!"],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 15,
@@ -55,1613 +20,66 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 6,
+                "line": 1,
+              },
+            },
+            "raw": "'error!'",
+            "start": 6,
+            "type": "Literal",
+            "value": "error!",
+          },
+        ],
+        "callee": Node {
+          "end": 5,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 5,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "error",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 15,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 15,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: \\"error!\\"",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 2: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_undefined(undefined);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_undefined, 1, 0, undefined);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 3: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_undefined(null);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_undefined, 1, 0, null);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 4: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_null(undefined);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_null, 1, 0, undefined);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 5: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_null(null);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_null, 1, 0, null);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 6: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_string('string');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_string, 1, 0, 'string');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 7: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_string('true');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_string, 1, 0, 'true');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 8: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_string('1');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_string, 1, 0, '1');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 9: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_string(true);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_string, 1, 0, true);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 10: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_string(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_string, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 11: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number('string');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, 'string');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 12: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number('true');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, 'true');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 13: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number('1');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, '1');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 14: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number(true);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, true);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 15: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 16: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_boolean('string');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_boolean, 1, 0, 'string');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 17: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_boolean('true');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_boolean, 1, 0, 'true');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 18: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_boolean('1');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_boolean, 1, 0, '1');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 19: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_boolean(true);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_boolean, 1, 0, true);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 20: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_boolean(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_boolean, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 21: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_function(display);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_function, 1, 0, display);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 22: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_function(x => x);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_function, 1, 0, wrap(x => ({   isTail: false,   value: x }), \\\\\\"x => x\\\\\\"));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 23: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "function f(x) {
-  return x;
-}
-is_function(f);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        const f = wrap(x => {
-          return {
-            isTail: false,
-            value: x
-          };
-        }, \\"function f(x) {\\\\n  return x;\\\\n}\\");
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_function, 4, 0, f);\\");
-        globals.variables.set(\\"f\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return f;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 24: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_function(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_function, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 25: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_array(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_array, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 26: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_array(pair(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_array, 1, 0, callIfFuncAndRightArgs(pair, 1, 9, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 27: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_array([1]);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_array, 1, 0, [1]);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 28: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 29: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(pair(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 30: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object([1]);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 31: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object({});",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 32: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object({a: 1});",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 33: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(x => x);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 34: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(display);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 35: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 36: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object('string');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 37: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_object(true);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 38: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_NaN(1 / 0);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 39: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_NaN(NaN);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 40: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_NaN(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 41: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_NaN(x => x);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 42: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "has_own_property({a: 1, b: 2}, 'a');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 43: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "has_own_property({a: 1, b: 2}, 'c');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 44: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "array_length([1]);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 1,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(array_length, 1, 0, [1]);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 45: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse_int('10', 10);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 10,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse_int, 1, 0, '10', 10);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 46: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse_int('10', 2);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse_int, 1, 0, '10', 2);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 47: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_number(runtime());",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_number, 1, 0, callIfFuncAndRightArgs(runtime, 1, 10));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 48: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "const start = runtime();
-function repeatUntilDifferentTime() {
-  if (start === runtime()) {
-    return repeatUntilDifferentTime();
-  } else {
-    return true;
-  }
-}
-repeatUntilDifferentTime();",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        const start = callIfFuncAndRightArgs(runtime, 1, 14);
-        const repeatUntilDifferentTime = wrap(() => {
-          if (boolOrErr(binaryOp(\\"===\\", start, callIfFuncAndRightArgs(runtime, 3, 16), 3, 6), 3, 2)) {
-            return {
-              isTail: true,
-              function: repeatUntilDifferentTime,
-              functionName: \\"repeatUntilDifferentTime\\",
-              arguments: [],
-              line: 4,
-              column: 11
-            };
-          } else {
-            return {
-              isTail: false,
-              value: true
-            };
-          }
-        }, \\"function repeatUntilDifferentTime() {\\\\n  if (start === runtime()) {\\\\n    return repeatUntilDifferentTime();\\\\n  } else {\\\\n    return true;\\\\n  }\\\\n}\\");
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(repeatUntilDifferentTime, 9, 0);\\");
-        globals.variables.set(\\"start\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return start;
-          }
-        });
-        globals.variables.set(\\"repeatUntilDifferentTime\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return repeatUntilDifferentTime;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 49: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "pair(1, 2);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    2,
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(pair, 1, 0, 1, 2);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 50: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "list(1, 2);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    Array [
-      2,
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list, 1, 0, 1, 2);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 51: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_list(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_list, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 52: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_list(pair(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_list, 1, 0, callIfFuncAndRightArgs(pair, 1, 8, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 53: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "is_list(list(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(is_list, 1, 0, callIfFuncAndRightArgs(list, 1, 8, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 54: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "head(pair(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 1,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(head, 1, 0, callIfFuncAndRightArgs(pair, 1, 5, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 55: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "tail(pair(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(tail, 1, 0, callIfFuncAndRightArgs(pair, 1, 5, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -1672,8 +90,10 @@ Object {
   "code": "head(null);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 10,
@@ -1684,11 +104,64 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 9,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 9,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "raw": "null",
+            "start": 5,
+            "type": "Literal",
+            "value": null,
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "head",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 10,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 10,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: head(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -1701,8 +174,10 @@ Object {
   "code": "tail(null);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 10,
@@ -1713,11 +188,64 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 9,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 9,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "raw": "null",
+            "start": 5,
+            "type": "Literal",
+            "value": null,
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "tail",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 10,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 10,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: tail(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -1730,8 +258,10 @@ Object {
   "code": "head(1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered 1],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 7,
@@ -1742,11 +272,64 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 6,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 6,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 5,
+            "type": "Literal",
+            "value": 1,
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "head",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 7,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: head(xs) expects a pair as argument xs, but encountered 1",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -1759,8 +342,10 @@ Object {
   "code": "tail(1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered 1],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 7,
@@ -1771,48 +356,66 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 6,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 6,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 5,
+            "type": "Literal",
+            "value": 1,
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "tail",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 7,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 7,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: tail(xs) expects a pair as argument xs, but encountered 1",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Builtins work as expected 60: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "length(list(1, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(length, 1, 0, callIfFuncAndRightArgs(list, 1, 7, 1, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -1823,23 +426,77 @@ Object {
   "code": "length(1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered 1],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 46,
+          "column": 20,
           "line": 24,
         },
         "start": Position {
-          "column": 38,
+          "column": 9,
           "line": 24,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 584,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 24,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 24,
+              },
+            },
+            "name": "xs",
+            "start": 582,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 581,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 24,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 24,
+            },
+          },
+          "name": "is_null",
+          "start": 574,
+          "type": "Identifier",
+        },
+        "end": 585,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 24,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 24,
+          },
+        },
+        "start": 574,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 24: Error: tail(xs) expects a pair as argument xs, but encountered 1",
+  "parsedErrors": "Line 24: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],

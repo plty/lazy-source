@@ -6,10 +6,13 @@ Object {
   "code": "({a: 0})[\\"a\\"];",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 0,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:0",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -27,7 +30,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"getProp({   a: 0 }, \\\\\\"a\\\\\\", 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -44,23 +47,95 @@ Object {
 map(f, list(1, 2));",
   "displayResult": Array [],
   "errors": Array [
-    UndefinedVariable {
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 10,
-          "line": 2,
+          "column": 17,
+          "line": 4,
         },
         "start": Position {
-          "column": 9,
-          "line": 2,
+          "column": 7,
+          "line": 4,
         },
       },
-      "name": "a",
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 43,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 13,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 12,
+                "line": 4,
+              },
+            },
+            "raw": "1",
+            "start": 42,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 46,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 16,
+                "line": 4,
+              },
+              "start": Position {
+                "column": 15,
+                "line": 4,
+              },
+            },
+            "raw": "2",
+            "start": 45,
+            "type": "Literal",
+            "value": 2,
+          },
+        ],
+        "callee": Node {
+          "end": 41,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 11,
+              "line": 4,
+            },
+            "start": Position {
+              "column": 7,
+              "line": 4,
+            },
+          },
+          "name": "list",
+          "start": 37,
+          "type": "Identifier",
+        },
+        "end": 47,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 17,
+            "line": 4,
+          },
+          "start": Position {
+            "column": 7,
+            "line": 4,
+          },
+        },
+        "start": 37,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 2: Name a not declared.",
+  "parsedErrors": "Line 4: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -84,26 +159,115 @@ const ones = pair(1, () => ones);
 eval_stream(make_alternating_stream(enum_stream(1, 9)), 9);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 29,
-          "line": 8,
+          "column": 32,
+          "line": 11,
         },
         "start": Position {
-          "column": 17,
-          "line": 8,
+          "column": 13,
+          "line": 11,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 367,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 11,
+              },
+              "start": Position {
+                "column": 18,
+                "line": 11,
+              },
+            },
+            "raw": "1",
+            "start": 366,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "body": Node {
+              "end": 379,
+              "loc": SourceLocation {
+                "end": Position {
+                  "column": 31,
+                  "line": 11,
+                },
+                "start": Position {
+                  "column": 27,
+                  "line": 11,
+                },
+              },
+              "name": "ones",
+              "start": 375,
+              "type": "Identifier",
+            },
+            "end": 379,
+            "expression": true,
+            "generator": false,
+            "id": null,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 31,
+                "line": 11,
+              },
+              "start": Position {
+                "column": 21,
+                "line": 11,
+              },
+            },
+            "params": Array [],
+            "start": 369,
+            "type": "ArrowFunctionExpression",
+          },
+        ],
+        "callee": Node {
+          "end": 365,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 17,
+              "line": 11,
+            },
+            "start": Position {
+              "column": 13,
+              "line": 11,
+            },
+          },
+          "name": "pair",
+          "start": 361,
+          "type": "Identifier",
+        },
+        "end": 380,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 32,
+            "line": 11,
+          },
+          "start": Position {
+            "column": 13,
+            "line": 11,
+          },
+        },
+        "start": 361,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 8: Error: head(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "native:\\"Line 4: Name stream_tail not declared.\\"
+interpreted:\\"Line 11: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -177,7 +341,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -195,8 +359,10 @@ Object {
 h(null);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 16,
@@ -207,14 +373,67 @@ h(null);",
           "line": 2,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 31,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 2,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 2,
+              },
+            },
+            "name": "p",
+            "start": 30,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 29,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 2,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 2,
+            },
+          },
+          "name": "head",
+          "start": 25,
+          "type": "Identifier",
+        },
+        "end": 32,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 16,
+            "line": 2,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 2,
+          },
+        },
+        "start": 25,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 2: Error: head(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 2: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -248,7 +467,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -283,6 +502,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -300,7 +520,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"getProp({}, \\\\\\"valueOf\\\\\\", 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -496,6 +716,7 @@ f(1);",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -537,7 +758,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -609,6 +830,7 @@ f();",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -636,7 +858,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -708,6 +930,7 @@ f(1, 2);",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -735,7 +958,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -807,6 +1030,7 @@ f[0](1, 2);",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -834,7 +1058,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -910,6 +1134,7 @@ f();",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -939,7 +1164,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1015,6 +1240,7 @@ f(1, 2);",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1044,7 +1270,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1176,6 +1402,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1193,7 +1420,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs('string', 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1325,6 +1552,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1342,7 +1570,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(0, 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1512,6 +1740,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1529,7 +1758,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs([1], 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -2088,6 +2317,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -2105,7 +2335,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(true, 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -2121,7 +2351,9 @@ Object {
   "displayResult": Array [],
   "errors": Array [
     CallingNonFunctionValue {
-      "callee": undefined,
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 13,
@@ -2168,8 +2400,17 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 2, Column 2: Calling non-function value undefined.
-Because undefined is not a function, you cannot run undefined().
+  "parsedErrors": "Line 2, Column 2: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.
+Because { \\"supplier\\":
+    function* () {
+                return v;
+            } } is not a function, you cannot run { \\"supplier\\":
+    function* () {
+                return v;
+            } }().
 ",
   "result": undefined,
   "resultStatus": "error",
@@ -2185,7 +2426,9 @@ Object {
   "displayResult": Array [],
   "errors": Array [
     CallingNonFunctionValue {
-      "callee": undefined,
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 20,
@@ -2267,8 +2510,17 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 2, Column 2: Calling non-function value undefined.
-Because undefined is not a function, you cannot run undefined(1, true).
+  "parsedErrors": "Line 2, Column 2: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.
+Because { \\"supplier\\":
+    function* () {
+                return v;
+            } } is not a function, you cannot run { \\"supplier\\":
+    function* () {
+                return v;
+            } }(1, true).
 ",
   "result": undefined,
   "resultStatus": "error",
@@ -2283,7 +2535,9 @@ Object {
   "displayResult": Array [],
   "errors": Array [
     CallingNonFunctionValue {
-      "callee": undefined,
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 18,
@@ -2365,7 +2619,10 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Calling non-function value undefined.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -2379,7 +2636,9 @@ Object {
   "displayResult": Array [],
   "errors": Array [
     CallingNonFunctionValue {
-      "callee": undefined,
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 11,
@@ -2426,10 +2685,14 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Calling non-function value undefined.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -2447,7 +2710,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(undefined, 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -2910,8 +3173,10 @@ Object {
   "code": "parse_int(\\"10\\");",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 15,
@@ -2922,11 +3187,64 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 10,
+                "line": 1,
+              },
+            },
+            "raw": "\\"10\\"",
+            "start": 10,
+            "type": "Literal",
+            "value": "10",
+          },
+        ],
+        "callee": Node {
+          "end": 9,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 9,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "parse_int",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 15,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 15,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -2939,11 +3257,10 @@ Object {
   "code": "parse(\\"'\\");",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [ParseError: SyntaxError: Unterminated string constant (1:0)],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 10,
+          "column": 5,
           "line": 1,
         },
         "start": Position {
@@ -2951,11 +3268,12 @@ Object {
           "line": 1,
         },
       },
+      "name": "parse",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: ParseError: SyntaxError: Unterminated string constant (1:0)",
+  "parsedErrors": "Line 1: Name parse not declared.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -2993,6 +3311,7 @@ f.prototype;",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3022,7 +3341,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3058,6 +3377,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3075,7 +3395,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"getProp(null, \\\\\\"prop\\\\\\", 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3111,6 +3431,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3128,7 +3449,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"getProp('hi', \\\\\\"length\\\\\\", 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3167,6 +3488,7 @@ f.prop = 5;",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3196,7 +3518,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3232,6 +3554,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3249,7 +3572,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"setProp('hi', \\\\\\"prop\\\\\\", 5, 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3287,6 +3610,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3304,7 +3628,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"binaryOp(\\\\\\"*\\\\\\", 12, 'string', 1, 0);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3344,6 +3668,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3361,7 +3686,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"if (boolOrErr(1, 1, 0)) {   2; } else {}\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",

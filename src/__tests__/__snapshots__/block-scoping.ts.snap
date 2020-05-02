@@ -224,10 +224,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -263,7 +266,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -284,10 +287,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 1,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:1",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -330,7 +336,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -350,10 +356,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -388,7 +397,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -411,10 +420,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -450,7 +462,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -471,10 +483,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -508,7 +523,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -530,10 +545,13 @@ Object {
 test();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -570,7 +588,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",

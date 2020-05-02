@@ -31,39 +31,54 @@ test('parse_int with valid args is ok, but invalid str for radix', () => {
 test('parse_int with non-string arg str throws error', () => {
   return expectParsedError(stripIndent`
     parse_int(42, 2);
-  `).toMatchInlineSnapshot(
-    `"Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive."`
-  )
+  `).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 test('parse_int with non-integer arg radix throws error', () => {
   return expectParsedError(stripIndent`
     parse_int(42, 2.1);
-  `).toMatchInlineSnapshot(
-    `"Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive."`
-  )
+  `).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 test('parse_int with radix outside [2, 36] throws error, radix=1', () => {
   return expectParsedError(stripIndent`
     parse_int('10', 1);
-  `).toMatchInlineSnapshot(
-    `"Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive."`
-  )
+  `).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 test('parse_int with radix outside [2, 36] throws error, radix=37', () => {
   return expectParsedError(stripIndent`
     parse_int('10', 37);
-  `).toMatchInlineSnapshot(
-    `"Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive."`
-  )
+  `).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })
 
 test('parse_int with string arg radix throws error', () => {
   return expectParsedError(stripIndent`
     parse_int(42, '2');
-  `).toMatchInlineSnapshot(
-    `"Line 1: Error: parse_int expects two arguments a string s, and a positive integer i between 2 and 36, inclusive."`
-  )
+  `).toMatchInlineSnapshot(`
+            "Line 1: Calling non-function value { \\"supplier\\":
+                function* () {
+                            return v;
+                        } }."
+          `)
 })

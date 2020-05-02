@@ -6,11 +6,10 @@ Object {
   "code": "stringify(parse(\\"function* f() { yield 1; } f();\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [ParseError: Yield expressions are not allowed],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 50,
+          "column": 15,
           "line": 1,
         },
         "start": Position {
@@ -18,11 +17,12 @@ Object {
           "line": 1,
         },
       },
+      "name": "parse",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: ParseError: Yield expressions are not allowed",
+  "parsedErrors": "Line 1: Name parse not declared.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -35,11 +35,10 @@ Object {
   "code": "stringify(parse(\\"'\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [ParseError: SyntaxError: Unterminated string constant (1:0)],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 20,
+          "column": 15,
           "line": 1,
         },
         "start": Position {
@@ -47,11 +46,12 @@ Object {
           "line": 1,
         },
       },
+      "name": "parse",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: ParseError: SyntaxError: Unterminated string constant (1:0)",
+  "parsedErrors": "Line 1: Name parse not declared.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],
@@ -64,11 +64,10 @@ Object {
   "code": "stringify(parse(\\"x = y = x;\\"), undefined, 2);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [ParseError: Assignment inside an expression is not allowed. Only assignment in a statement is allowed.],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 29,
+          "column": 15,
           "line": 1,
         },
         "start": Position {
@@ -76,11 +75,12 @@ Object {
           "line": 1,
         },
       },
+      "name": "parse",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: ParseError: Assignment inside an expression is not allowed. Only assignment in a statement is allowed.",
+  "parsedErrors": "Line 1: Name parse not declared.",
   "result": undefined,
   "resultStatus": "error",
   "visualiseListResult": Array [],

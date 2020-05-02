@@ -283,7 +283,7 @@ export function checkForUndefinedVariablesAndTransformAssignmentsToPropagateBack
   const previousVariablesToAst = new Map<
     string,
     { isConstant: boolean; variableLocationId: es.Expression }
-  >()
+    >()
   let variableScope = globalEnvironment
   let variableScopeId: es.Expression = globalIds.globals
   while (variableScope !== null) {
@@ -631,7 +631,7 @@ function addInfiniteLoopProtection(program: es.Program) {
   })
 }
 
-export function transpile(program: es.Program, id: number, skipUndefinedVariableErrors = false) {
+export function transpile(program: es.Program, id: number, skipUndefinedVariableErrors = false, variant: Value) {
   contextId = id
   refreshLatestIdentifiers(program)
   NATIVE_STORAGE[contextId].globals = {

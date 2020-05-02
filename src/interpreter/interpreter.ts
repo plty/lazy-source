@@ -507,7 +507,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     while (
       returnExpression.type === 'LogicalExpression' ||
       returnExpression.type === 'ConditionalExpression'
-    ) {
+      ) {
       if (returnExpression.type === 'LogicalExpression') {
         returnExpression = transformLogicalExpression(returnExpression)
       }
@@ -528,11 +528,11 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     let value: any // tslint:disable-line
     while (
       // tslint:disable-next-line
-      (yield* evaluate(node.test, context)) &&
-      !(value instanceof ReturnValue) &&
-      !(value instanceof BreakValue) &&
-      !(value instanceof TailCallReturnValue)
-    ) {
+    (yield* evaluate(node.test, context)) &&
+    !(value instanceof ReturnValue) &&
+    !(value instanceof BreakValue) &&
+    !(value instanceof TailCallReturnValue)
+      ) {
       value = yield* evaluate(node.body, context)
     }
     if (value instanceof BreakValue) {

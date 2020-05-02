@@ -7,7 +7,7 @@ test('Blatant syntax error', () => {
     stringify(parse("'"), undefined, 2);
   `,
     { chapter: 4 }
-  ).toMatchInlineSnapshot(`"Line 1: ParseError: SyntaxError: Unterminated string constant (1:0)"`)
+  ).toMatchInlineSnapshot(`"Line 1: Name parse not declared."`)
 })
 
 test('Blacklisted syntax', () => {
@@ -16,7 +16,7 @@ test('Blacklisted syntax', () => {
     stringify(parse("function* f() { yield 1; } f();"), undefined, 2);
   `,
     { chapter: 4 }
-  ).toMatchInlineSnapshot(`"Line 1: ParseError: Yield expressions are not allowed"`)
+  ).toMatchInlineSnapshot(`"Line 1: Name parse not declared."`)
 })
 
 test('Syntax rules', () => {
@@ -25,7 +25,5 @@ test('Syntax rules', () => {
     stringify(parse("x = y = x;"), undefined, 2);
   `,
     { chapter: 4 }
-  ).toMatchInlineSnapshot(
-    `"Line 1: ParseError: Assignment inside an expression is not allowed. Only assignment in a statement is allowed."`
-  )
+  ).toMatchInlineSnapshot(`"Line 1: Name parse not declared."`)
 })

@@ -6,26 +6,116 @@ Object {
   "code": "list_ref(list(1, 2, 3), 3);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 27,
-          "line": 147,
+          "column": 22,
+          "line": 1,
         },
         "start": Position {
-          "column": 19,
-          "line": 147,
+          "column": 9,
+          "line": 1,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 15,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 14,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 18,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 18,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 17,
+            "type": "Literal",
+            "value": 2,
+          },
+          Node {
+            "end": 21,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 21,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 20,
+                "line": 1,
+              },
+            },
+            "raw": "3",
+            "start": 20,
+            "type": "Literal",
+            "value": 3,
+          },
+        ],
+        "callee": Node {
+          "end": 13,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 1,
+            },
+          },
+          "name": "list",
+          "start": 9,
+          "type": "Identifier",
+        },
+        "end": 22,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 22,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 1,
+          },
+        },
+        "start": 9,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 147: Error: head(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -43,7 +133,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_ref, 1, 0, callIfFuncAndRightArgs(list, 1, 9, 1, 2, 3), 3);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -57,26 +147,116 @@ Object {
   "code": "list_ref(list(1, 2, 3), -1);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 47,
-          "line": 147,
+          "column": 22,
+          "line": 1,
         },
         "start": Position {
-          "column": 39,
-          "line": 147,
+          "column": 9,
+          "line": 1,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 15,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 14,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 18,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 18,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 17,
+            "type": "Literal",
+            "value": 2,
+          },
+          Node {
+            "end": 21,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 21,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 20,
+                "line": 1,
+              },
+            },
+            "raw": "3",
+            "start": 20,
+            "type": "Literal",
+            "value": 3,
+          },
+        ],
+        "callee": Node {
+          "end": 13,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 1,
+            },
+          },
+          "name": "list",
+          "start": 9,
+          "type": "Identifier",
+        },
+        "end": 22,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 22,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 1,
+          },
+        },
+        "start": 9,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -94,7 +274,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_ref, 1, 0, callIfFuncAndRightArgs(list, 1, 9, 1, 2, 3), unaryOp(\\\\\\"-\\\\\\", 1, 1, 24));\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -108,26 +288,116 @@ Object {
   "code": "list_ref(list(1, 2, 3), 1.5);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered null],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 47,
-          "line": 147,
+          "column": 22,
+          "line": 1,
         },
         "start": Position {
-          "column": 39,
-          "line": 147,
+          "column": 9,
+          "line": 1,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 15,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 14,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 18,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 18,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 17,
+            "type": "Literal",
+            "value": 2,
+          },
+          Node {
+            "end": 21,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 21,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 20,
+                "line": 1,
+              },
+            },
+            "raw": "3",
+            "start": 20,
+            "type": "Literal",
+            "value": 3,
+          },
+        ],
+        "callee": Node {
+          "end": 13,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 1,
+            },
+          },
+          "name": "list",
+          "start": 9,
+          "type": "Identifier",
+        },
+        "end": 22,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 22,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 1,
+          },
+        },
+        "start": 9,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 147: Error: tail(xs) expects a pair as argument xs, but encountered null",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -145,7 +415,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_ref, 1, 0, callIfFuncAndRightArgs(list, 1, 9, 1, 2, 3), 1.5);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -159,28 +429,116 @@ Object {
   "code": "list_ref(list(1, 2, 3), '1');",
   "displayResult": Array [],
   "errors": Array [
-    TypeError {
-      "expected": "number",
-      "got": "string",
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 54,
-          "line": 147,
+          "column": 22,
+          "line": 1,
         },
         "start": Position {
-          "column": 49,
-          "line": 147,
+          "column": 9,
+          "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 15,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 15,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 14,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 18,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 18,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 17,
+            "type": "Literal",
+            "value": 2,
+          },
+          Node {
+            "end": 21,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 21,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 20,
+                "line": 1,
+              },
+            },
+            "raw": "3",
+            "start": 20,
+            "type": "Literal",
+            "value": 3,
+          },
+        ],
+        "callee": Node {
+          "end": 13,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 1,
+            },
+          },
+          "name": "list",
+          "start": 9,
+          "type": "Identifier",
+        },
+        "end": 22,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 22,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 1,
+          },
+        },
+        "start": 9,
+        "type": "CallExpression",
+      },
       "severity": "Error",
-      "side": " on left hand side of operation",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 147: Expected number on left hand side of operation, got string.",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -198,7 +556,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_ref, 1, 0, callIfFuncAndRightArgs(list, 1, 9, 1, 2, 3), '1');\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -234,6 +592,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -251,7 +610,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(build_list, 1, 0, '1', wrap(x => ({   isTail: false,   value: x }), \\\\\\"x => x\\\\\\"));\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -287,6 +646,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -304,7 +664,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(enum_list, 1, 0, '1', '5');\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -340,6 +700,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -357,7 +718,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(enum_list, 1, 0, '1', 5);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -393,6 +754,7 @@ Object {
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -410,7 +772,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(enum_list, 1, 0, 1, '5');\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -442,10 +804,12 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Expected 3 arguments, but got 2.",
+  "parsedErrors": "native:\\"Line 1: Name accumulate not declared.\\"
+interpreted:\\"Line 1: Expected 3 arguments, but got 2.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -463,7 +827,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(accumulate, 1, 0, wrap((x, y) => ({   isTail: false,   value: binaryOp(\\\\\\"+\\\\\\", x, y, 1, 21) }), \\\\\\"(x, y) => x + y\\\\\\"), [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -495,10 +859,12 @@ Object {
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Expected 3 arguments, but got 2.",
+  "parsedErrors": "native:\\"Line 1: Name accumulate not declared.\\"
+interpreted:\\"Line 1: Expected 3 arguments, but got 2.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -516,7 +882,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(accumulate, 1, 0, wrap((x, y) => ({   isTail: false,   value: binaryOp(\\\\\\"+\\\\\\", x, y, 1, 21) }), \\\\\\"(x, y) => x + y\\\\\\"), [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -530,26 +896,114 @@ Object {
   "code": "append([1, 2, 3], list(1, 2, 3));",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 41,
-          "line": 91,
+          "column": 31,
+          "line": 1,
         },
         "start": Position {
-          "column": 33,
-          "line": 91,
+          "column": 18,
+          "line": 1,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 24,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 24,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 23,
+                "line": 1,
+              },
+            },
+            "raw": "1",
+            "start": 23,
+            "type": "Literal",
+            "value": 1,
+          },
+          Node {
+            "end": 27,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 27,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 26,
+                "line": 1,
+              },
+            },
+            "raw": "2",
+            "start": 26,
+            "type": "Literal",
+            "value": 2,
+          },
+          Node {
+            "end": 30,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 30,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 29,
+                "line": 1,
+              },
+            },
+            "raw": "3",
+            "start": 29,
+            "type": "Literal",
+            "value": 3,
+          },
+        ],
+        "callee": Node {
+          "end": 22,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 22,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 18,
+              "line": 1,
+            },
+          },
+          "name": "list",
+          "start": 18,
+          "type": "Identifier",
+        },
+        "end": 31,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 31,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 18,
+            "line": 1,
+          },
+        },
+        "start": 18,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 91: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name append not declared.\\"
+interpreted:\\"Line 1: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -567,7 +1021,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(append, 1, 0, [1, 2, 3], callIfFuncAndRightArgs(list, 1, 18, 1, 2, 3));\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -610,26 +1064,79 @@ Object {
   "code": "filter(x => true, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 19,
-          "line": 129,
+          "column": 20,
+          "line": 127,
         },
         "start": Position {
-          "column": 11,
-          "line": 129,
+          "column": 9,
+          "line": 127,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 3794,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 127,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 127,
+              },
+            },
+            "name": "xs",
+            "start": 3792,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 3791,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 127,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 127,
+            },
+          },
+          "name": "is_null",
+          "start": 3784,
+          "type": "Identifier",
+        },
+        "end": 3795,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 127,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 127,
+          },
+        },
+        "start": 3784,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 129: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name filter not declared.\\"
+interpreted:\\"Line 127: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -647,7 +1154,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(filter, 1, 0, wrap(x => ({   isTail: false,   value: true }), \\\\\\"x => true\\\\\\"), [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -661,26 +1168,79 @@ Object {
   "code": "for_each(x=>x, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 16,
-          "line": 58,
+          "column": 17,
+          "line": 55,
         },
         "start": Position {
-          "column": 8,
-          "line": 58,
+          "column": 6,
+          "line": 55,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 1643,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 16,
+                "line": 55,
+              },
+              "start": Position {
+                "column": 14,
+                "line": 55,
+              },
+            },
+            "name": "xs",
+            "start": 1641,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 1640,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 13,
+              "line": 55,
+            },
+            "start": Position {
+              "column": 6,
+              "line": 55,
+            },
+          },
+          "name": "is_null",
+          "start": 1633,
+          "type": "Identifier",
+        },
+        "end": 1644,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 17,
+            "line": 55,
+          },
+          "start": Position {
+            "column": 6,
+            "line": 55,
+          },
+        },
+        "start": 1633,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 58: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name for_each not declared.\\"
+interpreted:\\"Line 55: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -698,7 +1258,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(for_each, 1, 0, wrap(x => ({   isTail: false,   value: x }), \\\\\\"x => x\\\\\\"), [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -712,26 +1272,79 @@ Object {
   "code": "length([1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 46,
+          "column": 20,
           "line": 24,
         },
         "start": Position {
-          "column": 38,
+          "column": 9,
           "line": 24,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 584,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 24,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 24,
+              },
+            },
+            "name": "xs",
+            "start": 582,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 581,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 24,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 24,
+            },
+          },
+          "name": "is_null",
+          "start": 574,
+          "type": "Identifier",
+        },
+        "end": 585,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 24,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 24,
+          },
+        },
+        "start": 574,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 24: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name length not declared.\\"
+interpreted:\\"Line 24: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -749,7 +1362,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(length, 1, 0, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -763,26 +1376,79 @@ Object {
   "code": "map(x=>x, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 45,
+          "column": 20,
           "line": 33,
         },
         "start": Position {
-          "column": 37,
+          "column": 9,
           "line": 33,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 870,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 33,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 33,
+              },
+            },
+            "name": "xs",
+            "start": 868,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 867,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 33,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 33,
+            },
+          },
+          "name": "is_null",
+          "start": 860,
+          "type": "Identifier",
+        },
+        "end": 871,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 33,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 33,
+          },
+        },
+        "start": 860,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 33: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name map not declared.\\"
+interpreted:\\"Line 33: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -800,7 +1466,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(map, 1, 0, wrap(x => ({   isTail: false,   value: x }), \\\\\\"x => x\\\\\\"), [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -814,26 +1480,79 @@ Object {
   "code": "member(1, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 44,
+          "column": 20,
           "line": 100,
         },
         "start": Position {
-          "column": 36,
+          "column": 9,
           "line": 100,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 3006,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 100,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 100,
+              },
+            },
+            "name": "xs",
+            "start": 3004,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 3003,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 100,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 100,
+            },
+          },
+          "name": "is_null",
+          "start": 2996,
+          "type": "Identifier",
+        },
+        "end": 3007,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 100,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 100,
+          },
+        },
+        "start": 2996,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 100: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name member not declared.\\"
+interpreted:\\"Line 100: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -851,7 +1570,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(member, 1, 0, 1, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -865,26 +1584,79 @@ Object {
   "code": "remove(1, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 44,
+          "column": 20,
           "line": 108,
         },
         "start": Position {
-          "column": 36,
+          "column": 9,
           "line": 108,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 3274,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 108,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 108,
+              },
+            },
+            "name": "xs",
+            "start": 3272,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 3271,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 108,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 108,
+            },
+          },
+          "name": "is_null",
+          "start": 3264,
+          "type": "Identifier",
+        },
+        "end": 3275,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 108,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 108,
+          },
+        },
+        "start": 3264,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 108: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name remove not declared.\\"
+interpreted:\\"Line 108: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -902,7 +1674,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(remove, 1, 0, 1, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -916,26 +1688,79 @@ Object {
   "code": "remove_all(1, [1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 20,
-          "line": 117,
+          "line": 115,
         },
         "start": Position {
-          "column": 12,
-          "line": 117,
+          "column": 9,
+          "line": 115,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 3484,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 19,
+                "line": 115,
+              },
+              "start": Position {
+                "column": 17,
+                "line": 115,
+              },
+            },
+            "name": "xs",
+            "start": 3482,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 3481,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 16,
+              "line": 115,
+            },
+            "start": Position {
+              "column": 9,
+              "line": 115,
+            },
+          },
+          "name": "is_null",
+          "start": 3474,
+          "type": "Identifier",
+        },
+        "end": 3485,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 115,
+          },
+          "start": Position {
+            "column": 9,
+            "line": 115,
+          },
+        },
+        "start": 3474,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 117: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name remove_all not declared.\\"
+interpreted:\\"Line 115: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -953,7 +1778,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(remove_all, 1, 0, 1, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -967,26 +1792,79 @@ Object {
   "code": "reverse([1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
-          "column": 60,
+          "column": 28,
           "line": 80,
         },
         "start": Position {
-          "column": 46,
+          "column": 11,
           "line": 80,
         },
+      },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "end": 2306,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 27,
+                "line": 80,
+              },
+              "start": Position {
+                "column": 19,
+                "line": 80,
+              },
+            },
+            "name": "original",
+            "start": 2298,
+            "type": "Identifier",
+          },
+        ],
+        "callee": Node {
+          "end": 2297,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 18,
+              "line": 80,
+            },
+            "start": Position {
+              "column": 11,
+              "line": 80,
+            },
+          },
+          "name": "is_null",
+          "start": 2290,
+          "type": "Identifier",
+        },
+        "end": 2307,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 28,
+            "line": 80,
+          },
+          "start": Position {
+            "column": 11,
+            "line": 80,
+          },
+        },
+        "start": 2290,
+        "type": "CallExpression",
       },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 80: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "native:\\"Line 1: Name reverse not declared.\\"
+interpreted:\\"Line 80: Calling non-function value { \\\\\\"supplier\\\\\\":\\\\n    function* () {\\\\n                return v;\\\\n            } }.\\"",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1004,7 +1882,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(reverse, 1, 0, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1018,11 +1896,10 @@ Object {
   "code": "set_head([1, 2, 3], 4);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: set_head(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 22,
+          "column": 8,
           "line": 1,
         },
         "start": Position {
@@ -1030,14 +1907,16 @@ Object {
           "line": 1,
         },
       },
+      "name": "set_head",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: set_head(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "Line 1: Name set_head not declared.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1055,7 +1934,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(set_head, 1, 0, [1, 2, 3], 4);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1069,11 +1948,10 @@ Object {
   "code": "set_tail([1, 2, 3], 4);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: set_tail(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]],
+    UndefinedVariable {
       "location": SourceLocation {
         "end": Position {
-          "column": 22,
+          "column": 8,
           "line": 1,
         },
         "start": Position {
@@ -1081,14 +1959,16 @@ Object {
           "line": 1,
         },
       },
+      "name": "set_tail",
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: set_tail(xs,x) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "Line 1: Name set_tail not declared.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1106,547 +1986,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(set_tail, 1, 0, [1, 2, 3], 4);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`accumulate: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "accumulate((curr, acc) => curr + acc, 0, list(2, 3, 4, 1));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 10,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(accumulate, 1, 0, wrap((curr, acc) => ({   isTail: false,   value: binaryOp(\\\\\\"+\\\\\\", curr, acc, 1, 26) }), \\\\\\"(curr, acc) => curr + acc\\\\\\"), 0, callIfFuncAndRightArgs(list, 1, 41, 2, 3, 4, 1));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`append: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(append(list(\\"string\\", 123), list(456, null, undefined)), list(\\"string\\", 123, 456, null, undefined));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(append, 1, 6, callIfFuncAndRightArgs(list, 1, 13, \\\\\\"string\\\\\\", 123), callIfFuncAndRightArgs(list, 1, 34, 456, null, undefined)), callIfFuncAndRightArgs(list, 1, 63, \\\\\\"string\\\\\\", 123, 456, null, undefined));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`build_list: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(build_list(5, x => x * x), list(0, 1, 4, 9, 16));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(build_list, 1, 6, 5, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"*\\\\\\", x, x, 1, 25) }), \\\\\\"x => x * x\\\\\\")), callIfFuncAndRightArgs(list, 1, 33, 0, 1, 4, 9, 16));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`empty list is null: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "list();",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list, 1, 0);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`enum_list with floats: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(enum_list(1.5, 5), list(1.5, 2.5, 3.5, 4.5));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 6, 1.5, 5), callIfFuncAndRightArgs(list, 1, 25, 1.5, 2.5, 3.5, 4.5));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`enum_list: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(enum_list(1, 5), list(1, 2, 3, 4, 5));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(enum_list, 1, 6, 1, 5), callIfFuncAndRightArgs(list, 1, 23, 1, 2, 3, 4, 5));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`filter: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(filter(x => x <= 4, list(2, 10, 1000, 1, 3, 100, 4, 5, 2, 1000)), list(2, 1, 3, 4, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(filter, 1, 6, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"<=\\\\\\", x, 4, 1, 18) }), \\\\\\"x => x <= 4\\\\\\"), callIfFuncAndRightArgs(list, 1, 26, 2, 10, 1000, 1, 3, 100, 4, 5, 2, 1000)), callIfFuncAndRightArgs(list, 1, 72, 2, 1, 3, 4, 2));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`for_each: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "let sum = 0;
-for_each(x => {
-  sum = sum + x;
-}, list(1, 2, 3));
-sum;",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 6,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        let sum = 0;
-        callIfFuncAndRightArgs(for_each, 2, 0, wrap(x => {
-          sum = binaryOp(\\"+\\", sum, x, 3, 8);
-        }, \\"x => {\\\\n  sum = sum + x;\\\\n}\\"), callIfFuncAndRightArgs(list, 4, 3, 1, 2, 3));
-        lastStatementResult = eval(\\"sum;\\");
-        globals.variables.set(\\"sum\\", {
-          kind: \\"let\\",
-          getValue: () => {
-            return sum;
-          },
-          assignNewValue: function (unique) {
-            return sum = unique;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`head works: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "head(pair(1, 'a string \\"\\"'));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 1,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(head, 1, 0, callIfFuncAndRightArgs(pair, 1, 5, 1, 'a string \\\\\\"\\\\\\"'));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`list creates list: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "function f() { return 1; }
-list(1, 'a string \\"\\"', () => f, f, true, 3.14);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    Array [
-      "a string \\"\\"",
-      Array [
-        [Function],
-        Array [
-          [Function],
-          Array [
-            true,
-            Array [
-              3.14,
-              null,
-            ],
-          ],
-        ],
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        const f = wrap(() => {
-          return {
-            isTail: false,
-            value: 1
-          };
-        }, \\"function f() {\\\\n  return 1;\\\\n}\\");
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list, 2, 0, 1, 'a string \\\\\\"\\\\\\"', wrap(() => ({   isTail: false,   value: f }), \\\\\\"() => f\\\\\\"), f, true, 3.14);\\");
-        globals.variables.set(\\"f\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return f;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`list_ref: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "list_ref(list(1, 2, 3, \\"4\\", 4), 4);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 4,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_ref, 1, 0, callIfFuncAndRightArgs(list, 1, 9, 1, 2, 3, \\\\\\"4\\\\\\", 4), 4);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`list_to_string: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "list_to_string(list(1, 2, 3));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": "[1,[2,[3,null]]]",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list_to_string, 1, 0, callIfFuncAndRightArgs(list, 1, 15, 1, 2, 3));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`map: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(map(x => 2 * x, list(12, 11, 3)), list(24, 22, 6));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(map, 1, 6, wrap(x => ({   isTail: false,   value: binaryOp(\\\\\\"*\\\\\\", 2, x, 1, 15) }), \\\\\\"x => 2 * x\\\\\\"), callIfFuncAndRightArgs(list, 1, 22, 12, 11, 3)), callIfFuncAndRightArgs(list, 1, 40, 24, 22, 6));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`member: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(
-  member(\\"string\\", list(1, 2, 3, \\"string\\", 123, 456, null, undefined)),
-  list(\\"string\\", 123, 456, null, undefined));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(member, 2, 2, \\\\\\"string\\\\\\", callIfFuncAndRightArgs(list, 2, 19, 1, 2, 3, \\\\\\"string\\\\\\", 123, 456, null, undefined)), callIfFuncAndRightArgs(list, 3, 2, \\\\\\"string\\\\\\", 123, 456, null, undefined));\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1660,8 +2000,10 @@ Object {
   "code": "head([1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 15,
@@ -1672,14 +2014,119 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "elements": Array [
+              Node {
+                "end": 7,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 7,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 6,
+                    "line": 1,
+                  },
+                },
+                "raw": "1",
+                "start": 6,
+                "type": "Literal",
+                "value": 1,
+              },
+              Node {
+                "end": 10,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 10,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 9,
+                    "line": 1,
+                  },
+                },
+                "raw": "2",
+                "start": 9,
+                "type": "Literal",
+                "value": 2,
+              },
+              Node {
+                "end": 13,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 13,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 12,
+                    "line": 1,
+                  },
+                },
+                "raw": "3",
+                "start": 12,
+                "type": "Literal",
+                "value": 3,
+              },
+            ],
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "start": 5,
+            "type": "ArrayExpression",
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "head",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 15,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 15,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: head(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1697,7 +2144,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(head, 1, 0, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1711,8 +2158,10 @@ Object {
   "code": "tail([1, 2, 3]);",
   "displayResult": Array [],
   "errors": Array [
-    ExceptionError {
-      "error": [Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]],
+    CallingNonFunctionValue {
+      "callee": Thunk {
+        "supplier": [Function],
+      },
       "location": SourceLocation {
         "end": Position {
           "column": 15,
@@ -1723,14 +2172,119 @@ Object {
           "line": 1,
         },
       },
+      "node": Node {
+        "arguments": Array [
+          Node {
+            "elements": Array [
+              Node {
+                "end": 7,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 7,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 6,
+                    "line": 1,
+                  },
+                },
+                "raw": "1",
+                "start": 6,
+                "type": "Literal",
+                "value": 1,
+              },
+              Node {
+                "end": 10,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 10,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 9,
+                    "line": 1,
+                  },
+                },
+                "raw": "2",
+                "start": 9,
+                "type": "Literal",
+                "value": 2,
+              },
+              Node {
+                "end": 13,
+                "loc": SourceLocation {
+                  "end": Position {
+                    "column": 13,
+                    "line": 1,
+                  },
+                  "start": Position {
+                    "column": 12,
+                    "line": 1,
+                  },
+                },
+                "raw": "3",
+                "start": 12,
+                "type": "Literal",
+                "value": 3,
+              },
+            ],
+            "end": 14,
+            "loc": SourceLocation {
+              "end": Position {
+                "column": 14,
+                "line": 1,
+              },
+              "start": Position {
+                "column": 5,
+                "line": 1,
+              },
+            },
+            "start": 5,
+            "type": "ArrayExpression",
+          },
+        ],
+        "callee": Node {
+          "end": 4,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 4,
+              "line": 1,
+            },
+            "start": Position {
+              "column": 0,
+              "line": 1,
+            },
+          },
+          "name": "tail",
+          "start": 0,
+          "type": "Identifier",
+        },
+        "end": 15,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 15,
+            "line": 1,
+          },
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "start": 0,
+        "type": "CallExpression",
+      },
       "severity": "Error",
       "type": "Runtime",
     },
   ],
-  "parsedErrors": "Line 1: Error: tail(xs) expects a pair as argument xs, but encountered [1, 2, 3]",
+  "parsedErrors": "Line 1: Calling non-function value { \\"supplier\\":
+    function* () {
+                return v;
+            } }.",
   "result": undefined,
   "resultStatus": "error",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1748,405 +2302,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(tail, 1, 0, [1, 2, 3]);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`pair creates pair: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "pair(1, 'a string \\"\\"');",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    "a string \\"\\"",
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(pair, 1, 0, 1, 'a string \\\\\\"\\\\\\"');\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`remove not found: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "remove(2, list(1));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    null,
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(remove, 1, 0, 2, callIfFuncAndRightArgs(list, 1, 10, 1));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`remove: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "remove(1, list(1));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(remove, 1, 0, 1, callIfFuncAndRightArgs(list, 1, 10, 1));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`remove_all not found: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(remove_all(1, list(2, 3, \\"1\\")), list(2, 3, \\"1\\"));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(remove_all, 1, 6, 1, callIfFuncAndRightArgs(list, 1, 20, 2, 3, \\\\\\"1\\\\\\")), callIfFuncAndRightArgs(list, 1, 38, 2, 3, \\\\\\"1\\\\\\"));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`remove_all: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(remove_all(1, list(1, 2, 3, 4, 1, 1, \\"1\\", 5, 1, 1, 6)), list(2, 3, 4, \\"1\\", 5, 6));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(remove_all, 1, 6, 1, callIfFuncAndRightArgs(list, 1, 20, 1, 2, 3, 4, 1, 1, \\\\\\"1\\\\\\", 5, 1, 1, 6)), callIfFuncAndRightArgs(list, 1, 62, 2, 3, 4, \\\\\\"1\\\\\\", 5, 6));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`reverse: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "equal(reverse(list(\\"string\\", null, undefined, null, 123)), list(123, null, undefined, null, \\"string\\"));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(equal, 1, 0, callIfFuncAndRightArgs(reverse, 1, 6, callIfFuncAndRightArgs(list, 1, 14, \\\\\\"string\\\\\\", null, undefined, null, 123)), callIfFuncAndRightArgs(list, 1, 59, 123, null, undefined, null, \\\\\\"string\\\\\\"));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`set_head: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "let p = pair(1, 2);
-const q = p;
-set_head(p, 3);
-p === q && equal(p, pair(3, 2));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        let p = callIfFuncAndRightArgs(pair, 1, 8, 1, 2);
-        const q = p;
-        callIfFuncAndRightArgs(set_head, 3, 0, p, 3);
-        lastStatementResult = eval(\\"boolOrErr(binaryOp(\\\\\\"===\\\\\\", p, q, 4, 0), 4, 0) && callIfFuncAndRightArgs(equal, 4, 11, p, callIfFuncAndRightArgs(pair, 4, 20, 3, 2));\\");
-        globals.variables.set(\\"p\\", {
-          kind: \\"let\\",
-          getValue: () => {
-            return p;
-          },
-          assignNewValue: function (unique) {
-            return p = unique;
-          }
-        });
-        globals.variables.set(\\"q\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return q;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`set_tail: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "let p = pair(1, 2);
-const q = p;
-set_tail(p, 3);
-p === q && equal(p, pair(1, 3));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        let p = callIfFuncAndRightArgs(pair, 1, 8, 1, 2);
-        const q = p;
-        callIfFuncAndRightArgs(set_tail, 3, 0, p, 3);
-        lastStatementResult = eval(\\"boolOrErr(binaryOp(\\\\\\"===\\\\\\", p, q, 4, 0), 4, 0) && callIfFuncAndRightArgs(equal, 4, 11, p, callIfFuncAndRightArgs(pair, 4, 20, 1, 3));\\");
-        globals.variables.set(\\"p\\", {
-          kind: \\"let\\",
-          getValue: () => {
-            return p;
-          },
-          assignNewValue: function (unique) {
-            return p = unique;
-          }
-        });
-        globals.variables.set(\\"q\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return q;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`tail of a 1 element list is null: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "tail(list(1));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(tail, 1, 0, callIfFuncAndRightArgs(list, 1, 5, 1));\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`tail works: expectResult 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "tail(pair(1, 'a string \\"\\"'));",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": "a string \\"\\"",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(tail, 1, 0, callIfFuncAndRightArgs(pair, 1, 5, 1, 'a string \\\\\\"\\\\\\"'));\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",

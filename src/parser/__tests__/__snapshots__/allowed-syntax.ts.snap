@@ -1,46 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Syntaxes are allowed in the chapter they are introduced 0: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      null,
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 0: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -55,477 +14,7 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 1: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"function name(a, b) {\\\\n  const sum = a + b;\\\\n  if (sum > 1) {\\\\n    return sum;\\\\n  } else {\\\\n    if (a % 2 === 0) {\\\\n      return -1;\\\\n    } else if (b % 2 === 0) {\\\\n      return 1;\\\\n    } else {\\\\n      return a > b ? 0 : -2;\\\\n    }\\\\n  }\\\\n}\\\\nname(1, 2);\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "constant_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "name",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "function_definition",
-                Array [
-                  Array [
-                    Array [
-                      "name",
-                      Array [
-                        "a",
-                        null,
-                      ],
-                    ],
-                    Array [
-                      Array [
-                        "name",
-                        Array [
-                          "b",
-                          null,
-                        ],
-                      ],
-                      null,
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      "sequence",
-                      Array [
-                        Array [
-                          Array [
-                            "constant_declaration",
-                            Array [
-                              Array [
-                                "name",
-                                Array [
-                                  "sum",
-                                  null,
-                                ],
-                              ],
-                              Array [
-                                Array [
-                                  "application",
-                                  Array [
-                                    Array [
-                                      "name",
-                                      Array [
-                                        "+",
-                                        null,
-                                      ],
-                                    ],
-                                    Array [
-                                      Array [
-                                        Array [
-                                          "name",
-                                          Array [
-                                            "a",
-                                            null,
-                                          ],
-                                        ],
-                                        Array [
-                                          Array [
-                                            "name",
-                                            Array [
-                                              "b",
-                                              null,
-                                            ],
-                                          ],
-                                          null,
-                                        ],
-                                      ],
-                                      null,
-                                    ],
-                                  ],
-                                ],
-                                null,
-                              ],
-                            ],
-                          ],
-                          Array [
-                            Array [
-                              "conditional_statement",
-                              Array [
-                                Array [
-                                  "application",
-                                  Array [
-                                    Array [
-                                      "name",
-                                      Array [
-                                        ">",
-                                        null,
-                                      ],
-                                    ],
-                                    Array [
-                                      Array [
-                                        Array [
-                                          "name",
-                                          Array [
-                                            "sum",
-                                            null,
-                                          ],
-                                        ],
-                                        Array [
-                                          1,
-                                          null,
-                                        ],
-                                      ],
-                                      null,
-                                    ],
-                                  ],
-                                ],
-                                Array [
-                                  Array [
-                                    "block",
-                                    Array [
-                                      Array [
-                                        "return_statement",
-                                        Array [
-                                          Array [
-                                            "name",
-                                            Array [
-                                              "sum",
-                                              null,
-                                            ],
-                                          ],
-                                          null,
-                                        ],
-                                      ],
-                                      null,
-                                    ],
-                                  ],
-                                  Array [
-                                    Array [
-                                      "block",
-                                      Array [
-                                        Array [
-                                          "conditional_statement",
-                                          Array [
-                                            Array [
-                                              "application",
-                                              Array [
-                                                Array [
-                                                  "name",
-                                                  Array [
-                                                    "===",
-                                                    null,
-                                                  ],
-                                                ],
-                                                Array [
-                                                  Array [
-                                                    Array [
-                                                      "application",
-                                                      Array [
-                                                        Array [
-                                                          "name",
-                                                          Array [
-                                                            "%",
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        Array [
-                                                          Array [
-                                                            Array [
-                                                              "name",
-                                                              Array [
-                                                                "a",
-                                                                null,
-                                                              ],
-                                                            ],
-                                                            Array [
-                                                              2,
-                                                              null,
-                                                            ],
-                                                          ],
-                                                          null,
-                                                        ],
-                                                      ],
-                                                    ],
-                                                    Array [
-                                                      0,
-                                                      null,
-                                                    ],
-                                                  ],
-                                                  null,
-                                                ],
-                                              ],
-                                            ],
-                                            Array [
-                                              Array [
-                                                "block",
-                                                Array [
-                                                  Array [
-                                                    "return_statement",
-                                                    Array [
-                                                      Array [
-                                                        "application",
-                                                        Array [
-                                                          Array [
-                                                            "name",
-                                                            Array [
-                                                              "-",
-                                                              null,
-                                                            ],
-                                                          ],
-                                                          Array [
-                                                            Array [
-                                                              1,
-                                                              null,
-                                                            ],
-                                                            null,
-                                                          ],
-                                                        ],
-                                                      ],
-                                                      null,
-                                                    ],
-                                                  ],
-                                                  null,
-                                                ],
-                                              ],
-                                              Array [
-                                                Array [
-                                                  "conditional_statement",
-                                                  Array [
-                                                    Array [
-                                                      "application",
-                                                      Array [
-                                                        Array [
-                                                          "name",
-                                                          Array [
-                                                            "===",
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        Array [
-                                                          Array [
-                                                            Array [
-                                                              "application",
-                                                              Array [
-                                                                Array [
-                                                                  "name",
-                                                                  Array [
-                                                                    "%",
-                                                                    null,
-                                                                  ],
-                                                                ],
-                                                                Array [
-                                                                  Array [
-                                                                    Array [
-                                                                      "name",
-                                                                      Array [
-                                                                        "b",
-                                                                        null,
-                                                                      ],
-                                                                    ],
-                                                                    Array [
-                                                                      2,
-                                                                      null,
-                                                                    ],
-                                                                  ],
-                                                                  null,
-                                                                ],
-                                                              ],
-                                                            ],
-                                                            Array [
-                                                              0,
-                                                              null,
-                                                            ],
-                                                          ],
-                                                          null,
-                                                        ],
-                                                      ],
-                                                    ],
-                                                    Array [
-                                                      Array [
-                                                        "block",
-                                                        Array [
-                                                          Array [
-                                                            "return_statement",
-                                                            Array [
-                                                              1,
-                                                              null,
-                                                            ],
-                                                          ],
-                                                          null,
-                                                        ],
-                                                      ],
-                                                      Array [
-                                                        Array [
-                                                          "block",
-                                                          Array [
-                                                            Array [
-                                                              "return_statement",
-                                                              Array [
-                                                                Array [
-                                                                  "conditional_expression",
-                                                                  Array [
-                                                                    Array [
-                                                                      "application",
-                                                                      Array [
-                                                                        Array [
-                                                                          "name",
-                                                                          Array [
-                                                                            ">",
-                                                                            null,
-                                                                          ],
-                                                                        ],
-                                                                        Array [
-                                                                          Array [
-                                                                            Array [
-                                                                              "name",
-                                                                              Array [
-                                                                                "a",
-                                                                                null,
-                                                                              ],
-                                                                            ],
-                                                                            Array [
-                                                                              Array [
-                                                                                "name",
-                                                                                Array [
-                                                                                  "b",
-                                                                                  null,
-                                                                                ],
-                                                                              ],
-                                                                              null,
-                                                                            ],
-                                                                          ],
-                                                                          null,
-                                                                        ],
-                                                                      ],
-                                                                    ],
-                                                                    Array [
-                                                                      0,
-                                                                      Array [
-                                                                        Array [
-                                                                          "application",
-                                                                          Array [
-                                                                            Array [
-                                                                              "name",
-                                                                              Array [
-                                                                                "-",
-                                                                                null,
-                                                                              ],
-                                                                            ],
-                                                                            Array [
-                                                                              Array [
-                                                                                2,
-                                                                                null,
-                                                                              ],
-                                                                              null,
-                                                                            ],
-                                                                          ],
-                                                                        ],
-                                                                        null,
-                                                                      ],
-                                                                    ],
-                                                                  ],
-                                                                ],
-                                                                null,
-                                                              ],
-                                                            ],
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        null,
-                                                      ],
-                                                    ],
-                                                  ],
-                                                ],
-                                                null,
-                                              ],
-                                            ],
-                                          ],
-                                        ],
-                                        null,
-                                      ],
-                                    ],
-                                    null,
-                                  ],
-                                ],
-                              ],
-                            ],
-                            null,
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "application",
-            Array [
-              Array [
-                "name",
-                Array [
-                  "name",
-                  null,
-                ],
-              ],
-              Array [
-                Array [
-                  1,
-                  Array [
-                    2,
-                    null,
-                  ],
-                ],
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"function name(a, b) {\\\\\\\\n  const sum = a + b;\\\\\\\\n  if (sum > 1) {\\\\\\\\n    return sum;\\\\\\\\n  } else {\\\\\\\\n    if (a % 2 === 0) {\\\\\\\\n      return -1;\\\\\\\\n    } else if (b % 2 === 0) {\\\\\\\\n      return 1;\\\\\\\\n    } else {\\\\\\\\n      return a > b ? 0 : -2;\\\\\\\\n    }\\\\\\\\n  }\\\\\\\\n}\\\\\\\\nname(1, 2);\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 1: passes 1`] = `
+exports[`Syntaxes are allowed in the chapter they are introduced 2: passes 1`] = `
 Object {
   "alertResult": Array [],
   "code": "function name(a, b) {
@@ -545,10 +34,13 @@ Object {
 name(1, 2);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 3,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:3",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -601,7 +93,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -609,75 +101,19 @@ const globals = $NATIVE_STORAGE.globals;
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 2: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"(() => true)();\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "application",
-    Array [
-      Array [
-        "function_definition",
-        Array [
-          null,
-          Array [
-            Array [
-              "return_statement",
-              Array [
-                true,
-                null,
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      Array [
-        null,
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"(() => true)();\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 2: passes 1`] = `
+exports[`Syntaxes are allowed in the chapter they are introduced 2: passes 2`] = `
 Object {
   "alertResult": Array [],
   "code": "(() => true)();",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -695,123 +131,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(wrap(() => ({   isTail: false,   value: true }), \\\\\\"() => true\\\\\\"), 1, 0);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 3: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"((x, y) => { return x + y; })(1, 2);\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "application",
-    Array [
-      Array [
-        "function_definition",
-        Array [
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "name",
-                Array [
-                  "y",
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-          Array [
-            Array [
-              "return_statement",
-              Array [
-                Array [
-                  "application",
-                  Array [
-                    Array [
-                      "name",
-                      Array [
-                        "+",
-                        null,
-                      ],
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            "x",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          Array [
-                            "name",
-                            Array [
-                              "y",
-                              null,
-                            ],
-                          ],
-                          null,
-                        ],
-                      ],
-                      null,
-                    ],
-                  ],
-                ],
-                null,
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      Array [
-        Array [
-          1,
-          Array [
-            2,
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"((x, y) => { return x + y; })(1, 2);\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -825,10 +145,13 @@ Object {
   "code": "((x, y) => { return x + y; })(1, 2);",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 3,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:3",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -846,42 +169,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"callIfFuncAndRightArgs(wrap((x, y) => {   return {     isTail: false,     value: binaryOp(\\\\\\"+\\\\\\", x, y, 1, 20)   }; }, \\\\\\"(x, y) => {\\\\\\\\n  return x + y;\\\\\\\\n}\\\\\\"), 1, 0, 1, 2);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 4: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"true;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"true;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -895,10 +183,13 @@ Object {
   "code": "true;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -916,42 +207,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"true;\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 5: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"false;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"false;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -965,10 +221,13 @@ Object {
   "code": "false;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": false,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:false",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -986,42 +245,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"false;\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 6: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"'a string \\\\\\"\\\\\\" \\\\\\\\'\\\\\\\\'';\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": "a string \\"\\" ''",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"'a string \\\\\\\\\\\\\\"\\\\\\\\\\\\\\" \\\\\\\\\\\\\\\\'\\\\\\\\\\\\\\\\'';\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1035,10 +259,13 @@ Object {
   "code": "'a string \\"\\" \\\\'\\\\'';",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": "a string \\"\\" ''",
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:\\"a string \\\\\\"\\\\\\" ''\\"",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1056,162 +283,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"'a string \\\\\\"\\\\\\" \\\\\\\\'\\\\\\\\'';\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 7: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"31.4 + (-3.14e10) * -1 % 2 / 1.5;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "application",
-    Array [
-      Array [
-        "name",
-        Array [
-          "+",
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          31.4,
-          Array [
-            Array [
-              "application",
-              Array [
-                Array [
-                  "name",
-                  Array [
-                    "/",
-                    null,
-                  ],
-                ],
-                Array [
-                  Array [
-                    Array [
-                      "application",
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            "%",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          Array [
-                            Array [
-                              "application",
-                              Array [
-                                Array [
-                                  "name",
-                                  Array [
-                                    "*",
-                                    null,
-                                  ],
-                                ],
-                                Array [
-                                  Array [
-                                    Array [
-                                      "application",
-                                      Array [
-                                        Array [
-                                          "name",
-                                          Array [
-                                            "-",
-                                            null,
-                                          ],
-                                        ],
-                                        Array [
-                                          Array [
-                                            31400000000,
-                                            null,
-                                          ],
-                                          null,
-                                        ],
-                                      ],
-                                    ],
-                                    Array [
-                                      Array [
-                                        "application",
-                                        Array [
-                                          Array [
-                                            "name",
-                                            Array [
-                                              "-",
-                                              null,
-                                            ],
-                                          ],
-                                          Array [
-                                            Array [
-                                              1,
-                                              null,
-                                            ],
-                                            null,
-                                          ],
-                                        ],
-                                      ],
-                                      null,
-                                    ],
-                                  ],
-                                  null,
-                                ],
-                              ],
-                            ],
-                            Array [
-                              2,
-                              null,
-                            ],
-                          ],
-                          null,
-                        ],
-                      ],
-                    ],
-                    Array [
-                      1.5,
-                      null,
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-            ],
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"31.4 + (-3.14e10) * -1 % 2 / 1.5;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1225,10 +297,13 @@ Object {
   "code": "31.4 + (-3.14e10) * -1 % 2 / 1.5;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 31.4,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:31.4",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1246,291 +321,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"binaryOp(\\\\\\"+\\\\\\", 31.4, binaryOp(\\\\\\"/\\\\\\", binaryOp(\\\\\\"%\\\\\\", binaryOp(\\\\\\"*\\\\\\", unaryOp(\\\\\\"-\\\\\\", 3.14e10, 1, 8), unaryOp(\\\\\\"-\\\\\\", 1, 1, 20), 1, 7), 2, 1, 7), 1.5, 1, 7), 1, 0);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 8: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"!false === (1 !== 2) && 1 < 2 && 1 <= 2 && 2 >= 1 && 2 > 1 || false;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "boolean_operation",
-    Array [
-      Array [
-        "name",
-        Array [
-          "||",
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          Array [
-            "boolean_operation",
-            Array [
-              Array [
-                "name",
-                Array [
-                  "&&",
-                  null,
-                ],
-              ],
-              Array [
-                Array [
-                  Array [
-                    "boolean_operation",
-                    Array [
-                      Array [
-                        "name",
-                        Array [
-                          "&&",
-                          null,
-                        ],
-                      ],
-                      Array [
-                        Array [
-                          Array [
-                            "boolean_operation",
-                            Array [
-                              Array [
-                                "name",
-                                Array [
-                                  "&&",
-                                  null,
-                                ],
-                              ],
-                              Array [
-                                Array [
-                                  Array [
-                                    "boolean_operation",
-                                    Array [
-                                      Array [
-                                        "name",
-                                        Array [
-                                          "&&",
-                                          null,
-                                        ],
-                                      ],
-                                      Array [
-                                        Array [
-                                          Array [
-                                            "application",
-                                            Array [
-                                              Array [
-                                                "name",
-                                                Array [
-                                                  "===",
-                                                  null,
-                                                ],
-                                              ],
-                                              Array [
-                                                Array [
-                                                  Array [
-                                                    "application",
-                                                    Array [
-                                                      Array [
-                                                        "name",
-                                                        Array [
-                                                          "!",
-                                                          null,
-                                                        ],
-                                                      ],
-                                                      Array [
-                                                        Array [
-                                                          false,
-                                                          null,
-                                                        ],
-                                                        null,
-                                                      ],
-                                                    ],
-                                                  ],
-                                                  Array [
-                                                    Array [
-                                                      "application",
-                                                      Array [
-                                                        Array [
-                                                          "name",
-                                                          Array [
-                                                            "!==",
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        Array [
-                                                          Array [
-                                                            1,
-                                                            Array [
-                                                              2,
-                                                              null,
-                                                            ],
-                                                          ],
-                                                          null,
-                                                        ],
-                                                      ],
-                                                    ],
-                                                    null,
-                                                  ],
-                                                ],
-                                                null,
-                                              ],
-                                            ],
-                                          ],
-                                          Array [
-                                            Array [
-                                              "application",
-                                              Array [
-                                                Array [
-                                                  "name",
-                                                  Array [
-                                                    "<",
-                                                    null,
-                                                  ],
-                                                ],
-                                                Array [
-                                                  Array [
-                                                    1,
-                                                    Array [
-                                                      2,
-                                                      null,
-                                                    ],
-                                                  ],
-                                                  null,
-                                                ],
-                                              ],
-                                            ],
-                                            null,
-                                          ],
-                                        ],
-                                        null,
-                                      ],
-                                    ],
-                                  ],
-                                  Array [
-                                    Array [
-                                      "application",
-                                      Array [
-                                        Array [
-                                          "name",
-                                          Array [
-                                            "<=",
-                                            null,
-                                          ],
-                                        ],
-                                        Array [
-                                          Array [
-                                            1,
-                                            Array [
-                                              2,
-                                              null,
-                                            ],
-                                          ],
-                                          null,
-                                        ],
-                                      ],
-                                    ],
-                                    null,
-                                  ],
-                                ],
-                                null,
-                              ],
-                            ],
-                          ],
-                          Array [
-                            Array [
-                              "application",
-                              Array [
-                                Array [
-                                  "name",
-                                  Array [
-                                    ">=",
-                                    null,
-                                  ],
-                                ],
-                                Array [
-                                  Array [
-                                    2,
-                                    Array [
-                                      1,
-                                      null,
-                                    ],
-                                  ],
-                                  null,
-                                ],
-                              ],
-                            ],
-                            null,
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      "application",
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            ">",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          Array [
-                            2,
-                            Array [
-                              1,
-                              null,
-                            ],
-                          ],
-                          null,
-                        ],
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-                null,
-              ],
-            ],
-          ],
-          Array [
-            false,
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"!false === (1 !== 2) && 1 < 2 && 1 <= 2 && 2 >= 1 && 2 > 1 || false;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1544,10 +335,13 @@ Object {
   "code": "!false === (1 !== 2) && 1 < 2 && 1 <= 2 && 2 >= 1 && 2 > 1 || false;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": true,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:true",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1565,54 +359,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"boolOrErr(boolOrErr(boolOrErr(boolOrErr(boolOrErr(binaryOp(\\\\\\"===\\\\\\", unaryOp(\\\\\\"!\\\\\\", false, 1, 0), binaryOp(\\\\\\"!==\\\\\\", 1, 2, 1, 12), 1, 0), 1, 0) && binaryOp(\\\\\\"<\\\\\\", 1, 2, 1, 24), 1, 0) && binaryOp(\\\\\\"<=\\\\\\", 1, 2, 1, 33), 1, 0) && binaryOp(\\\\\\">=\\\\\\", 2, 1, 1, 43), 1, 0) && binaryOp(\\\\\\">\\\\\\", 2, 1, 1, 53), 1, 0) || false;\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 9: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"true ? 1 : 2;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "conditional_expression",
-    Array [
-      true,
-      Array [
-        1,
-        Array [
-          2,
-          null,
-        ],
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"true ? 1 : 2;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1626,10 +373,13 @@ Object {
   "code": "true ? 1 : 2;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 1,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:1",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1647,7 +397,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"boolOrErr(true, 1, 0) ? 1 : 2;\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1690,51 +440,19 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 10: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"null;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"null;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 10: passes 1`] = `
 Object {
   "alertResult": Array [],
   "code": "null;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": null,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:null",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -1752,7 +470,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"null;\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -1795,100 +513,6 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 11: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"pair(1, null);\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "application",
-    Array [
-      Array [
-        "name",
-        Array [
-          "pair",
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          1,
-          Array [
-            null,
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"pair(1, null);\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 11: passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "pair(1, null);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    null,
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(pair, 1, 0, 1, null);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 12: fails a chapter below 1`] = `
 Object {
   "alertResult": Array [],
@@ -1914,97 +538,6 @@ Object {
   "parsedErrors": "Line 1: Name list not declared.",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 12: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"list(1);\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "application",
-    Array [
-      Array [
-        "name",
-        Array [
-          "list",
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          1,
-          null,
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"list(1);\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 12: passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "list(1);",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    null,
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(list, 1, 0, 1);\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -2367,161 +900,6 @@ Line 2: While statements are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 13: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let i = 1;\\\\nwhile (i < 5) {\\\\n  i = i + 1;\\\\n}\\\\ni;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            Array [
-              1,
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "while_loop",
-            Array [
-              Array [
-                "application",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "<",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      Array [
-                        "name",
-                        Array [
-                          "i",
-                          null,
-                        ],
-                      ],
-                      Array [
-                        5,
-                        null,
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                Array [
-                  "block",
-                  Array [
-                    Array [
-                      "assignment",
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            "i",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          Array [
-                            "application",
-                            Array [
-                              Array [
-                                "name",
-                                Array [
-                                  "+",
-                                  null,
-                                ],
-                              ],
-                              Array [
-                                Array [
-                                  Array [
-                                    "name",
-                                    Array [
-                                      "i",
-                                      null,
-                                    ],
-                                  ],
-                                  Array [
-                                    1,
-                                    null,
-                                  ],
-                                ],
-                                null,
-                              ],
-                            ],
-                          ],
-                          null,
-                        ],
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-                null,
-              ],
-            ],
-          ],
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let i = 1;\\\\\\\\nwhile (i < 5) {\\\\\\\\n  i = i + 1;\\\\\\\\n}\\\\\\\\ni;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 13: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -2532,10 +910,13 @@ while (i < 5) {
 i;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 5,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:5",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -2574,7 +955,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -3027,188 +1408,6 @@ Line 2: For statements are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 14: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let i = 1;\\\\nfor (i = 1; i < 5; i = i + 1) {\\\\n}\\\\ni;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            Array [
-              1,
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "for_loop",
-            Array [
-              Array [
-                "assignment",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "i",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    1,
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                Array [
-                  "application",
-                  Array [
-                    Array [
-                      "name",
-                      Array [
-                        "<",
-                        null,
-                      ],
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            "i",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          5,
-                          null,
-                        ],
-                      ],
-                      null,
-                    ],
-                  ],
-                ],
-                Array [
-                  Array [
-                    "assignment",
-                    Array [
-                      Array [
-                        "name",
-                        Array [
-                          "i",
-                          null,
-                        ],
-                      ],
-                      Array [
-                        Array [
-                          "application",
-                          Array [
-                            Array [
-                              "name",
-                              Array [
-                                "+",
-                                null,
-                              ],
-                            ],
-                            Array [
-                              Array [
-                                Array [
-                                  "name",
-                                  Array [
-                                    "i",
-                                    null,
-                                  ],
-                                ],
-                                Array [
-                                  1,
-                                  null,
-                                ],
-                              ],
-                              null,
-                            ],
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      "block",
-                      Array [
-                        Array [
-                          "sequence",
-                          Array [
-                            null,
-                            null,
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-              ],
-            ],
-          ],
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let i = 1;\\\\\\\\nfor (i = 1; i < 5; i = i + 1) {\\\\\\\\n}\\\\\\\\ni;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 14: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -3218,10 +1417,13 @@ for (i = 1; i < 5; i = i + 1) {
 i;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 5,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:5",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -3259,7 +1461,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -4209,350 +2411,6 @@ Line 2: For statements are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 15: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let i = 1;\\\\nfor (let j = 0; j < 5; j = j + 1) {\\\\n  if (j < 1) {\\\\n    continue;\\\\n  } else {\\\\n    i = i + 1;\\\\n    if (j > 2) {\\\\n      break;\\\\n    } else {\\\\n    }\\\\n  }\\\\n}\\\\ni;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            Array [
-              1,
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "for_loop",
-            Array [
-              Array [
-                "variable_declaration",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "j",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    0,
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                Array [
-                  "application",
-                  Array [
-                    Array [
-                      "name",
-                      Array [
-                        "<",
-                        null,
-                      ],
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "name",
-                          Array [
-                            "j",
-                            null,
-                          ],
-                        ],
-                        Array [
-                          5,
-                          null,
-                        ],
-                      ],
-                      null,
-                    ],
-                  ],
-                ],
-                Array [
-                  Array [
-                    "assignment",
-                    Array [
-                      Array [
-                        "name",
-                        Array [
-                          "j",
-                          null,
-                        ],
-                      ],
-                      Array [
-                        Array [
-                          "application",
-                          Array [
-                            Array [
-                              "name",
-                              Array [
-                                "+",
-                                null,
-                              ],
-                            ],
-                            Array [
-                              Array [
-                                Array [
-                                  "name",
-                                  Array [
-                                    "j",
-                                    null,
-                                  ],
-                                ],
-                                Array [
-                                  1,
-                                  null,
-                                ],
-                              ],
-                              null,
-                            ],
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      "block",
-                      Array [
-                        Array [
-                          "conditional_statement",
-                          Array [
-                            Array [
-                              "application",
-                              Array [
-                                Array [
-                                  "name",
-                                  Array [
-                                    "<",
-                                    null,
-                                  ],
-                                ],
-                                Array [
-                                  Array [
-                                    Array [
-                                      "name",
-                                      Array [
-                                        "j",
-                                        null,
-                                      ],
-                                    ],
-                                    Array [
-                                      1,
-                                      null,
-                                    ],
-                                  ],
-                                  null,
-                                ],
-                              ],
-                            ],
-                            Array [
-                              Array [
-                                "block",
-                                Array [
-                                  Array [
-                                    "continue_statement",
-                                    null,
-                                  ],
-                                  null,
-                                ],
-                              ],
-                              Array [
-                                Array [
-                                  "block",
-                                  Array [
-                                    Array [
-                                      "sequence",
-                                      Array [
-                                        Array [
-                                          Array [
-                                            "assignment",
-                                            Array [
-                                              Array [
-                                                "name",
-                                                Array [
-                                                  "i",
-                                                  null,
-                                                ],
-                                              ],
-                                              Array [
-                                                Array [
-                                                  "application",
-                                                  Array [
-                                                    Array [
-                                                      "name",
-                                                      Array [
-                                                        "+",
-                                                        null,
-                                                      ],
-                                                    ],
-                                                    Array [
-                                                      Array [
-                                                        Array [
-                                                          "name",
-                                                          Array [
-                                                            "i",
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        Array [
-                                                          1,
-                                                          null,
-                                                        ],
-                                                      ],
-                                                      null,
-                                                    ],
-                                                  ],
-                                                ],
-                                                null,
-                                              ],
-                                            ],
-                                          ],
-                                          Array [
-                                            Array [
-                                              "conditional_statement",
-                                              Array [
-                                                Array [
-                                                  "application",
-                                                  Array [
-                                                    Array [
-                                                      "name",
-                                                      Array [
-                                                        ">",
-                                                        null,
-                                                      ],
-                                                    ],
-                                                    Array [
-                                                      Array [
-                                                        Array [
-                                                          "name",
-                                                          Array [
-                                                            "j",
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        Array [
-                                                          2,
-                                                          null,
-                                                        ],
-                                                      ],
-                                                      null,
-                                                    ],
-                                                  ],
-                                                ],
-                                                Array [
-                                                  Array [
-                                                    "block",
-                                                    Array [
-                                                      Array [
-                                                        "break_statement",
-                                                        null,
-                                                      ],
-                                                      null,
-                                                    ],
-                                                  ],
-                                                  Array [
-                                                    Array [
-                                                      "block",
-                                                      Array [
-                                                        Array [
-                                                          "sequence",
-                                                          Array [
-                                                            null,
-                                                            null,
-                                                          ],
-                                                        ],
-                                                        null,
-                                                      ],
-                                                    ],
-                                                    null,
-                                                  ],
-                                                ],
-                                              ],
-                                            ],
-                                            null,
-                                          ],
-                                        ],
-                                        null,
-                                      ],
-                                    ],
-                                    null,
-                                  ],
-                                ],
-                                null,
-                              ],
-                            ],
-                          ],
-                        ],
-                        null,
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-              ],
-            ],
-          ],
-          Array [
-            Array [
-              "name",
-              Array [
-                "i",
-                null,
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let i = 1;\\\\\\\\nfor (let j = 0; j < 5; j = j + 1) {\\\\\\\\n  if (j < 1) {\\\\\\\\n    continue;\\\\\\\\n  } else {\\\\\\\\n    i = i + 1;\\\\\\\\n    if (j > 2) {\\\\\\\\n      break;\\\\\\\\n    } else {\\\\\\\\n    }\\\\\\\\n  }\\\\\\\\n}\\\\\\\\ni;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 15: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -4571,10 +2429,13 @@ for (let j = 0; j < 5; j = j + 1) {
 i;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 4,
+  "parsedErrors": "native:\\"Line -1: TypeError: runtime is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:4",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -4620,7 +2481,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -4663,57 +2524,19 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 16: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"[];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "array_expression",
-    Array [
-      null,
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"[];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 16: passes 1`] = `
 Object {
   "alertResult": Array [],
   "code": "[];",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [],
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:[]",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -4731,7 +2554,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"[];\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -4826,70 +2649,19 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 17: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"[1, 2, 3];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "array_expression",
-    Array [
-      Array [
-        1,
-        Array [
-          2,
-          Array [
-            3,
-            null,
-          ],
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"[1, 2, 3];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 17: passes 1`] = `
 Object {
   "alertResult": Array [],
   "code": "[1, 2, 3];",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    1,
-    2,
-    3,
-  ],
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:[1, 2, 3]",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -4907,7 +2679,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"[1, 2, 3];\\");
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -5109,75 +2881,19 @@ Line 1: Member expressions are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 18: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"[1, 2, 3][1];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_access",
-    Array [
-      Array [
-        "array_expression",
-        Array [
-          Array [
-            1,
-            Array [
-              2,
-              Array [
-                3,
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      Array [
-        1,
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"[1, 2, 3][1];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 1`] = `
 Object {
   "alertResult": Array [],
   "code": "[1, 2, 3][1];",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:2",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -5195,179 +2911,7 @@ const globals = $NATIVE_STORAGE.globals;
         lastStatementResult = eval(\\"getProp([1, 2, 3], 1, 1, 0);\\");
       }
     }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 2`] = `
-Object {
-  "alertResult": Array [],
-  "code": "let i = 1;
-for (i = 1; i < 5; i = i + 1) {
-}
-i;",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "native:\\"Line null: Name UNKNOWN not declared.\\"
-interpreted:\\"\\"",
-  "result": "native:undefined
-interpreted:5",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        let i = 1;
-        const startTime = runtime();
-        for (i = 1; boolOrErr(binaryOp(\\"<\\", i, 5, 2, 12), 2, 0); i = binaryOp(\\"+\\", i, 1, 2, 23)) {
-          throwIfTimeout(startTime, runtime(), 2, 0);
-        }
-        lastStatementResult = eval(\\"i;\\");
-        globals.variables.set(\\"i\\", {
-          kind: \\"let\\",
-          getValue: () => {
-            return i;
-          },
-          assignNewValue: function (unique) {
-            return i = unique;
-          }
-        });
-        globals.variables.set(\\"startTime\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return startTime;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 3`] = `
-Object {
-  "alertResult": Array [],
-  "code": "let i = 1;
-for (let j = 0; j < 5; j = j + 1) {
-  if (j < 1) {
-    continue;
-  } else {
-    i = i + 1;
-    if (j > 2) {
-      break;
-    } else {
-    }
-  }
-}
-i;",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "native:\\"Line null: Name UNKNOWN not declared.\\"
-interpreted:\\"\\"",
-  "result": "native:undefined
-interpreted:4",
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        let i = 1;
-        const startTime = runtime();
-        for (let j = 0; boolOrErr(binaryOp(\\"<\\", j, 5, 2, 16), 2, 0); j = binaryOp(\\"+\\", j, 1, 2, 27)) {
-          throwIfTimeout(startTime, runtime(), 2, 0);
-          if (boolOrErr(binaryOp(\\"<\\", j, 1, 3, 6), 3, 2)) {
-            continue;
-          } else {
-            i = binaryOp(\\"+\\", i, 1, 6, 8);
-            if (boolOrErr(binaryOp(\\">\\", j, 2, 7, 8), 7, 4)) {
-              break;
-            } else {}
-          }
-        }
-        lastStatementResult = eval(\\"i;\\");
-        globals.variables.set(\\"i\\", {
-          kind: \\"let\\",
-          getValue: () => {
-            return i;
-          },
-          assignNewValue: function (unique) {
-            return i = unique;
-          }
-        });
-        globals.variables.set(\\"startTime\\", {
-          kind: \\"const\\",
-          getValue: () => {
-            return startTime;
-          }
-        });
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 18: passes 4`] = `
-Object {
-  "alertResult": Array [],
-  "code": "[1, 2, 3][1];",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"getProp([1, 2, 3], 1, 1, 0);\\");
-      }
-    }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -5640,98 +3184,6 @@ Line 2: Member expressions are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 19: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let x = [1, 2, 3];\\\\nx[1];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "array_expression",
-                Array [
-                  Array [
-                    1,
-                    Array [
-                      2,
-                      Array [
-                        3,
-                        null,
-                      ],
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "object_access",
-            Array [
-              Array [
-                "name",
-                Array [
-                  "x",
-                  null,
-                ],
-              ],
-              Array [
-                1,
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let x = [1, 2, 3];\\\\\\\\nx[1];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 19: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -5739,10 +3191,13 @@ Object {
 x[1];",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 2,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:2",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -5770,7 +3225,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -6131,107 +3586,6 @@ Line 2: Assignment expressions are not allowed",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 20: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let x = [1, 2, 3];\\\\nx[1] = 4;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "array_expression",
-                Array [
-                  Array [
-                    1,
-                    Array [
-                      2,
-                      Array [
-                        3,
-                        null,
-                      ],
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "array_assignment",
-            Array [
-              Array [
-                "object_access",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "x",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    1,
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                4,
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let x = [1, 2, 3];\\\\\\\\nx[1] = 4;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 20: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -6239,10 +3593,13 @@ Object {
 x[1] = 4;",
   "displayResult": Array [],
   "errors": Array [],
-  "parsedErrors": "",
-  "result": 4,
+  "parsedErrors": "native:\\"Line -1: TypeError: forceIt is not a function\\"
+interpreted:\\"\\"",
+  "result": "native:undefined
+interpreted:4",
   "resultStatus": "finished",
   "transpiled": "const native = $$NATIVE_STORAGE;
+const forceIt = native.operators.get(\\"forceIt\\");
 const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
 const boolOrErr = native.operators.get(\\"boolOrErr\\");
 const wrap = native.operators.get(\\"wrap\\");
@@ -6270,7 +3627,7 @@ const globals = $NATIVE_STORAGE.globals;
         });
       }
     }
-    return lastStatementResult;
+    return forceIt(lastStatementResult);
   })();
 })();
 ",
@@ -6309,47 +3666,6 @@ Object {
   "parsedErrors": "Line 1: Object expressions are not allowed",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 21: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({});\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_expression",
-    Array [
-      null,
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({});\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -6507,71 +3823,6 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 22: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({a: 1, b: 2});\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_expression",
-    Array [
-      Array [
-        Array [
-          Array [
-            "property",
-            Array [
-              "a",
-              null,
-            ],
-          ],
-          1,
-        ],
-        Array [
-          Array [
-            Array [
-              "property",
-              Array [
-                "b",
-                null,
-              ],
-            ],
-            2,
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({a: 1, b: 2});\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 22: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -6724,80 +3975,6 @@ Object {
   "parsedErrors": "Line 1: Object expressions are not allowed",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 23: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({a: 1, b: 2})['a'];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_access",
-    Array [
-      Array [
-        "object_expression",
-        Array [
-          Array [
-            Array [
-              Array [
-                "property",
-                Array [
-                  "a",
-                  null,
-                ],
-              ],
-              1,
-            ],
-            Array [
-              Array [
-                Array [
-                  "property",
-                  Array [
-                    "b",
-                    null,
-                  ],
-                ],
-                2,
-              ],
-              null,
-            ],
-          ],
-          null,
-        ],
-      ],
-      Array [
-        "a",
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({a: 1, b: 2})['a'];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -7109,86 +4286,6 @@ Object {
 Line 1: Dot abbreviations are not allowed.",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 24: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({a: 1, b: 2}).a;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_access",
-    Array [
-      Array [
-        "object_expression",
-        Array [
-          Array [
-            Array [
-              Array [
-                "property",
-                Array [
-                  "a",
-                  null,
-                ],
-              ],
-              1,
-            ],
-            Array [
-              Array [
-                Array [
-                  "property",
-                  Array [
-                    "b",
-                    null,
-                  ],
-                ],
-                2,
-              ],
-              null,
-            ],
-          ],
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          "property",
-          Array [
-            "a",
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({a: 1, b: 2}).a;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -7508,74 +4605,6 @@ Line 1: Dot abbreviations are not allowed.",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 25: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({'a': 1, 'b': 2}).a;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_access",
-    Array [
-      Array [
-        "object_expression",
-        Array [
-          Array [
-            Array [
-              "a",
-              1,
-            ],
-            Array [
-              Array [
-                "b",
-                2,
-              ],
-              null,
-            ],
-          ],
-          null,
-        ],
-      ],
-      Array [
-        Array [
-          "property",
-          Array [
-            "a",
-            null,
-          ],
-        ],
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({'a': 1, 'b': 2}).a;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 25: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -7731,68 +4760,6 @@ Object {
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 26: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"({1: 1, 2: 2})['1'];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "object_access",
-    Array [
-      Array [
-        "object_expression",
-        Array [
-          Array [
-            Array [
-              1,
-              1,
-            ],
-            Array [
-              Array [
-                2,
-                2,
-              ],
-              null,
-            ],
-          ],
-          null,
-        ],
-      ],
-      Array [
-        "1",
-        null,
-      ],
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"({1: 1, 2: 2})['1'];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 26: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -7943,113 +4910,6 @@ Object {
   "parsedErrors": "Line 2: Object expressions are not allowed",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 27: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"const key = 'a';\\\\n({a: 1, b: 2})[key];\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "constant_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "key",
-                null,
-              ],
-            ],
-            Array [
-              "a",
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "object_access",
-            Array [
-              Array [
-                "object_expression",
-                Array [
-                  Array [
-                    Array [
-                      Array [
-                        "property",
-                        Array [
-                          "a",
-                          null,
-                        ],
-                      ],
-                      1,
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "property",
-                          Array [
-                            "b",
-                            null,
-                          ],
-                        ],
-                        2,
-                      ],
-                      null,
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              Array [
-                Array [
-                  "property",
-                  Array [
-                    "key",
-                    null,
-                  ],
-                ],
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"const key = 'a';\\\\\\\\n({a: 1, b: 2})[key];\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -8262,128 +5122,6 @@ Line 2: Dot abbreviations are not allowed.",
 }
 `;
 
-exports[`Syntaxes are allowed in the chapter they are introduced 28: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let x = {a: 1, b: 2};\\\\nx.a = 3;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "object_expression",
-                Array [
-                  Array [
-                    Array [
-                      Array [
-                        "property",
-                        Array [
-                          "a",
-                          null,
-                        ],
-                      ],
-                      1,
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "property",
-                          Array [
-                            "b",
-                            null,
-                          ],
-                        ],
-                        2,
-                      ],
-                      null,
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "array_assignment",
-            Array [
-              Array [
-                "object_access",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "x",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    Array [
-                      "property",
-                      Array [
-                        "a",
-                        null,
-                      ],
-                    ],
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                3,
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let x = {a: 1, b: 2};\\\\\\\\nx.a = 3;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
-  "visualiseListResult": Array [],
-}
-`;
-
 exports[`Syntaxes are allowed in the chapter they are introduced 28: passes 1`] = `
 Object {
   "alertResult": Array [],
@@ -8535,122 +5273,6 @@ x['a'] = 3;",
   "parsedErrors": "Line 1: Object expressions are not allowed",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 29: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let x = {a: 1, b: 2};\\\\nx['a'] = 3;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "object_expression",
-                Array [
-                  Array [
-                    Array [
-                      Array [
-                        "property",
-                        Array [
-                          "a",
-                          null,
-                        ],
-                      ],
-                      1,
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "property",
-                          Array [
-                            "b",
-                            null,
-                          ],
-                        ],
-                        2,
-                      ],
-                      null,
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "array_assignment",
-            Array [
-              Array [
-                "object_access",
-                Array [
-                  Array [
-                    "name",
-                    Array [
-                      "x",
-                      null,
-                    ],
-                  ],
-                  Array [
-                    "a",
-                    null,
-                  ],
-                ],
-              ],
-              Array [
-                3,
-                null,
-              ],
-            ],
-          ],
-          null,
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let x = {a: 1, b: 2};\\\\\\\\nx['a'] = 3;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;
@@ -8807,146 +5429,6 @@ x[key] = 3;",
   "parsedErrors": "Line 1: Object expressions are not allowed",
   "result": undefined,
   "resultStatus": "error",
-  "visualiseListResult": Array [],
-}
-`;
-
-exports[`Syntaxes are allowed in the chapter they are introduced 30: parse passes 1`] = `
-Object {
-  "alertResult": Array [],
-  "code": "parse(\\"let x = {a: 1, b: 2};\\\\nconst key = 'a';\\\\nx[key] = 3;\\");",
-  "displayResult": Array [],
-  "errors": Array [],
-  "parsedErrors": "",
-  "result": Array [
-    "sequence",
-    Array [
-      Array [
-        Array [
-          "variable_declaration",
-          Array [
-            Array [
-              "name",
-              Array [
-                "x",
-                null,
-              ],
-            ],
-            Array [
-              Array [
-                "object_expression",
-                Array [
-                  Array [
-                    Array [
-                      Array [
-                        "property",
-                        Array [
-                          "a",
-                          null,
-                        ],
-                      ],
-                      1,
-                    ],
-                    Array [
-                      Array [
-                        Array [
-                          "property",
-                          Array [
-                            "b",
-                            null,
-                          ],
-                        ],
-                        2,
-                      ],
-                      null,
-                    ],
-                  ],
-                  null,
-                ],
-              ],
-              null,
-            ],
-          ],
-        ],
-        Array [
-          Array [
-            "constant_declaration",
-            Array [
-              Array [
-                "name",
-                Array [
-                  "key",
-                  null,
-                ],
-              ],
-              Array [
-                "a",
-                null,
-              ],
-            ],
-          ],
-          Array [
-            Array [
-              "array_assignment",
-              Array [
-                Array [
-                  "object_access",
-                  Array [
-                    Array [
-                      "name",
-                      Array [
-                        "x",
-                        null,
-                      ],
-                    ],
-                    Array [
-                      Array [
-                        "property",
-                        Array [
-                          "key",
-                          null,
-                        ],
-                      ],
-                      null,
-                    ],
-                  ],
-                ],
-                Array [
-                  3,
-                  null,
-                ],
-              ],
-            ],
-            null,
-          ],
-        ],
-      ],
-      null,
-    ],
-  ],
-  "resultStatus": "finished",
-  "transpiled": "const native = $$NATIVE_STORAGE;
-const callIfFuncAndRightArgs = native.operators.get(\\"callIfFuncAndRightArgs\\");
-const boolOrErr = native.operators.get(\\"boolOrErr\\");
-const wrap = native.operators.get(\\"wrap\\");
-const unaryOp = native.operators.get(\\"unaryOp\\");
-const binaryOp = native.operators.get(\\"binaryOp\\");
-const throwIfTimeout = native.operators.get(\\"throwIfTimeout\\");
-const setProp = native.operators.get(\\"setProp\\");
-const getProp = native.operators.get(\\"getProp\\");
-let lastStatementResult = undefined;
-const globals = $NATIVE_STORAGE.globals;
-(( <globals redacted> ) => {
-  return (() => {
-    {
-      {
-        lastStatementResult = eval(\\"callIfFuncAndRightArgs(parse, 1, 0, \\\\\\"let x = {a: 1, b: 2};\\\\\\\\nconst key = 'a';\\\\\\\\nx[key] = 3;\\\\\\");\\");
-      }
-    }
-    return lastStatementResult;
-  })();
-})();
-",
   "visualiseListResult": Array [],
 }
 `;

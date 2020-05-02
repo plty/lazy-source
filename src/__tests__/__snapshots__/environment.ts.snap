@@ -53,80 +53,204 @@ Array [
       "name": "programEnvironment",
       "tail": Object {
         "head": Object {
-          "Infinity": Infinity,
-          "NaN": NaN,
-          "apply_in_underlying_javascript": [Function],
-          "array_length": [Function],
-          "display": [Function],
-          "draw_data": [Function],
-          "error": [Function],
-          "head": [Function],
-          "is_array": [Function],
-          "is_boolean": [Function],
-          "is_function": [Function],
-          "is_null": [Function],
-          "is_number": [Function],
-          "is_pair": [Function],
-          "is_string": [Function],
-          "is_undefined": [Function],
-          "list": [Function],
-          "list_to_stream": [Function],
-          "math_E": 2.718281828459045,
-          "math_LN10": 2.302585092994046,
-          "math_LN2": 0.6931471805599453,
-          "math_LOG10E": 0.4342944819032518,
-          "math_LOG2E": 1.4426950408889634,
-          "math_PI": 3.141592653589793,
-          "math_SQRT1_2": 0.7071067811865476,
-          "math_SQRT2": 1.4142135623730951,
-          "math_abs": [Function],
-          "math_acos": [Function],
-          "math_acosh": [Function],
-          "math_asin": [Function],
-          "math_asinh": [Function],
-          "math_atan": [Function],
-          "math_atan2": [Function],
-          "math_atanh": [Function],
-          "math_cbrt": [Function],
-          "math_ceil": [Function],
-          "math_clz32": [Function],
-          "math_cos": [Function],
-          "math_cosh": [Function],
-          "math_exp": [Function],
-          "math_expm1": [Function],
-          "math_floor": [Function],
-          "math_fround": [Function],
-          "math_hypot": [Function],
-          "math_imul": [Function],
-          "math_log": [Function],
-          "math_log10": [Function],
-          "math_log1p": [Function],
-          "math_log2": [Function],
-          "math_max": [Function],
-          "math_min": [Function],
-          "math_pow": [Function],
-          "math_random": [Function],
-          "math_round": [Function],
-          "math_sign": [Function],
-          "math_sin": [Function],
-          "math_sinh": [Function],
-          "math_sqrt": [Function],
-          "math_tan": [Function],
-          "math_tanh": [Function],
-          "math_trunc": [Function],
-          "pair": [Function],
-          "parse": [Function],
-          "parse_int": [Function],
-          "prompt": [Function],
-          "raw_display": [Function],
-          "runtime": [Function],
-          "set_head": [Function],
-          "set_tail": [Function],
-          "stream": [Function],
-          "stream_tail": [Function],
-          "stringify": [Function],
-          "tail": [Function],
-          "undefined": undefined,
+          "Infinity": Thunk {
+            "supplier": [Function],
+          },
+          "NaN": Thunk {
+            "supplier": [Function],
+          },
+          "display": Thunk {
+            "supplier": [Function],
+          },
+          "draw_data": Thunk {
+            "supplier": [Function],
+          },
+          "error": Thunk {
+            "supplier": [Function],
+          },
+          "head": Thunk {
+            "supplier": [Function],
+          },
+          "is_boolean": Thunk {
+            "supplier": [Function],
+          },
+          "is_function": Thunk {
+            "supplier": [Function],
+          },
+          "is_null": Thunk {
+            "supplier": [Function],
+          },
+          "is_number": Thunk {
+            "supplier": [Function],
+          },
+          "is_pair": Thunk {
+            "supplier": [Function],
+          },
+          "is_string": Thunk {
+            "supplier": [Function],
+          },
+          "is_undefined": Thunk {
+            "supplier": [Function],
+          },
+          "list": Thunk {
+            "supplier": [Function],
+          },
+          "list_to_vector": Thunk {
+            "supplier": [Function],
+          },
+          "math_E": Thunk {
+            "supplier": [Function],
+          },
+          "math_LN10": Thunk {
+            "supplier": [Function],
+          },
+          "math_LN2": Thunk {
+            "supplier": [Function],
+          },
+          "math_LOG10E": Thunk {
+            "supplier": [Function],
+          },
+          "math_LOG2E": Thunk {
+            "supplier": [Function],
+          },
+          "math_PI": Thunk {
+            "supplier": [Function],
+          },
+          "math_SQRT1_2": Thunk {
+            "supplier": [Function],
+          },
+          "math_SQRT2": Thunk {
+            "supplier": [Function],
+          },
+          "math_abs": Thunk {
+            "supplier": [Function],
+          },
+          "math_acos": Thunk {
+            "supplier": [Function],
+          },
+          "math_acosh": Thunk {
+            "supplier": [Function],
+          },
+          "math_asin": Thunk {
+            "supplier": [Function],
+          },
+          "math_asinh": Thunk {
+            "supplier": [Function],
+          },
+          "math_atan": Thunk {
+            "supplier": [Function],
+          },
+          "math_atan2": Thunk {
+            "supplier": [Function],
+          },
+          "math_atanh": Thunk {
+            "supplier": [Function],
+          },
+          "math_cbrt": Thunk {
+            "supplier": [Function],
+          },
+          "math_ceil": Thunk {
+            "supplier": [Function],
+          },
+          "math_clz32": Thunk {
+            "supplier": [Function],
+          },
+          "math_cos": Thunk {
+            "supplier": [Function],
+          },
+          "math_cosh": Thunk {
+            "supplier": [Function],
+          },
+          "math_exp": Thunk {
+            "supplier": [Function],
+          },
+          "math_expm1": Thunk {
+            "supplier": [Function],
+          },
+          "math_floor": Thunk {
+            "supplier": [Function],
+          },
+          "math_fround": Thunk {
+            "supplier": [Function],
+          },
+          "math_hypot": Thunk {
+            "supplier": [Function],
+          },
+          "math_imul": Thunk {
+            "supplier": [Function],
+          },
+          "math_log": Thunk {
+            "supplier": [Function],
+          },
+          "math_log10": Thunk {
+            "supplier": [Function],
+          },
+          "math_log1p": Thunk {
+            "supplier": [Function],
+          },
+          "math_log2": Thunk {
+            "supplier": [Function],
+          },
+          "math_max": Thunk {
+            "supplier": [Function],
+          },
+          "math_min": Thunk {
+            "supplier": [Function],
+          },
+          "math_pow": Thunk {
+            "supplier": [Function],
+          },
+          "math_random": Thunk {
+            "supplier": [Function],
+          },
+          "math_round": Thunk {
+            "supplier": [Function],
+          },
+          "math_sign": Thunk {
+            "supplier": [Function],
+          },
+          "math_sin": Thunk {
+            "supplier": [Function],
+          },
+          "math_sinh": Thunk {
+            "supplier": [Function],
+          },
+          "math_sqrt": Thunk {
+            "supplier": [Function],
+          },
+          "math_tan": Thunk {
+            "supplier": [Function],
+          },
+          "math_tanh": Thunk {
+            "supplier": [Function],
+          },
+          "math_trunc": Thunk {
+            "supplier": [Function],
+          },
+          "pair": Thunk {
+            "supplier": [Function],
+          },
+          "parse_int": Thunk {
+            "supplier": [Function],
+          },
+          "prompt": Thunk {
+            "supplier": [Function],
+          },
+          "raw_display": Thunk {
+            "supplier": [Function],
+          },
+          "runtime": Thunk {
+            "supplier": [Function],
+          },
+          "stringify": Thunk {
+            "supplier": [Function],
+          },
+          "tail": Thunk {
+            "supplier": [Function],
+          },
+          "undefined": Thunk {
+            "supplier": [Function],
+          },
         },
         "name": "global",
         "tail": null,
@@ -522,6 +646,7 @@ Array [
           ],
           "value": undefined,
         },
+        "variant": "default",
       },
     },
     "thisContext": undefined,
@@ -533,80 +658,204 @@ Array [
     "name": "programEnvironment",
     "tail": Object {
       "head": Object {
-        "Infinity": Infinity,
-        "NaN": NaN,
-        "apply_in_underlying_javascript": [Function],
-        "array_length": [Function],
-        "display": [Function],
-        "draw_data": [Function],
-        "error": [Function],
-        "head": [Function],
-        "is_array": [Function],
-        "is_boolean": [Function],
-        "is_function": [Function],
-        "is_null": [Function],
-        "is_number": [Function],
-        "is_pair": [Function],
-        "is_string": [Function],
-        "is_undefined": [Function],
-        "list": [Function],
-        "list_to_stream": [Function],
-        "math_E": 2.718281828459045,
-        "math_LN10": 2.302585092994046,
-        "math_LN2": 0.6931471805599453,
-        "math_LOG10E": 0.4342944819032518,
-        "math_LOG2E": 1.4426950408889634,
-        "math_PI": 3.141592653589793,
-        "math_SQRT1_2": 0.7071067811865476,
-        "math_SQRT2": 1.4142135623730951,
-        "math_abs": [Function],
-        "math_acos": [Function],
-        "math_acosh": [Function],
-        "math_asin": [Function],
-        "math_asinh": [Function],
-        "math_atan": [Function],
-        "math_atan2": [Function],
-        "math_atanh": [Function],
-        "math_cbrt": [Function],
-        "math_ceil": [Function],
-        "math_clz32": [Function],
-        "math_cos": [Function],
-        "math_cosh": [Function],
-        "math_exp": [Function],
-        "math_expm1": [Function],
-        "math_floor": [Function],
-        "math_fround": [Function],
-        "math_hypot": [Function],
-        "math_imul": [Function],
-        "math_log": [Function],
-        "math_log10": [Function],
-        "math_log1p": [Function],
-        "math_log2": [Function],
-        "math_max": [Function],
-        "math_min": [Function],
-        "math_pow": [Function],
-        "math_random": [Function],
-        "math_round": [Function],
-        "math_sign": [Function],
-        "math_sin": [Function],
-        "math_sinh": [Function],
-        "math_sqrt": [Function],
-        "math_tan": [Function],
-        "math_tanh": [Function],
-        "math_trunc": [Function],
-        "pair": [Function],
-        "parse": [Function],
-        "parse_int": [Function],
-        "prompt": [Function],
-        "raw_display": [Function],
-        "runtime": [Function],
-        "set_head": [Function],
-        "set_tail": [Function],
-        "stream": [Function],
-        "stream_tail": [Function],
-        "stringify": [Function],
-        "tail": [Function],
-        "undefined": undefined,
+        "Infinity": Thunk {
+          "supplier": [Function],
+        },
+        "NaN": Thunk {
+          "supplier": [Function],
+        },
+        "display": Thunk {
+          "supplier": [Function],
+        },
+        "draw_data": Thunk {
+          "supplier": [Function],
+        },
+        "error": Thunk {
+          "supplier": [Function],
+        },
+        "head": Thunk {
+          "supplier": [Function],
+        },
+        "is_boolean": Thunk {
+          "supplier": [Function],
+        },
+        "is_function": Thunk {
+          "supplier": [Function],
+        },
+        "is_null": Thunk {
+          "supplier": [Function],
+        },
+        "is_number": Thunk {
+          "supplier": [Function],
+        },
+        "is_pair": Thunk {
+          "supplier": [Function],
+        },
+        "is_string": Thunk {
+          "supplier": [Function],
+        },
+        "is_undefined": Thunk {
+          "supplier": [Function],
+        },
+        "list": Thunk {
+          "supplier": [Function],
+        },
+        "list_to_vector": Thunk {
+          "supplier": [Function],
+        },
+        "math_E": Thunk {
+          "supplier": [Function],
+        },
+        "math_LN10": Thunk {
+          "supplier": [Function],
+        },
+        "math_LN2": Thunk {
+          "supplier": [Function],
+        },
+        "math_LOG10E": Thunk {
+          "supplier": [Function],
+        },
+        "math_LOG2E": Thunk {
+          "supplier": [Function],
+        },
+        "math_PI": Thunk {
+          "supplier": [Function],
+        },
+        "math_SQRT1_2": Thunk {
+          "supplier": [Function],
+        },
+        "math_SQRT2": Thunk {
+          "supplier": [Function],
+        },
+        "math_abs": Thunk {
+          "supplier": [Function],
+        },
+        "math_acos": Thunk {
+          "supplier": [Function],
+        },
+        "math_acosh": Thunk {
+          "supplier": [Function],
+        },
+        "math_asin": Thunk {
+          "supplier": [Function],
+        },
+        "math_asinh": Thunk {
+          "supplier": [Function],
+        },
+        "math_atan": Thunk {
+          "supplier": [Function],
+        },
+        "math_atan2": Thunk {
+          "supplier": [Function],
+        },
+        "math_atanh": Thunk {
+          "supplier": [Function],
+        },
+        "math_cbrt": Thunk {
+          "supplier": [Function],
+        },
+        "math_ceil": Thunk {
+          "supplier": [Function],
+        },
+        "math_clz32": Thunk {
+          "supplier": [Function],
+        },
+        "math_cos": Thunk {
+          "supplier": [Function],
+        },
+        "math_cosh": Thunk {
+          "supplier": [Function],
+        },
+        "math_exp": Thunk {
+          "supplier": [Function],
+        },
+        "math_expm1": Thunk {
+          "supplier": [Function],
+        },
+        "math_floor": Thunk {
+          "supplier": [Function],
+        },
+        "math_fround": Thunk {
+          "supplier": [Function],
+        },
+        "math_hypot": Thunk {
+          "supplier": [Function],
+        },
+        "math_imul": Thunk {
+          "supplier": [Function],
+        },
+        "math_log": Thunk {
+          "supplier": [Function],
+        },
+        "math_log10": Thunk {
+          "supplier": [Function],
+        },
+        "math_log1p": Thunk {
+          "supplier": [Function],
+        },
+        "math_log2": Thunk {
+          "supplier": [Function],
+        },
+        "math_max": Thunk {
+          "supplier": [Function],
+        },
+        "math_min": Thunk {
+          "supplier": [Function],
+        },
+        "math_pow": Thunk {
+          "supplier": [Function],
+        },
+        "math_random": Thunk {
+          "supplier": [Function],
+        },
+        "math_round": Thunk {
+          "supplier": [Function],
+        },
+        "math_sign": Thunk {
+          "supplier": [Function],
+        },
+        "math_sin": Thunk {
+          "supplier": [Function],
+        },
+        "math_sinh": Thunk {
+          "supplier": [Function],
+        },
+        "math_sqrt": Thunk {
+          "supplier": [Function],
+        },
+        "math_tan": Thunk {
+          "supplier": [Function],
+        },
+        "math_tanh": Thunk {
+          "supplier": [Function],
+        },
+        "math_trunc": Thunk {
+          "supplier": [Function],
+        },
+        "pair": Thunk {
+          "supplier": [Function],
+        },
+        "parse_int": Thunk {
+          "supplier": [Function],
+        },
+        "prompt": Thunk {
+          "supplier": [Function],
+        },
+        "raw_display": Thunk {
+          "supplier": [Function],
+        },
+        "runtime": Thunk {
+          "supplier": [Function],
+        },
+        "stringify": Thunk {
+          "supplier": [Function],
+        },
+        "tail": Thunk {
+          "supplier": [Function],
+        },
+        "undefined": Thunk {
+          "supplier": [Function],
+        },
       },
       "name": "global",
       "tail": null,
@@ -1002,84 +1251,209 @@ Array [
         ],
         "value": undefined,
       },
+      "variant": "default",
     },
   },
   Object {
     "head": Object {
-      "Infinity": Infinity,
-      "NaN": NaN,
-      "apply_in_underlying_javascript": [Function],
-      "array_length": [Function],
-      "display": [Function],
-      "draw_data": [Function],
-      "error": [Function],
-      "head": [Function],
-      "is_array": [Function],
-      "is_boolean": [Function],
-      "is_function": [Function],
-      "is_null": [Function],
-      "is_number": [Function],
-      "is_pair": [Function],
-      "is_string": [Function],
-      "is_undefined": [Function],
-      "list": [Function],
-      "list_to_stream": [Function],
-      "math_E": 2.718281828459045,
-      "math_LN10": 2.302585092994046,
-      "math_LN2": 0.6931471805599453,
-      "math_LOG10E": 0.4342944819032518,
-      "math_LOG2E": 1.4426950408889634,
-      "math_PI": 3.141592653589793,
-      "math_SQRT1_2": 0.7071067811865476,
-      "math_SQRT2": 1.4142135623730951,
-      "math_abs": [Function],
-      "math_acos": [Function],
-      "math_acosh": [Function],
-      "math_asin": [Function],
-      "math_asinh": [Function],
-      "math_atan": [Function],
-      "math_atan2": [Function],
-      "math_atanh": [Function],
-      "math_cbrt": [Function],
-      "math_ceil": [Function],
-      "math_clz32": [Function],
-      "math_cos": [Function],
-      "math_cosh": [Function],
-      "math_exp": [Function],
-      "math_expm1": [Function],
-      "math_floor": [Function],
-      "math_fround": [Function],
-      "math_hypot": [Function],
-      "math_imul": [Function],
-      "math_log": [Function],
-      "math_log10": [Function],
-      "math_log1p": [Function],
-      "math_log2": [Function],
-      "math_max": [Function],
-      "math_min": [Function],
-      "math_pow": [Function],
-      "math_random": [Function],
-      "math_round": [Function],
-      "math_sign": [Function],
-      "math_sin": [Function],
-      "math_sinh": [Function],
-      "math_sqrt": [Function],
-      "math_tan": [Function],
-      "math_tanh": [Function],
-      "math_trunc": [Function],
-      "pair": [Function],
-      "parse": [Function],
-      "parse_int": [Function],
-      "prompt": [Function],
-      "raw_display": [Function],
-      "runtime": [Function],
-      "set_head": [Function],
-      "set_tail": [Function],
-      "stream": [Function],
-      "stream_tail": [Function],
-      "stringify": [Function],
-      "tail": [Function],
-      "undefined": undefined,
+      "Infinity": Thunk {
+        "supplier": [Function],
+      },
+      "NaN": Thunk {
+        "supplier": [Function],
+      },
+      "display": Thunk {
+        "supplier": [Function],
+      },
+      "draw_data": Thunk {
+        "supplier": [Function],
+      },
+      "error": Thunk {
+        "supplier": [Function],
+      },
+      "head": Thunk {
+        "supplier": [Function],
+      },
+      "is_boolean": Thunk {
+        "supplier": [Function],
+      },
+      "is_function": Thunk {
+        "supplier": [Function],
+      },
+      "is_null": Thunk {
+        "supplier": [Function],
+      },
+      "is_number": Thunk {
+        "supplier": [Function],
+      },
+      "is_pair": Thunk {
+        "supplier": [Function],
+      },
+      "is_string": Thunk {
+        "supplier": [Function],
+      },
+      "is_undefined": Thunk {
+        "supplier": [Function],
+      },
+      "list": Thunk {
+        "supplier": [Function],
+      },
+      "list_to_vector": Thunk {
+        "supplier": [Function],
+      },
+      "math_E": Thunk {
+        "supplier": [Function],
+      },
+      "math_LN10": Thunk {
+        "supplier": [Function],
+      },
+      "math_LN2": Thunk {
+        "supplier": [Function],
+      },
+      "math_LOG10E": Thunk {
+        "supplier": [Function],
+      },
+      "math_LOG2E": Thunk {
+        "supplier": [Function],
+      },
+      "math_PI": Thunk {
+        "supplier": [Function],
+      },
+      "math_SQRT1_2": Thunk {
+        "supplier": [Function],
+      },
+      "math_SQRT2": Thunk {
+        "supplier": [Function],
+      },
+      "math_abs": Thunk {
+        "supplier": [Function],
+      },
+      "math_acos": Thunk {
+        "supplier": [Function],
+      },
+      "math_acosh": Thunk {
+        "supplier": [Function],
+      },
+      "math_asin": Thunk {
+        "supplier": [Function],
+      },
+      "math_asinh": Thunk {
+        "supplier": [Function],
+      },
+      "math_atan": Thunk {
+        "supplier": [Function],
+      },
+      "math_atan2": Thunk {
+        "supplier": [Function],
+      },
+      "math_atanh": Thunk {
+        "supplier": [Function],
+      },
+      "math_cbrt": Thunk {
+        "supplier": [Function],
+      },
+      "math_ceil": Thunk {
+        "supplier": [Function],
+      },
+      "math_clz32": Thunk {
+        "supplier": [Function],
+      },
+      "math_cos": Thunk {
+        "supplier": [Function],
+      },
+      "math_cosh": Thunk {
+        "supplier": [Function],
+      },
+      "math_exp": Thunk {
+        "supplier": [Function],
+      },
+      "math_expm1": Thunk {
+        "supplier": [Function],
+      },
+      "math_floor": Thunk {
+        "supplier": [Function],
+      },
+      "math_fround": Thunk {
+        "supplier": [Function],
+      },
+      "math_hypot": Thunk {
+        "supplier": [Function],
+      },
+      "math_imul": Thunk {
+        "supplier": [Function],
+      },
+      "math_log": Thunk {
+        "supplier": [Function],
+      },
+      "math_log10": Thunk {
+        "supplier": [Function],
+      },
+      "math_log1p": Thunk {
+        "supplier": [Function],
+      },
+      "math_log2": Thunk {
+        "supplier": [Function],
+      },
+      "math_max": Thunk {
+        "supplier": [Function],
+      },
+      "math_min": Thunk {
+        "supplier": [Function],
+      },
+      "math_pow": Thunk {
+        "supplier": [Function],
+      },
+      "math_random": Thunk {
+        "supplier": [Function],
+      },
+      "math_round": Thunk {
+        "supplier": [Function],
+      },
+      "math_sign": Thunk {
+        "supplier": [Function],
+      },
+      "math_sin": Thunk {
+        "supplier": [Function],
+      },
+      "math_sinh": Thunk {
+        "supplier": [Function],
+      },
+      "math_sqrt": Thunk {
+        "supplier": [Function],
+      },
+      "math_tan": Thunk {
+        "supplier": [Function],
+      },
+      "math_tanh": Thunk {
+        "supplier": [Function],
+      },
+      "math_trunc": Thunk {
+        "supplier": [Function],
+      },
+      "pair": Thunk {
+        "supplier": [Function],
+      },
+      "parse_int": Thunk {
+        "supplier": [Function],
+      },
+      "prompt": Thunk {
+        "supplier": [Function],
+      },
+      "raw_display": Thunk {
+        "supplier": [Function],
+      },
+      "runtime": Thunk {
+        "supplier": [Function],
+      },
+      "stringify": Thunk {
+        "supplier": [Function],
+      },
+      "tail": Thunk {
+        "supplier": [Function],
+      },
+      "undefined": Thunk {
+        "supplier": [Function],
+      },
     },
     "name": "global",
     "tail": null,

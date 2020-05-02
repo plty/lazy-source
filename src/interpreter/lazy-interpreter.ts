@@ -10,6 +10,7 @@ import { evaluateBinaryExpression, evaluateUnaryExpression } from '../utils/oper
 import * as rttc from '../utils/rttc'
 import Closure from './closure'
 import Thunk from './Thunk'
+import { unravel } from '../utils/lazy-enforcer'
 
 class ReturnValue {
   constructor(public value: Value) {}
@@ -368,7 +369,7 @@ export const evaluators: { [nodeType: string]: Evaluator<es.Node> } = {
     context.numberOfOuterEnvironments += 1
     const environment = createBlockEnvironment(context, 'programEnvironment')
     pushEnvironment(context, environment)
-    return yield* evaluateBlockStatement(context, node)
+    return unravel(yield* evaluateBlockStatement(context, node))
   }
 }
 
